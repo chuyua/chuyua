@@ -1,407 +1,317 @@
 <!DOCTYPE html>
-
 <html lang="zh-CN">
-    <head>
-    <meta charset="utf-8">
-    <!--
-        hexo-theme-suka © SukkaW
-        GitHub: https://github.com/SukkaW/hexo-theme-suka
-    -->
 
-    <!-- ### Resource Hint ### -->
 
-    <!-- ## DNS Prefetch ## -->
-    <meta http-equiv="x-dns-prefetch-control" content="on">
 
-<!-- busuanzi -->
 
-    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
 
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/chuyua/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/chuyua/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>归档 - Hexo</title>
 
-<!-- comment -->
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+<link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
 
 
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
 
 
+<!-- 主题依赖的图标库，不要自行修改 -->
 
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_fmb4a04yx8h.css">
 
 
-<!-- analytics -->
 
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
 
 
 
 
+<link  rel="stylesheet" href="/chuyua/css/main.css" />
 
+<!-- 自定义样式保持在最底部 -->
 
-    <!-- ## Preload ## -->
-    
-    <!-- Busuanzi -->
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
 
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 
+<body>
+  <header style="height: 60vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/chuyua/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
 
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
 
-
-
-    <!-- ### Meta & Title & Info ### -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
-    <meta name="renderer" content="webkit">
-
-    <!-- Title -->
-    <title>归档: 2020 | Hexo</title>
-
-    <!-- Favicons -->
-    <link rel="icon" type="image&#x2F;ico" href="/chuyua/img/suka-favicon.ico">
-
-    <!-- ### Import File ### -->
-    <link rel="stylesheet" href="/chuyua/lib/spectre/spectre.min.css"><style>
-    body {
-        background-color: #f8f9fa;
-    }
-
-    a, a:visited {
-        color: #0070ff;
-    }
-
-    a:active, a:focus, a:hover {
-        color: #0070ff;
-        opacity: .75;
-    }
-
-    #post-content a,
-    #post-content a:hover,
-    #post-content a:focus,
-    #post-content a:visited {
-        color: #005eb9;
-        opacity: 1;
-    }
-
-    
-
-    .post-entry .card-body a {
-        color: #0070ff;
-    }
-
-    .avatar {
-        background: #444;
-    }
-
-    .navbar-link,
-    .navbar-link:visited,
-    .timeline .timeline-item .timeline-icon.icon-lg {
-        color: #0070ff;
-    }
-
-    .navbar-link:hover {
-        color: #0070ff;
-        opacity: .8;
-    }
-
-    #search-input .btn,
-    #disqus_click_btn,
-    #disqus-switch-to-direct,
-    #disqus-loadmore-button {
-        background: #727e96;
-        border-color: #727e96;
-        color: #fff;
-    }
-
-    #post-toc a.post-toc-link,
-    #post-toc a.post-toc-link:visited,
-    .share-menu.menu .menu-item>a {
-        color: #727e96;
-    }
-
-    .share-menu.menu .menu-item>a:hover,
-    .share-menu.menu .menu-item>a:focus,
-    .share-menu.menu .menu-item>a:visited {
-        color: #50596c;
-        background: #f8f9fa;
-        opacity: .85;
-    }
-</style><link rel="stylesheet" href="/chuyua/css/style.min.css">
-
-
-
-
-
-
-
-
-    <!-- Prettify Theme -->
-    
-
-
-
-
-<script>
-/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
-!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
-</script>
-
-    <!-- ### Site Verification ### -->
-    
-
-
-    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="Hexo"><meta name="msapplication-starturl" content="http://chuyua.github.io/chuyua"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Hexo"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
-    <!-- ### The Open Graph & Twitter Card Protocol ### -->
-    <meta property="og:title" content="归档: 2020 | Hexo"><meta property="og:site_name" content="Hexo"><meta property="og:type" content="website"><meta property="og:url" content="http://chuyua.github.io/chuyua/archives/2020/"><meta property="og:locale" content="zh-CN"><meta name="description" content="John Doe - Hexo">
-
-    
-
-    <!-- ### Canonical link ### -->
-    <link rel="canonical" href="http://chuyua.github.io/chuyua/archives/2020/">
-
-    <meta name="generator" content="Hexo 4.2.0">
-
-    <!-- ### Analytics ### -->
-    
-
-
-
-
-
-
-
-    <!-- ### Structured Data ### -->
-    
-
-
-
-
-    <!-- ### Custom Head ### -->
-    
-</head>
-
-    <body>
-            
-
-            <!-- ### Main content ### -->
-            <!-- ## Header ##-->
-<header>
-    <h1 class="header-title text-center"><a href="/chuyua/">Hexo</a></h1>
-
-    <p class="text-center header-slogan">
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
         
-            
-                Hi, nice to meet you.
-            
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/chuyua/">
+              <i class="iconfont icon-home-fill"></i>
+              首页</a>
+          </li>
         
-    </p>
-
-    <nav class="navbar-section text-center">
-    
-        <a href="/chuyua/" class="navbar-link">首页</a>
-    
-    
-        <a href="/chuyua/archives/" class="navbar-link">归档</a>
-    
-    
-        <a href="/search" class="navbar-link">搜索</a>
-    
-    
-        <a href="/about/" class="navbar-link">About</a>
-    
-        <a href="/links/" class="navbar-link">Friends</a>
-    
-    
-        <div class="dropdown dropdown-right">
-    <a class="navbar-link dropdown-toggle" tabindex="0">分享</a>
-    <ul class="menu share-menu">
-
-        <!-- Share Weibo -->
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/chuyua/archives/">
+              <i class="iconfont icon-archive-fill"></i>
+              归档</a>
+          </li>
         
-        <li class="menu-item">
-            <a href="http://service.weibo.com/share/share.php?appkey=&title=Hexo&url=http://chuyua.github.io/chuyua&pic=http://chuyua.github.io/chuyua/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">分享到微博</a>
-        </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/chuyua/categories/">
+              <i class="iconfont icon-category-fill"></i>
+              分类</a>
+          </li>
         
-
-        <!-- Share Twitter -->
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/chuyua/tags/">
+              <i class="iconfont icon-tags-fill"></i>
+              标签</a>
+          </li>
         
-        <li class="menu-item">
-            <a href="https://twitter.com/intent/tweet?text=Hexo&url=http://chuyua.github.io/chuyua&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">分享到 Twitter</a>
-        </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/chuyua/about/">
+              <i class="iconfont icon-user-fill"></i>
+              关于</a>
+          </li>
         
-
-        <!-- Share Facebook -->
         
-        <li class="menu-item">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=http://chuyua.github.io/chuyua" target="_blank" rel="external noopener noreferrer nofollow">分享到 Facebook</a>
-        </li>
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
         
-
-        <!-- Share Google+ -->
-        
-        <li class="menu-item">
-            <a href="https://plus.google.com/share?url=http://chuyua.github.io/chuyua" target="_blank" rel="external noopener noreferrer nofollow">分享到 Google+</a>
-        </li>
-        
-
-        <!-- Share LinkedIn -->
-        
-        <li class="menu-item">
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://chuyua.github.io/chuyua&title=" target="_blank" rel="external noopener noreferrer nofollow">分享到 LinkedIn</a>
-        </li>
-        
-
-        <!-- Share QQ -->
-        
-        <li class="menu-item">
-            <a href="http://connect.qq.com/widget/shareqq/index.html?site=Hexo&title=&summary=&pics=http://chuyua.github.io/chuyua/img/suka-favicon.ico&url=http://chuyua.github.io/chuyua" target="_blank" rel="external noopener noreferrer nofollow"> 分享到 QQ</a>
-        </li>
-        
-
-        <!-- Share Telegram -->
-        
-        <li class="menu-item">
-            <a href="https://t.me/share/url?url=http://chuyua.github.io/chuyua&text=" target="_blank" rel="external noopener noreferrer nofollow">分享到 Telegram</a>
-        </li>
-        
-
-        <!-- QRCode -->
-        
-        <li class="menu-item">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAAAAABQV18IAAAB3ElEQVR42u3ayw6DMAxEUf7/p9stpbFnHFgk5rKp1PI4lYzjODk+Cx4HKFCgQA1QR3Kczzmf+3Ojy2/X60a/h88B1QY1DLrg5tdzzg+NrrefA6oV6hp4UXA7gR3dJ3sOqPehssSZBT0oUFGAZuePEBEU1HtQ0UBZGVhVgD9WJYBaHpUV9E9+PjabAbU0SjYdxGAcFXnqxbjVdQG1NCoLxJkmhlPchZNbUK1QqjBTEwZnYiH/CKg2qAiWBbEMWqN4/HsuqJaoDOg2LVTDthzooLZCzTT0VWJ1gVblCWpblDN4ZoWc+t56gUC1Q6kFo9nEajfkQLVDuYOpe002uU0no6C2R6mbOM0QZyIqzwPVApVdoBoYalHS3eAFqifKLdoqA7izwC0bsaC2RDkNjkrSVA2N8FpQbVDOJEI1/dWLYTU/QLVCORNRa1AtLDqWijxQ26GcZr27ccK553SVAGorlJPwqovcTnIG1RPlFHJugq1s7JEZHdR2KHU4BV32B0qJFlQLlLXRuLBB0GmA2A0OUNui7gS408RVjVtQPVHuwnZlA2FlgAf1PpRKftMTUFCvRamJqgpsK9mCaoVyNuQ4m2jc5j6o3igVlCoRuhufZQMOVAvUSgcoUKBAnY4vNkzwwMVnqD8AAAAASUVORK5CYII=" alr="QRCode">
-        </li>
-        
-
-    </ul>
-</div>
-    
-    
-</nav>
-</header>
-
-            <div class="container">
-    <div class="main-container">
-        <main>
-
-            <div class="timeline">
-
-                <div class="timeline-item">
-                    <div class="timeline-left">
-                        <div class="timeline-icon"></div>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="tile">
-                            <div class="tile-content">
-                                <p class="tile-title">
-                                    目前共计 1 篇文章
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                
-                
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-left">
-                            <div class="timeline-icon icon-lg"></div>
-                        </div>
-                        <div class="timeline-content">
-                            <div class="tile">
-                                <div class="tile-content">
-                                    <p class="tile-title mb-0 h4">2020</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-left">
-                            <div class="timeline-icon"></div>
-                        </div>
-                        <div class="timeline-content">
-                            <div class="tile">
-                                <div class="tile-content">
-                                    <span class="tile-subtitle text-gray mb-1">05-07</span>
-                                    <a href="/chuyua/2020/05/07/hello-world/" class="timeline-tile-title ml-1" rel="bookmark"><span class="tile-title">Hello World</span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                
-                
-            </div>
-
-        </main>
-        
-
+      </ul>
     </div>
+  </div>
+</nav>
+
+    <div class="view intro-2" id="background" parallax=true
+         style="background: url('/chuyua/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-md">
+        <div class="py-5" id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+<div class="list-group">
+  <p class="h4">共计 1 篇文章</p>
+  <hr>
+  
+    
+      
+      <p class="h5">2020</p>
+    
+    <a href="/chuyua/2020/05/07/hello-world/" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">Hello World</span>
+      <span style="float: right;">05-07</span>
+    </a>
+  
 </div>
-            <!-- ### Footer ### -->
-            <footer class="text-center">
-    <!-- footer copyright -->
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     
-        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
-            <a class="footer-copyright-a" href="http://chuyua.github.io/chuyua">Hexo</a>
-        </p>
+  </main>
 
-    <!-- footer custom text -->
-    <p class="footer-text mb-0">
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
     
-    </p>
-    <!-- footer develop info -->
-    <p class="footer-develop mb-0">
-        
-    <!-- Busuanzi User Views -->
-    <span id="busuanzi_container_site_uv" hidden>
-        <span></span>
-        <span id="busuanzi_value_site_uv"></span>
-        <span>Viewers</span>
-        
-            <span>|</span>
-        
-    </span>
 
+    
 
-
-
-        
-        Powered by&nbsp;<!--
-         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
-         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
-    </p>
+    
+  </div>
 </footer>
 
-
-        <!-- ### Import File ### -->
-        <!-- ### Footer JS Import ### -->
-
-<script>
-
-    
-window.lazyLoadOptions = {
-    elements_selector: ".lazyload",
-    threshold: 50
-};
-document.getElementById('copyright-year').textContent = new Date().getFullYear();
-console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
-
-</script>
-
-<script src="/chuyua/lib/vanilla-lazyload/lazyload.min.js" async></script>
-    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/chuyua/js/main.js" ></script>
 
 
-<!-- Offset -->
+  <script  src="/chuyua/js/lazyload.js" ></script>
 
 
 
 
-<!-- Comment -->
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/chuyua/js/clipboard-use.js" ></script>
 
 
-<!-- ### Custom Footer ### -->
 
-    </body>
 
+
+
+<!-- Plugins -->
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "归档&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/chuyua/js/local-search.js" ></script>
+  <script>
+    var path = "/chuyua/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
 </html>
