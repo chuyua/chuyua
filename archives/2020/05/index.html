@@ -231,8 +231,8 @@
     
   </div>
 <div>
-  <span id="timeDate">载入天数...</span>
-  <span id="times">载入时分秒...</span>
+  <span id="timeDate rel="nofollow noopener">载入天数...</span>
+  <span id="times rel="nofollow noopener">载入时分秒...</span>
   <script>
   var now = new Date();
   function createtime(){
@@ -261,16 +261,6 @@
   setInterval("createtime()",250);
   </script>
 </div>
-<p id="hitokoto">:D 获取中...</p>
-<script>
-  fetch('https://hitokoto.cn/?uuid=a666a16f-e627-4e2d-8d18-cbf3c63bf651')
-    .then(response => response.json())
-    .then(data => {
-      const hitokoto = document.getElementById('hitokoto')
-      hitokoto.innerText = data.hitokoto
-      })
-      .catch(console.error)
-</script>
 </footer>
 
 <!-- SCRIPTS -->
