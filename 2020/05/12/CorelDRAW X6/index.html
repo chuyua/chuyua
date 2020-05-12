@@ -193,27 +193,22 @@
             <article class="markdown-body">
               <p><strong>断网再安装 Coreldraw X6 软件（务必断网安装，否则又可能出现注册反弹）</strong>，选择试用版安装，安装完后启动软件，按稍后注册，关闭软件，出现注册选项，用注册工具注册（这部分很多网上都有介绍， 关键是下面这部分 ）。</p>
 <ol>
-<li><p>开始&gt;&gt;运行&gt;&gt;输入 services.msc，找到Protexis Licensing V2服务 &gt;&gt; 禁用。</p>
-</li>
-<li><p>开始&gt;&gt;运行&gt;&gt;输入 sc delete Protexis Licensing V2，目的是删除该服务(可选操作)。</p>
-</li>
-<li><p>删除 <code>C:\Program Files\Common Files\Protexis\License Service</code> 下的 PsiService_2.exe (得先在&gt;&gt;任务管理器 &gt;&gt; PsiService_2.exe 结束进程，上述文件才能删除)。</p>
-</li>
-<li><p>将同一路径下的 PsiKey_.dll 重命名为 PsiClient.dll， _表示任意字元，例如:PSIKey-03000201.dll。</p>
-</li>
-<li><p><strong>将 PsiClient.dll 档替换掉 CorelDRAW 安装路径下所有的 PsiClient.dll 同名档</strong>（可用搜索功能搜一下文件位置），共4 个！ <em>必须替换，否则，启动 CorelDraw 时会告诉你文件损坏。</em></p>
-</li>
-<li><p>然后就是禁止CDR软件联网了，可以用系统自带防火墙，或者专业防火墙，把下面4个程序加入到防火墙的出站规则以及入站规则中（全部禁止联网）。<br>以 CorelDRW.exe 为例：打开控制面板&gt;&gt;windows防火墙（确定你已经开启了防火墙功能），进入高级设置&gt;&gt;入站规则&gt;&gt;新建规则&gt;&gt;规则类型：程序&gt;&gt;下一步&gt;&gt;选择CorelDraw主程序&gt;&gt;下一步&gt;&gt;阻止连接&gt;&gt;配置文件：全选&gt;&gt;名称：CorelDraw&gt;&gt;完成。<br>同理：出站规则&gt;&gt;新建规则&gt;&gt;规则类型：程序&gt;&gt;下一步&gt;&gt;选择CorelDraw主程序&gt;&gt;下一步&gt;&gt;阻止连接&gt;&gt;配置文件：全选&gt;&gt;名称：CorelDraw&gt;&gt;完成。</p>
+<li>开始&gt;&gt;运行&gt;&gt;输入 services.msc，找到Protexis Licensing V2服务 &gt;&gt; 禁用。</li>
+<li>开始&gt;&gt;运行&gt;&gt;输入 sc delete Protexis Licensing V2，目的是删除该服务(可选操作)。</li>
+<li>删除 <code>C:\Program Files\Common Files\Protexis\License Service</code> 下的 PsiService_2.exe (得先在&gt;&gt;任务管理器 &gt;&gt; PsiService_2.exe 结束进程，上述文件才能删除)。</li>
+<li>将同一路径下的 PsiKey_.dll 重命名为 PsiClient.dll， _表示任意字元，例如:PSIKey-03000201.dll。</li>
+<li><strong>将 PsiClient.dll 档替换掉 CorelDRAW 安装路径下所有的 PsiClient.dll 同名档</strong>（可用搜索功能搜一下文件位置），共4 个！ <em>必须替换，否则，启动 CorelDraw 时会告诉你文件损坏。</em></li>
+<li>然后就是禁止CDR软件联网了，可以用系统自带防火墙，或者专业防火墙，把下面4个程序加入到防火墙的出站规则以及入站规则中（全部禁止联网）。<br>以 CorelDRW.exe 为例：打开控制面板&gt;&gt;windows防火墙（确定你已经开启了防火墙功能），进入高级设置&gt;&gt;入站规则&gt;&gt;新建规则&gt;&gt;规则类型：程序&gt;&gt;下一步&gt;&gt;选择CorelDraw主程序&gt;&gt;下一步&gt;&gt;阻止连接&gt;&gt;配置文件：全选&gt;&gt;名称：CorelDraw&gt;&gt;完成。<br>同理：出站规则&gt;&gt;新建规则&gt;&gt;规则类型：程序&gt;&gt;下一步&gt;&gt;选择CorelDraw主程序&gt;&gt;下一步&gt;&gt;阻止连接&gt;&gt;配置文件：全选&gt;&gt;名称：CorelDraw&gt;&gt;完成。</li>
+</ol>
 <blockquote>
-<p>C:\Program Files\Corel\CorelDRAW Graphics SuiteX6\Programs64\CorelDRW.exeC:\Program Files\Corel\CorelDRAW GraphicsSuite X6\Programs64\DIM.exeC:\Program Files\Corel\CorelDRAW GraphicsSuite X6\Programs64\CorelPP.exeC:\Program Files\Corel\CorelDRAW Graphics Suite X6\Draw\DIM.exe</p>
+<p>C:\Program Files\Corel\CorelDRAW Graphics SuiteX6\Programs64\CorelDRW.exe<br>C:\Program Files\Corel\CorelDRAW GraphicsSuite X6\Programs64\DIM.exe<br>C:\Program Files\Corel\CorelDRAW GraphicsSuite X6\Programs64\CorelPP.exe<br>C:\Program Files\Corel\CorelDRAW Graphics Suite X6\Draw\DIM.exe</p>
 </blockquote>
-</li>
-<li><p>打开C:\Windows\System32\drivers\etc\hosts文件（此文件无扩展名）在文件末尾另起一行，输入：</p>
+<ol start="7">
+<li>打开C:\Windows\System32\drivers\etc\hosts文件（此文件无扩展名）在文件末尾另起一行，输入：</li>
+</ol>
 <blockquote>
 <p>127.0.0.1 apps.corel.com<br>127.0.0.1 mc.corel.com<br>127.0.0.1 origin-mc.corel.com<br>127.0.0.1 iws.corel.com</p>
 </blockquote>
-</li>
-</ol>
 <p>保存并关闭文件。</p>
 <h4 id="简单总结起来就是："><a href="#简单总结起来就是：" class="headerlink" title="简单总结起来就是："></a>简单总结起来就是：</h4><ul>
 <li>禁用Protexis Licensing V2服务</li>
