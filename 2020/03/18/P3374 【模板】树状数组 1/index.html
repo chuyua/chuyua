@@ -214,7 +214,7 @@
 <p>对于 $100%$ 的数据，$1\le n,m \le 5\times 10^5$。</p>
 <p>样例说明：</p>
 <p>故输出结果 14、16</p>
-<p><img src="https://gitee.com/royce2003/blog/raw/master/img/2256.png" srcset="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/loading.webp" alt=""></p>
+<p><img src="https://gitee.com/royce2003/blog/raw/master/img/2256.png" srcset="https://cdn.jsdelivr.net/gh/chuyua/imges@master/BlogSource/loading.webp" alt=""></p>
 <p>(写这篇呢其实是因为自己已经不会树状数组了，正好借此机会复习下 QAQ)</p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h3 id="树状数组"><a href="#树状数组" class="headerlink" title="树状数组"></a>树状数组</h3><p>首先需要了解什么是 <code>树状数组</code></p>
 <p>树状数组用的是树结构的思想，即树型逻辑结构，但他不是树形结构啦</p>
@@ -225,7 +225,7 @@
 <p>树状数组的优势就在于其维护的时间复杂度为 $O(log , n)$ ，而类似的前缀和数组维护的时间复杂度为 $O(n)$，两者的查询都是 $O(1)$ </p>
 <p>（说到这我就想起来某次校内赛的xzt买煎饼。。。。还好我拿了20分）</p>
 <h3 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h3><h4 id="lowbit"><a href="#lowbit" class="headerlink" title="lowbit"></a>lowbit</h4><p>实际上，对于树状数组 $tree$ 的每一个 $i$，其实际意义应该为：算上其本身的讯息，总共存储了 $2^k$ 个元素的信息，其中 $k$ 表示 $i$ 在二进制下，末尾零的个数，同时也可以表示最小的含 1 位的二进制权值——换句话讲，$2^k$ 即可表示成：对于每个二进制意义下的 $i$，从最末位数 $k+1$ 位，保留这 $k+1$ 位并删除 $k+1$ 位以左的所有数位上的数，留下的新二进制数的实际大</p>
-<p><img src="https://gitee.com/royce2003/blog/raw/master/img/0dd7912397dda14482d369acbfb7d0a20df486d1.jpg" srcset="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/loading.webp" alt=""></p>
+<p><img src="https://gitee.com/royce2003/blog/raw/master/img/0dd7912397dda14482d369acbfb7d0a20df486d1.jpg" srcset="https://cdn.jsdelivr.net/gh/chuyua/imges@master/BlogSource/loading.webp" alt=""></p>
 <table>
 <thead>
 <tr>
@@ -291,7 +291,7 @@
 <p>我们先列出 1~8 的 $lowbit$ </p>
 <p>$1;2;1;4;1;2;1;8$</p>
 <p>我们让 $C[i]$ 管理 $A[i-lowbit(i)+1,,i]$ 这段区间，如下图</p>
-<p><img src="https://gitee.com/royce2003/blog/raw/master/img/Snipaste_03-19_11-45-31.png" srcset="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/loading.webp" alt=""></p>
+<p><img src="https://gitee.com/royce2003/blog/raw/master/img/Snipaste_03-19_11-45-31.png" srcset="https://cdn.jsdelivr.net/gh/chuyua/imges@master/BlogSource/loading.webp" alt=""></p>
 <p>那么我们把某个点 $+x$ 的时候只需要把能管到这个点的都 $+x$ 就好啦，那我们如何找哪些能管到我们修改的点呢，这时候就需要 $lowbit$ 了</p>
 <h4 id="前缀和"><a href="#前缀和" class="headerlink" title="前缀和"></a>前缀和</h4><h5 id="一维前缀和"><a href="#一维前缀和" class="headerlink" title="一维前缀和"></a>一维前缀和</h5><p>现有一个长度为 $N$ 的序列 $A$，需要进行 $M$ 次操作，每次操作选取从 $A_i$ 到 $A_j$ 共 $j-i+1$ 个数并求出他们的总和 （N 和 M 可以很大）  </p>
 <p>例：<br>$$<br>N=9，;A={3,1,4,1,5,9,2,6,5}<br>$$<br>如果按照题意暴力，最坏情况下时间复杂度 $O(n\times m)$（是这个吗，我咋感觉时间复杂度好像大概可能不是这个QAQ）</p>
@@ -302,7 +302,7 @@
 <h5 id="二维前缀和"><a href="#二维前缀和" class="headerlink" title="二维前缀和"></a>二维前缀和</h5><p>一维前缀和会了二维的也很简单</p>
 <p>$$<br>A=<br>\left[<br>\begin{matrix}<br>5 &amp; 6 &amp; 6 &amp; 1 &amp; 4 &amp; 6\<br>3 &amp; 4 &amp; 2 &amp; 4 &amp; 1 &amp; 7 \<br>0 &amp; 9 &amp; 4 &amp; 6 &amp; 2 &amp; 4<br>\end{matrix}<br>\right]<br>;<br>B=<br>\left[<br>\begin{matrix}<br>5 &amp; 11 &amp; 17 &amp; 18 &amp; 21 &amp; 27\<br>8 &amp; 18 &amp; 26 &amp; \cdots &amp; \cdots &amp; \cdots \<br>\cdots &amp; \cdots &amp; \cdots &amp; \cdots  &amp; \cdots &amp; \cdots<br>\end{matrix}<br>\right]<br>$$<br>若我们要求 $x_1,,y_1$ 与 $x_2,,y_2$ 两点所围成矩形内数字的和<br>公式 $sum=B_{x_2,y_2}-B_{x_2,1}-B_{1,y_1}+B_{x_1-1,y_1-1}$</p>
 <h3 id="储存"><a href="#储存" class="headerlink" title="储存"></a>储存</h3><p>树状数组本质就是一个数组，我们用 C 来表示，然后把 C 排成数🎄的样子，就像前面的那个图那样</p>
-<p><img src="https://gitee.com/royce2003/blog/raw/master/img/0dd7912397dda14482d369acbfb7d0a20df486d1.jpg" srcset="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/loading.webp" alt=""></p>
+<p><img src="https://gitee.com/royce2003/blog/raw/master/img/0dd7912397dda14482d369acbfb7d0a20df486d1.jpg" srcset="https://cdn.jsdelivr.net/gh/chuyua/imges@master/BlogSource/loading.webp" alt=""></p>
 <p>$C[1]=A[1]$<br>$C[2]=A[1]+A[2]$<br>$C[3]=A[3]$<br>$C[4]=A[1]+A[2]+A[3]+A[4]$<br>$C[5]=A[5]$<br>$C[6]=A[5]+A[6]$<br>$C[7]=A[7]$<br>$C[8]=A[1]+A[2] \cdots A[8]$</p>
 <p>很明显 $C[i]=A[i-lowbit(i)+1]+A[i-lowbit(i)+2]+ \cdots +A[i]$</p>
 <p>用代码写就是</p>

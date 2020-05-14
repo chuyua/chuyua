@@ -189,19 +189,19 @@
 <p>华东节点的从这里进 <a href="https://tab.leancloud.cn/applist.html#/apps" target="_blank" rel="noopener">查看链接</a></p>
 <p>华北节点从这里 <a href="https://leancloud.cn/dashboard/login.html#/apps" target="_blank" rel="noopener">查看链接</a></p>
 <h3 id="修改代码库"><a href="#修改代码库" class="headerlink" title="修改代码库"></a>修改代码库</h3><p>然后进入放评论数据的那个应用，云引擎–&gt;设置–&gt;修改代码库为<br><code>https://github.com/zhaojun1998/Valine-Admin</code></p>
-<p><img src="https://cos.royce2003.top/22549/01.webp-default" srcset="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/loading.webp" alt=""></p>
+<p><img src="https://cos.royce2003.top/22549/01.webp-default" srcset="https://cdn.jsdelivr.net/gh/chuyua/imges@master/BlogSource/loading.webp" alt=""></p>
 <p>进入部署界面，选择 Git 源码部署，</p>
-<p><img src="https://cos.royce2003.top/22549/02.webp-default" srcset="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/loading.webp" alt=""></p>
+<p><img src="https://cos.royce2003.top/22549/02.webp-default" srcset="https://cdn.jsdelivr.net/gh/chuyua/imges@master/BlogSource/loading.webp" alt=""></p>
 <p>修改 分支或版本号为 master</p>
-<p><img src="https://cos.royce2003.top/22549/03.webp-default" srcset="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/loading.webp" alt=""></p>
+<p><img src="https://cos.royce2003.top/22549/03.webp-default" srcset="https://cdn.jsdelivr.net/gh/chuyua/imges@master/BlogSource/loading.webp" alt=""></p>
 <p>下载最新依赖是升级用的<br>然后点击部署<br>过程会比较漫长，耐心等待当看到完成之类的字眼就好啦图片我下了个最新依赖花了我 4 分钟…..</p>
-<p><img src="https://cos.royce2003.top/22549/04.webp-default" srcset="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/loading.webp" alt=""></p>
+<p><img src="https://cos.royce2003.top/22549/04.webp-default" srcset="https://cdn.jsdelivr.net/gh/chuyua/imges@master/BlogSource/loading.webp" alt=""></p>
 <h3 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><p>接下来就需要配置环境变量了</p>
 <div class="note note-warning">
             <p>环境变量配置图片已更新，请注意 SITE_URL 的值需要带 http(s)，否则邮件无法跳转</p>
           </div>
 
-<p><img src="https://cos.royce2003.top/22549/05.webp-default" srcset="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/loading.webp" alt=""></p>
+<p><img src="https://cos.royce2003.top/22549/05.webp-default" srcset="https://cdn.jsdelivr.net/gh/chuyua/imges@master/BlogSource/loading.webp" alt=""></p>
 <p><code>SITE_NAME</code> : 网站名称<br><code>SITE_URL</code> : 网站地址, 最后不要加 / SMTP_SERVICE : 邮件服务提供商，不如QQ，163…<br><code>SMTP_USER</code> : SMTP 服务用户名，邮箱地址<br><code>SMTP_PASS</code> : SMTP 密码，不是登录密码哦，是授权码，就是超级超级坑，需要你花钱发短信才能获得的授权码!<br><code>SENDER_NAME</code> : 寄件人名称<br><code>TEMPLATE_NAME</code>：邮件的样式，可以不写这行就按默认，除了默认还有另一个样式rainbow<br>（我没提到但图片里有的环境变量先不管他）<br>支持的邮件服务商:<br><code>&quot;126&quot; &quot;163&quot; &quot;1und1&quot; &quot;AOL&quot; &quot;DebugMail&quot; &quot;DynectEmail&quot; &quot;FastMail&quot; &quot;GandiMail&quot; &quot;Gmail&quot; &quot;Godaddy&quot; &quot;GodaddyAsia&quot; &quot;GodaddyEurope&quot; &quot;hot.ee&quot; &quot;Hotmail&quot; &quot;iCloud&quot; &quot;mail.ee&quot; &quot;Mail.ru&quot; &quot;Maildev&quot; &quot;Mailgun&quot; &quot;Mailjet&quot; &quot;Mailosaur&quot; &quot;Mandrill&quot; &quot;Naver&quot; &quot;OpenMailBox&quot; &quot;Outlook365&quot; &quot;Postmark&quot; &quot;QQ&quot; &quot;QQex&quot; &quot;SendCloud&quot; &quot;SendGrid&quot; &quot;SendinBlue&quot; &quot;SendPulse&quot; &quot;SES&quot; &quot;SES-US-EAST-1&quot; &quot;SES-US-WEST-2&quot; &quot;SES-EU-WEST-1&quot; &quot;Sparkpost&quot; &quot;Yahoo&quot; &quot;Yandex&quot; &quot;Zoho&quot; &quot;qiye.aliyun&quot;</code> 就这么多啦</p>
 <div class="note note-danger">
             <p>每次配置完环境变量需要重启容器!</p>
@@ -216,24 +216,24 @@
 <p>正是因为大家都缺钱所以我们需要利用 LeanCloud的 云函数进行唤醒</p>
 <p>既然必须休眠 6 个小时，那就让他休眠呗，总不可能你博客 24 小时都有人评论</p>
 <p>首先我们需要再添加一个环境变量 <code>ADMIN_URL</code> 然后把下方 Web 主机域名给填写上</p>
-<p><img src="https://cos.royce2003.top/22549/06.webp-default" srcset="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/loading.webp" alt=""></p>
+<p><img src="https://cos.royce2003.top/22549/06.webp-default" srcset="https://cdn.jsdelivr.net/gh/chuyua/imges@master/BlogSource/loading.webp" alt=""></p>
 <p>然后点击定时任务–&gt;创建定时任务</p>
-<p><img src="https://cos.royce2003.top/22549/07.webp-default" srcset="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/loading.webp" alt=""></p>
+<p><img src="https://cos.royce2003.top/22549/07.webp-default" srcset="https://cdn.jsdelivr.net/gh/chuyua/imges@master/BlogSource/loading.webp" alt=""></p>
 <p>名字随便取<br>选择生产环境下的 <code>self_wake</code><br>然后cron表达式输入<br><code>0 */30 7-23 * * ?</code><br>意思是 8 点到 23 点每 30 分钟唤醒一次<br>这是我的表达式<br>大家可以按自己需求改只需要保证 6 小时的休眠就好啦<br>然后如果出问题了可以去应用日志里查看以下</p>
-<p><img src="https://cos.royce2003.top/22549/08.webp-default" srcset="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/loading.webp" alt=""><br><img src="https://cos.royce2003.top/22549/09.webp-default" srcset="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/loading.webp" alt=""></p>
+<p><img src="https://cos.royce2003.top/22549/08.webp-default" srcset="https://cdn.jsdelivr.net/gh/chuyua/imges@master/BlogSource/loading.webp" alt=""><br><img src="https://cos.royce2003.top/22549/09.webp-default" srcset="https://cdn.jsdelivr.net/gh/chuyua/imges@master/BlogSource/loading.webp" alt=""></p>
 <p>当有人评论时，应用日志里也会显示  </p>
 <h3 id="评论管理"><a href="#评论管理" class="headerlink" title="评论管理"></a>评论管理</h3><p>然后还记得刚刚的 Web 主机域名，你也可以绑定自己的域名<br>通过访问该地址你就可以管理评论啦<br>但当你打开网址时会叫你登录<br>这时候你需要去创建个用户，也就是你自己<br>只需要填写密码，username，邮箱</p>
-<p><img src="https://cos.royce2003.top/22549/10.webp-default" srcset="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/loading.webp" alt=""><br><img src="https://cos.royce2003.top/22549/11.webp-default" srcset="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/loading.webp" alt=""></p>
+<p><img src="https://cos.royce2003.top/22549/10.webp-default" srcset="https://cdn.jsdelivr.net/gh/chuyua/imges@master/BlogSource/loading.webp" alt=""><br><img src="https://cos.royce2003.top/22549/11.webp-default" srcset="https://cdn.jsdelivr.net/gh/chuyua/imges@master/BlogSource/loading.webp" alt=""></p>
 <p>注意！邮箱才是是你的登录名！<br>不懂这是什么逻辑</p>
 <h2 id="微信提醒"><a href="#微信提醒" class="headerlink" title="微信提醒"></a>微信提醒</h2><p>好啦，接下来时加如微信提醒[^2]了<br>首先进入 Server 酱官网注册个账号然后按官网首页绑定微信</p>
-<p><img src="https://cos.royce2003.top/22549/12.webp-default" srcset="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/loading.webp" alt=""></p>
+<p><img src="https://cos.royce2003.top/22549/12.webp-default" srcset="https://cdn.jsdelivr.net/gh/chuyua/imges@master/BlogSource/loading.webp" alt=""></p>
 <p>第三步时测试绑定有没有成功</p>
 <h3 id="更改代码库"><a href="#更改代码库" class="headerlink" title="更改代码库"></a>更改代码库</h3><p>然后还记得更改的代码仓库吗，将他改成这个<br><code>https://github.com/sviptzk/Valine-Admin-Server</code> 点击保存</p>
-<p><img src="https://cos.royce2003.top/22549/13.webp-default" srcset="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/loading.webp" alt=""></p>
+<p><img src="https://cos.royce2003.top/22549/13.webp-default" srcset="https://cdn.jsdelivr.net/gh/chuyua/imges@master/BlogSource/loading.webp" alt=""></p>
 <h3 id="配置环境变量-1"><a href="#配置环境变量-1" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><p>然后再添加一个新的环境变量 <code>SCKEY</code></p>
-<p><img src="https://cos.royce2003.top/22549/14.webp-default" srcset="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/loading.webp" alt=""></p>
+<p><img src="https://cos.royce2003.top/22549/14.webp-default" srcset="https://cdn.jsdelivr.net/gh/chuyua/imges@master/BlogSource/loading.webp" alt=""></p>
 <p><code>SCKEY</code> 的值从这来</p>
-<p><img src="https://cos.royce2003.top/22549/15.webp-default" srcset="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/loading.webp" alt=""></p>
+<p><img src="https://cos.royce2003.top/22549/15.webp-default" srcset="https://cdn.jsdelivr.net/gh/chuyua/imges@master/BlogSource/loading.webp" alt=""></p>
 <div class="note note-danger">
             <p>然后一定记得要进行重新部署，重启容器！</p>
           </div>

@@ -228,7 +228,7 @@
 <p>ST 表基于==倍增==思想，可以做到 $O(n logn)$  的预处理，  $O(1)$ 的查询，但是不支持修改操作。</p>
 <p>我们用 $MAX_{i,j}$ 表示从 $a_i$ 开始 $2^j$ 个数的最大值，比如 $MAX_{1,0}$ 表示 $a_1$，$MAX_{1,1}$ 表示 $max(a_1,a_2)$</p>
 <p>可以看看图片的例子，竖着看，看完一列再看下一列，应该就能理解了（B 站上一个视频里的，个人感觉思想讲的挺好的，可以看完再去 luogu 上看看题解的代码）<a href="https://www.bilibili.com/video/BV1pE411u7Gq?t=762" target="_blank" rel="noopener">视频链接</a></p>
-<p><img src="https://cos.royce2003.top/55323/01.webp-default" srcset="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/loading.webp" alt=""></p>
+<p><img src="https://cos.royce2003.top/55323/01.webp-default" srcset="https://cdn.jsdelivr.net/gh/chuyua/imges@master/BlogSource/loading.webp" alt=""></p>
 <p>最后查询的时候将查询区间分成两段，比如查询 $1\sim7$ ，那就分成 $1\sim4$， $4\sim7$</p>
 <p>$$<br>t = log_2(right - left + 1)\<br>4=r-2^t+1<br>$$</p>
 <p>最后，$MAX[i][j]$ 中，$j = log_2n$</p>

@@ -201,10 +201,10 @@
 </blockquote>
 <p>归并排序<br>时间复杂度 $O(n;log;n)$<br>空间复杂度 $O(n)$</p>
 <p>算法图解</p>
-<p><img src="https://gitee.com/royce2003/blog/raw/master/img/c8177f3e6709c93d673b9ed49d3df8dcd00054c3.png" srcset="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/loading.webp" alt=""></p>
+<p><img src="https://gitee.com/royce2003/blog/raw/master/img/c8177f3e6709c93d673b9ed49d3df8dcd00054c3.png" srcset="https://cdn.jsdelivr.net/gh/chuyua/imges@master/BlogSource/loading.webp" alt=""></p>
 <p>就是先进行拆分，拆到只剩下自己的时候再进行合并</p>
 <p>以样例作为例子</p>
-<p><img src="https://gitee.com/royce2003/blog/raw/master/img/Snipaste_03-13_14-15-30.png" srcset="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/loading.webp" alt=""></p>
+<p><img src="https://gitee.com/royce2003/blog/raw/master/img/Snipaste_03-13_14-15-30.png" srcset="https://cdn.jsdelivr.net/gh/chuyua/imges@master/BlogSource/loading.webp" alt=""></p>
 <h4 id="拆分"><a href="#拆分" class="headerlink" title="拆分"></a>拆分</h4><p>先定义一个 msort 函数将原序列拆分</p>
 <div class="hljs"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">msort</span><span class="hljs-params">(<span class="hljs-keyword">int</span> L, <span class="hljs-keyword">int</span> R)</span> </span>&#123;
 	<span class="hljs-keyword">int</span> mid = (L + R) / <span class="hljs-number">2</span>;
@@ -240,18 +240,18 @@
 	a[k] = temp[k];</code></pre></div>
 
 <h4 id="步骤分解"><a href="#步骤分解" class="headerlink" title="步骤分解"></a>步骤分解</h4><p>肯能看到这还是很懵<br>那就看看详细的步骤分解吧</p>
-<p><img src="https://gitee.com/royce2003/blog/raw/master/img/Snipaste_03-13_14-15-30.png" srcset="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/loading.webp" alt=""></p>
+<p><img src="https://gitee.com/royce2003/blog/raw/master/img/Snipaste_03-13_14-15-30.png" srcset="https://cdn.jsdelivr.net/gh/chuyua/imges@master/BlogSource/loading.webp" alt=""></p>
 <p>合并 5 4，$i=L=1$， $mid=\frac{L+R}{2}=1$ ，$j=mid+1=2$，$a_i&gt;a_j$，将 $a_j$ 存入 temp，temp 数组：4 5 0 0 0 ，j++，j=3，超出范围，将剩余的 5 存入，temp 数组：4 5 2 6 3 1</p>
-<p><img src="https://gitee.com/royce2003/blog/raw/master/img/Snipaste_03-13_14-16-00.png" srcset="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/loading.webp" alt=""></p>
+<p><img src="https://gitee.com/royce2003/blog/raw/master/img/Snipaste_03-13_14-16-00.png" srcset="https://cdn.jsdelivr.net/gh/chuyua/imges@master/BlogSource/loading.webp" alt=""></p>
 <p>合并 3 6，$i=L=4$，，$mid=\frac{L+R}{2}=4$，$j=mid+1=5$，$a_i&gt;a_j$，将$a_j$存入 temp，temp 数组：4 5 0 3 6 0，j++，j=6，超出范围，将剩余 3 存入，temp 数组：4 5 2 3 6 1</p>
-<p><img src="https://gitee.com/royce2003/blog/raw/master/img/Snipaste_03-13_14-16-14.png" srcset="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/loading.webp" alt=""></p>
+<p><img src="https://gitee.com/royce2003/blog/raw/master/img/Snipaste_03-13_14-16-14.png" srcset="https://cdn.jsdelivr.net/gh/chuyua/imges@master/BlogSource/loading.webp" alt=""></p>
 <p>合并 3,5 和 2，$i=L=1$，$mid=\frac{L+R}{2}=2$，$j=mid+1=3$，$a_i&gt;a_j$，将 $a_j$ 存入 temp，temp 数组：2 5 0 3 6 0，j++，j=4，超出范围，将剩余 4 5 存入，temp 数组：2 4 5 3 6 0</p>
-<p><img src="https://gitee.com/royce2003/blog/raw/master/img/Snipaste_03-13_14-16-35.png" srcset="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/loading.webp" alt=""></p>
+<p><img src="https://gitee.com/royce2003/blog/raw/master/img/Snipaste_03-13_14-16-35.png" srcset="https://cdn.jsdelivr.net/gh/chuyua/imges@master/BlogSource/loading.webp" alt=""></p>
 <p>合并 1 和 3,6，$i=L=4$，$mid=\frac{L+R}{2}=4$，$j=mid+1=6$，$a_i&gt;a_j$，将 $a_j$ 存入 temp，temp 数组：2 5 0 1 6 0，j++，j=7，超出范围，将剩余 3 6 存入，temp 数组：2 4 5 1 3 6</p>
-<p><img src="https://gitee.com/royce2003/blog/raw/master/img/Snipaste_03-13_14-16-54.png" srcset="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/loading.webp" alt=""></p>
+<p><img src="https://gitee.com/royce2003/blog/raw/master/img/Snipaste_03-13_14-16-54.png" srcset="https://cdn.jsdelivr.net/gh/chuyua/imges@master/BlogSource/loading.webp" alt=""></p>
 <p>合并 2 4 5 和 1 3 6</p>
 <p>$$<br>i=L=1,\ mid=\frac{L+R}{2}=3,\ j=mid+1=4  \<br>~\<br>a_i&gt;a_j,\ 将a_j存入temp,\ temp数组：1,5,0,1,6,0  \<br>~\<br>j++,\ j=5,\ a_i&lt;a_j,\ 将a_i存入temp,\ temp数组：1,2,0,1,6,0  \<br>~\<br>i++,\ i=2,\ a_i&gt;a_j,\ 将a_j存入temp,\ temp数组：1,2,3,1,6,0  \<br>~\<br>j++,\ j=6,\ a_i&lt;a_j,\ 将a_i存入temp,\ temp数组：1,2,3,4,6,0  \<br>~\<br>i++,\ i=3,\ a_i&lt;a_j,\ 将a_i存入temp,\ temp数组：1,2,3,4,5,0  \<br>~\<br>i++,\ i=3,\ 超出mid,\ 将剩余 6 存入,\ temp数组：1,2,3,4,5,6\<br>$$</p>
-<p><img src="https://gitee.com/royce2003/blog/raw/master/img/Snipaste_03-13_14-17-25.png" srcset="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/loading.webp" alt=""></p>
+<p><img src="https://gitee.com/royce2003/blog/raw/master/img/Snipaste_03-13_14-17-25.png" srcset="https://cdn.jsdelivr.net/gh/chuyua/imges@master/BlogSource/loading.webp" alt=""></p>
 <p>这样就能得到一个有序数列了，例子中讲的是升序，降序也是同样的道理</p>
 <h4 id="逆序对"><a href="#逆序对" class="headerlink" title="逆序对"></a>逆序对</h4><p>然鹅这题是求逆序对，所以我们还需要在此基础上加上一行</p>
 <p>在判断$a_i&lt;a_j$的时候，前面的数小于后面的数，这时逆序对就出现了！</p>
