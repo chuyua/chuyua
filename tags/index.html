@@ -18,21 +18,12 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   <title>标签 - Hexo</title>
-
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
 
 
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_fmb4a04yx8h.css">
-
-
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_1736904_akkflqzx7j.css">
 
 
 
@@ -47,10 +38,17 @@
 
 <body>
   <header style="height: 80vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+    <a id="mdark" onclick="switchDarkMode()"></a>
+<script>
+  var isNight = new Date().getHours() >= 22 || new Date().getHours() <= 7;
+  if(((matchMedia('(prefers-color-scheme: dark)').matches)||isNight||(localStorage.getItem('dark') === '1'))&&!(isNight&&localStorage.getItem('noDark') === '1')) {
+    document.body.classList.add('dark');
+  }
+</script>
+<nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
-       href="/chuyua/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+       href="/chuyua/"><strong>Fluid</strong></a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -122,14 +120,22 @@
                 class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
           </li>
         
+        <li class="nav-item">
+          <a id="dark" class="nav-link" onclick="switchDarkMode()"></a>
+        </li>
       </ul>
     </div>
   </div>
 </nav>
-
+<script>
+  document.getElementById('dark').innerHTML = document.querySelector("body").classList.contains("dark") ? '<i class="iconfont icon-moon"></i>' : '<i class="iconfont icon-sun"></i>';
+  document.getElementById('mdark').innerHTML = document.querySelector("body").classList.contains("dark") ? '<i class="iconfont icon-moon"></i>' : '<i class="iconfont icon-sun"></i>';
+</script>
+ 
     <div class="view intro-2" id="background" parallax=true
-         style="background: url('https://cdn.jsdelivr.net/gh/chuyua/imges@master/xiaojiejie.jpg') no-repeat center center;
-           background-size: cover;">
+      style="background: url('https://cdn.jsdelivr.net/gh/chuyua/imges@master/xiaojiejie.jpg') no-repeat center center;
+        background-size: cover;">
+    <div class="view intro-2" id="background">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="container text-center white-text fadeInUp">
@@ -211,12 +217,21 @@
       <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
         <span>Fluid</span></a>
     </div>
+    <div>
+      powered by <a href="https://cloud.tencent.com/product/tcb?from=12334" class="qr-trigger" target="_blank" rel="nofollow noopener">CloudBase<img class="qr-img" src="https://rmt.dogedoge.com/fetch/royce/storage/CloudBase.png?fmt=webp" alt="qrcode" /></a>
+    </div>
     
 
     
 
     
+    
+
+    
+    <a href="https://www.dogedoge.com/" target="_blank" rel="noopener"><img src="https://rmt.dogedoge.com/fetch/royce/storage/dogedoge.png?w=100&fmt=webp" alt="dogedoge" style="width:2.75rem"></a>
   </div>
+</footer>
+
 <!-- SCRIPTS -->
 <script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
 <script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
