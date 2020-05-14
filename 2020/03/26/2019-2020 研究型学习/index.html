@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/chuyua/img/favicon.ico">
+  <link rel="icon" type="image/png" href="/chuyua/img/favicon.ico">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>研究型学习 - Hexo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+<link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_1736904_akkflqzx7j.css">
+
+
+
+
+<link  rel="stylesheet" href="/chuyua/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="/chuyua/css/custom.css">
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+  <header style="height: 80vh;">
+    <a id="mdark" onclick="switchDarkMode()"></a>
+<script>
+  var isNight = new Date().getHours() >= 22 || new Date().getHours() <= 7;
+  if(((matchMedia('(prefers-color-scheme: dark)').matches)||isNight||(localStorage.getItem('dark') === '1'))&&!(isNight&&localStorage.getItem('noDark') === '1')) {
+    document.body.classList.add('dark');
+  }
+</script>
+<nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/chuyua/"><strong>Royce's world</strong></a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://travellings.now.sh/" target="_blank" rel="noopener">
+              <i class="iconfont icon-plane"></i>
+              开往</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/chuyua/tags/">
+              <i class="iconfont icon-tags-fill"></i>
+              标签</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/chuyua/gallery/">
+              <i class="iconfont icon-xiangce1"></i>
+              相册</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/chuyua/messageboard/">
+              <i class="iconfont icon-liuyan"></i>
+              留言</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/chuyua/links/">
+              <i class="iconfont icon-link-fill"></i>
+              友链</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/chuyua/about/">
+              <i class="iconfont icon-user-fill"></i>
+              关于</a>
+          </li>
+        
+        
+        <li class="nav-item">
+          <a id="dark" class="nav-link" onclick="switchDarkMode()"></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<script>
+  document.getElementById('dark').innerHTML = document.querySelector("body").classList.contains("dark") ? '<i class="iconfont icon-moon"></i>' : '<i class="iconfont icon-sun"></i>';
+  document.getElementById('mdark').innerHTML = document.querySelector("body").classList.contains("dark") ? '<i class="iconfont icon-moon"></i>' : '<i class="iconfont icon-sun"></i>';
+</script>
+ 
+    <div class="view intro-2" id="background" parallax=true
+      style="background: url('https://rmt.dogedoge.com/fetch/royce/storage/bg/1.jpg?fmt=webp') no-repeat center center;
+        background-size: cover;">
+    <div class="view intro-2" id="background">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+                <div class="mt-3 post-meta">
+                  <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+                  <time datetime="2020-03-26 21:35">
+                    周四 3月 26 2020
+                  </time>
+                </div>
+              
+
+              <div class="mt-1">
+                
+                  
+                  <span class="post-meta mr-2">
+                    <i class="iconfont icon-chart"></i>
+                    487
+                  </span>
+                
+
+                
+
+                
+              </div>
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <div class="post-content mx-auto" id="post">
+            
+            <article class="markdown-body">
+              <p>昨天和几个同学完成了咕了很久的研究型学习的采访任务<br>贼尴尬😅</p>
+<a id="more"></a>
+<p>校门口集合，出发前往万达，进行了一些采访</p>
+<h2 id="对话记录"><a href="#对话记录" class="headerlink" title="对话记录"></a>对话记录</h2><h3 id="大门口，可能是经理之类的"><a href="#大门口，可能是经理之类的" class="headerlink" title="大门口，可能是经理之类的"></a>大门口，可能是经理之类的</h3><p>Q:你好，balabala<br>A:可以啊，到这后面来吧</p>
+<p>Q:目前有碰到出现发烧的吗<br>A:还没有</p>
+<p>Q:如果出现会采取什么措施<br>A:发烧达到75 会先找个区域隔离<br>如果出现你们会采取什么措施，<br>如果出现高温，一旦发烧达到75这边会找个隔离区域先隔离，<br>然后通知专门来检查<br>真的确诊会通知医院带走，这边有设置专门的隔离区，隔离起来</p>
+<p>Q:目前有没有碰到不带口罩然后不太配合的<br>A:肯定有吗<br>Q:比较多么<br>A:比较少，基本都有带，大家都比较有素质<br>还是就是说有的小孩子，有些小孩子带不了口罩我也没办法<br>像小孩子他会哭啊，不肯带，只能说允许默认小孩子不带，大人基本都带<br>还有什么问题吗</p>
+<p>没有了，谢谢</p>
+<h3 id="华为店的员工"><a href="#华为店的员工" class="headerlink" title="华为店的员工"></a>华为店的员工</h3><p>Q:你好，balabala<br>A:可以啊</p>
+<p>Q:疫情期间对本店的生意有什么比较大的影响吗<br>A:万达人流量变少了，生意肯定也变少了<br>Q:大概少了多少<br>A:上个月的话基本没有人，剩下个两三成左右<br>这个月还算恢复的差不多，差不多恢复了百分之60到70</p>
+<p>Q:那店内有什么消杀措施吗<br>A:有啊，都有的，每天都会消毒<br>Q:那对这些产品有消毒吗<br>A:我们来的话，店里面都会进行杀毒，做卫生，这个也是万达要求的，都会有检查的</p>
+<p>Q:那，你知道分餐制吗<br>A:不知道<br>好的，谢谢谢谢</p>
+<p>…</p>
+
+            </article>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/chuyua/tags/Royce/">Royce</a>
+                    
+                      <a class="hover-with-bg" href="/chuyua/tags/others/">others</a>
+                    
+                  </div>
+                
+              </div>
+              
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <div class="comments" id="comments">
+                
+                
+  <script defer src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/royce2019/BlogSource/js/Valine.min.js"></script>
+
+  <script type="text/javascript">
+    var oldLoadVa = window.onload;
+    window.onload = function () {
+      oldLoadVa && oldLoadVa();
+
+      new Valine({
+        lang: 'zh-cn',
+        el: '#comments' ,
+        app_id: 'KIkO2HJm1qz9uykOuuU41i8F-9Nh9j0Va',
+        app_key: 'oJgS2mVg227GJIkndK0bFGtF',
+        admin_email: '1098870059@qq.com',
+        placeholder: '说点什么...',
+        emoticon_url: 'https://rmt.dogedoge.com/fetch/royce/storage/comments',
+        emoticon_list: ["抓狂.png","无奈2.png","惊讶.png","托腮.png","快哭了.png","可怜.png","吃瓜.png","打哈欠.png","辣眼睛.png","脑阔疼.png","doge.png","动耳朵.gif","抖脚脚.gif","抖眼.gif","抖眼镜.gif","风吹秀发.gif","慌张.gif","夹住.gif","开车.gif","哭唧唧.gif","绿色的.gif","跳舞.gif","跳着走.gif","小花花.gif","眼睛转.gif","摇头.gif","眨眼.gif","吃东西.gif","弹肚皮.gif","动次打次.gif?fmt=webp ","比心心.gif","吹风.gif","打篮球.gif","都是小心心.gif","吐.png","喷血.png","狂汗.png","不说话.png","汗.png","坐等.png","献花.png","不高兴.png","中刀.png","害羞.png","皱眉.png","小眼睛.png","中指.png","尴尬.png","瞅你.png","想一想.png","中枪.png","得意.png","肿包.png","扇耳光.png","亲亲.png","惊喜.png","脸红.png","无所谓.png","便便.png","愤怒.png","蜡烛.png","献黄瓜.png","内伤.png","投降.png","观察.png","看不见.png","击掌.png","抠鼻.png","邪恶.png","看热闹.png","口水.png","抽烟.png","锁眉.png","装大款.png","吐舌.png","无奈.png","长草.png","赞一个.png","呲牙.png","无语.png","阴暗.png","不出所料.png","咽气.png","期待.png","高兴.png","吐血倒地.png","哭泣.png","欢呼.png","黑线.png","喜极而泣.png","喷水.png","深思.png","鼓掌.png","暗地观察.png"],
+      });
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" target="_blank" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    <div>
+      powered by <a href="https://cloud.tencent.com/product/tcb?from=12334" class="qr-trigger" target="_blank" rel="nofollow noopener">CloudBase<img class="qr-img" src="https://rmt.dogedoge.com/fetch/royce/storage/CloudBase.png?fmt=webp" alt="qrcode" /></a>
+    </div>
+    
+
+    
+  <!-- 备案信息 -->
+  <div>
+    <a href="http://beian.miit.gov.cn/" target="_blank" class="beian-icp"
+       rel="nofollow noopener">闽ICP备20005437号-1</a>
+    
+  </div>
+
+
+    
+    
+
+    
+    <a href="https://www.dogedoge.com/" target="_blank" rel="noopener"><img src="https://rmt.dogedoge.com/fetch/royce/storage/dogedoge.png?w=100&fmt=webp" alt="dogedoge" style="width:2.75rem"></a>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/chuyua/js/main.js" ></script>
+
+
+
+
+  
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '.post-content',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+<!-- Plugins -->
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?3b1c52021da1d2ea4a18cb97b7313fd0";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "研究型学习&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

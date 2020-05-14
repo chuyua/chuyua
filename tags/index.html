@@ -7,32 +7,25 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/chuyua/img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" href="/chuyua/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/chuyua/img/favicon.ico">
+  <link rel="icon" type="image/png" href="/chuyua/img/favicon.ico">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
-  <meta name="theme-color" content="#FC9D9A">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   <title>标签 - Hexo</title>
-
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
 
 
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_fmb4a04yx8h.css">
-
-
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_1736904_akkflqzx7j.css">
 
 
 
@@ -41,16 +34,27 @@
 
 <!-- 自定义样式保持在最底部 -->
 
+  
+<link rel="stylesheet" href="/chuyua/css/custom.css">
+
+
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 
 <body>
   <header style="height: 80vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+    <a id="mdark" onclick="switchDarkMode()"></a>
+<script>
+  var isNight = new Date().getHours() >= 22 || new Date().getHours() <= 7;
+  if(((matchMedia('(prefers-color-scheme: dark)').matches)||isNight||(localStorage.getItem('dark') === '1'))&&!(isNight&&localStorage.getItem('noDark') === '1')) {
+    document.body.classList.add('dark');
+  }
+</script>
+<nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
-       href="/chuyua/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+       href="/chuyua/"><strong>Royce's world</strong></a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -66,27 +70,9 @@
           
           
           <li class="nav-item">
-            <a class="nav-link" href="/chuyua/">
-              <i class="iconfont icon-home-fill"></i>
-              首页</a>
-          </li>
-        
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/chuyua/archives/">
-              <i class="iconfont icon-archive-fill"></i>
-              归档</a>
-          </li>
-        
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/chuyua/categories/">
-              <i class="iconfont icon-category-fill"></i>
-              分类</a>
+            <a class="nav-link" href="https://travellings.now.sh/" target="_blank" rel="noopener">
+              <i class="iconfont icon-plane"></i>
+              开往</a>
           </li>
         
           
@@ -102,9 +88,18 @@
           
           
           <li class="nav-item">
-            <a class="nav-link" href="/chuyua/about/">
-              <i class="iconfont icon-user-fill"></i>
-              关于</a>
+            <a class="nav-link" href="/chuyua/gallery/">
+              <i class="iconfont icon-xiangce1"></i>
+              相册</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/chuyua/messageboard/">
+              <i class="iconfont icon-liuyan"></i>
+              留言</a>
           </li>
         
           
@@ -116,20 +111,32 @@
               友链</a>
           </li>
         
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/chuyua/about/">
+              <i class="iconfont icon-user-fill"></i>
+              关于</a>
           </li>
         
+        
+        <li class="nav-item">
+          <a id="dark" class="nav-link" onclick="switchDarkMode()"></a>
+        </li>
       </ul>
     </div>
   </div>
 </nav>
-
+<script>
+  document.getElementById('dark').innerHTML = document.querySelector("body").classList.contains("dark") ? '<i class="iconfont icon-moon"></i>' : '<i class="iconfont icon-sun"></i>';
+  document.getElementById('mdark').innerHTML = document.querySelector("body").classList.contains("dark") ? '<i class="iconfont icon-moon"></i>' : '<i class="iconfont icon-sun"></i>';
+</script>
+ 
     <div class="view intro-2" id="background" parallax=true
-         style="background: url('https://cdn.jsdelivr.net/gh/chuyua/imges@master/xiaojiejie.jpg') no-repeat center center;
-           background-size: cover;">
+      style="background: url('https://rmt.dogedoge.com/fetch/royce/storage/bg/1.jpg?fmt=webp') no-repeat center center;
+        background-size: cover;">
+    <div class="view intro-2" id="background">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="container text-center white-text fadeInUp">
@@ -158,7 +165,7 @@
                 
 
 <div class="text-center tagcloud">
-  <a href="/chuyua/tags/CorelDraw/" style="font-size: 15px; color: #bbe">CorelDraw</a>
+  <a href="/chuyua/tags/Android/" style="font-size: 15px; color: #bbe">Android</a> <a href="/chuyua/tags/CSS/" style="font-size: 22.5px; color: #779bd3">CSS</a> <a href="/chuyua/tags/CorelDraw/" style="font-size: 15px; color: #bbe">CorelDraw</a> <a href="/chuyua/tags/Fluid/" style="font-size: 17.5px; color: #a4b0e5">Fluid</a> <a href="/chuyua/tags/Hexo/" style="font-size: 27.5px; color: #4a85c0">Hexo</a> <a href="/chuyua/tags/Kotlin/" style="font-size: 15px; color: #bbe">Kotlin</a> <a href="/chuyua/tags/NexT/" style="font-size: 20px; color: #8ea5dc">NexT</a> <a href="/chuyua/tags/OI/" style="font-size: 30px; color: #337ab7">OI</a> <a href="/chuyua/tags/Royce/" style="font-size: 20px; color: #8ea5dc">Royce</a> <a href="/chuyua/tags/Windows/" style="font-size: 15px; color: #bbe">Windows</a> <a href="/chuyua/tags/c/" style="font-size: 30px; color: #337ab7">c++</a> <a href="/chuyua/tags/others/" style="font-size: 22.5px; color: #779bd3">others</a> <a href="/chuyua/tags/%E6%80%BB%E7%BB%93/" style="font-size: 15px; color: #bbe">总结</a> <a href="/chuyua/tags/%E6%95%99%E7%A8%8B/" style="font-size: 25px; color: #6090c9">教程</a> <a href="/chuyua/tags/%E6%A8%AA%E5%90%91%E8%AF%84%E6%B5%8B/" style="font-size: 17.5px; color: #a4b0e5">横向评测</a> <a href="/chuyua/tags/%E6%B8%B8%E8%AE%B0/" style="font-size: 15px; color: #bbe">游记</a> <a href="/chuyua/tags/%E8%BD%AC%E8%BD%BD/" style="font-size: 20px; color: #8ea5dc">转载</a> <a href="/chuyua/tags/%E8%BD%AF%E4%BB%B6/" style="font-size: 15px; color: #bbe">软件</a> <a href="/chuyua/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 15px; color: #bbe">随笔</a>
 </div>
 
               </div>
@@ -176,28 +183,6 @@
   
 
   
-    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
-    </div>
-  </div>
-</div>
-  
 
   
 
@@ -211,26 +196,37 @@
       <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
         <span>Fluid</span></a>
     </div>
+    <div>
+      powered by <a href="https://cloud.tencent.com/product/tcb?from=12334" class="qr-trigger" target="_blank" rel="nofollow noopener">CloudBase<img class="qr-img" src="https://rmt.dogedoge.com/fetch/royce/storage/CloudBase.png?fmt=webp" alt="qrcode" /></a>
+    </div>
     
 
     
-
+  <!-- 备案信息 -->
+  <div>
+    <a href="http://beian.miit.gov.cn/" target="_blank" class="beian-icp"
+       rel="nofollow noopener">闽ICP备20005437号-1</a>
     
   </div>
+
+
+    
+    
+
+    
+    <a href="https://www.dogedoge.com/" target="_blank" rel="noopener"><img src="https://rmt.dogedoge.com/fetch/royce/storage/dogedoge.png?w=100&fmt=webp" alt="dogedoge" style="width:2.75rem"></a>
+  </div>
+</footer>
+
 <!-- SCRIPTS -->
 <script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
 <script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
 <script  src="/chuyua/js/main.js" ></script>
 
 
-  <script  src="/chuyua/js/lazyload.js" ></script>
 
 
 
-
-
-  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
-  <script  src="/chuyua/js/clipboard-use.js" ></script>
 
 
 
@@ -240,13 +236,37 @@
 <!-- Plugins -->
 
 
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?3b1c52021da1d2ea4a18cb97b7313fd0";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
 
   <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
   <script>
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "标签&nbsp;",
+        "今天也是开心的一天&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
@@ -261,32 +281,7 @@
 
 
 
-  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
-  <script>
-    anchors.options = {
-      placement: "right",
-      visible: "hover",
-      
-    };
-    var el = "h1,h2,h3,h4,h5,h6".split(",");
-    var res = [];
-    for (item of el) {
-      res.push(".markdown-body > " + item)
-    }
-    anchors.add(res.join(", "))
-  </script>
 
-
-
-  <script  src="/chuyua/js/local-search.js" ></script>
-  <script>
-    var path = "/chuyua/local-search.xml";
-    var inputArea = document.querySelector("#local-search-input");
-    inputArea.onclick = function () {
-      searchFunc(path, 'local-search-input', 'local-search-result');
-      this.onclick = null
-    }
-  </script>
 
 
 

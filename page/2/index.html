@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/chuyua/img/favicon.ico">
+  <link rel="icon" type="image/png" href="/chuyua/img/favicon.ico">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>Hexo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+<link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_1736904_akkflqzx7j.css">
+
+
+
+
+<link  rel="stylesheet" href="/chuyua/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="/chuyua/css/custom.css">
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+  <header style="height: 100vh;">
+    <a id="mdark" onclick="switchDarkMode()"></a>
+<script>
+  var isNight = new Date().getHours() >= 22 || new Date().getHours() <= 7;
+  if(((matchMedia('(prefers-color-scheme: dark)').matches)||isNight||(localStorage.getItem('dark') === '1'))&&!(isNight&&localStorage.getItem('noDark') === '1')) {
+    document.body.classList.add('dark');
+  }
+</script>
+<nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/chuyua/"><strong>Royce's world</strong></a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://travellings.now.sh/" target="_blank" rel="noopener">
+              <i class="iconfont icon-plane"></i>
+              开往</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/chuyua/tags/">
+              <i class="iconfont icon-tags-fill"></i>
+              标签</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/chuyua/gallery/">
+              <i class="iconfont icon-xiangce1"></i>
+              相册</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/chuyua/messageboard/">
+              <i class="iconfont icon-liuyan"></i>
+              留言</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/chuyua/links/">
+              <i class="iconfont icon-link-fill"></i>
+              友链</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/chuyua/about/">
+              <i class="iconfont icon-user-fill"></i>
+              关于</a>
+          </li>
+        
+        
+        <li class="nav-item">
+          <a id="dark" class="nav-link" onclick="switchDarkMode()"></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<script>
+  document.getElementById('dark').innerHTML = document.querySelector("body").classList.contains("dark") ? '<i class="iconfont icon-moon"></i>' : '<i class="iconfont icon-sun"></i>';
+  document.getElementById('mdark').innerHTML = document.querySelector("body").classList.contains("dark") ? '<i class="iconfont icon-moon"></i>' : '<i class="iconfont icon-sun"></i>';
+</script>
+ 
+    <div class="view intro-2" id="background" parallax=true
+      style="background: url('https://rmt.dogedoge.com/fetch/royce/storage/bg/1.jpg?fmt=webp') no-repeat center center;
+        background-size: cover;">
+    <div class="view intro-2" id="background">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-md">
+        <div class="py-5" id="board"
+          style=margin-top:0>
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/chuyua/2020/03/26/2019-2020%20%E7%A0%94%E7%A9%B6%E5%9E%8B%E5%AD%A6%E4%B9%A0/" target="_self">
+          <img src="https://cos.royce2003.top/23195/index_img.webp-cover" alt="研究型学习">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a class="index-header" href="/chuyua/2020/03/26/2019-2020%20%E7%A0%94%E7%A9%B6%E5%9E%8B%E5%AD%A6%E4%B9%A0/">研究型学习</a>
+
+      <a href="/chuyua/2020/03/26/2019-2020%20%E7%A0%94%E7%A9%B6%E5%9E%8B%E5%AD%A6%E4%B9%A0/" class="index-excerpt">
+        
+        
+          
+        
+        <div>昨天和几个同学完成了咕了很久的研究型学习的采访任务贼尴尬😅</div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>&nbsp;2020-03-26
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/chuyua/tags/Royce/">Royce</a>
+            
+              <a href="/chuyua/tags/others/">others</a>
+            
+          </div>
+        
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/chuyua/2020/03/18/P3374%20%E3%80%90%E6%A8%A1%E6%9D%BF%E3%80%91%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84%201/" target="_self">
+          <img src="https://cos.royce2003.top/759/index_img.webp-cover" alt="P3374 【模板】树状数组 1">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a class="index-header" href="/chuyua/2020/03/18/P3374%20%E3%80%90%E6%A8%A1%E6%9D%BF%E3%80%91%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84%201/">P3374 【模板】树状数组 1</a>
+
+      <a href="/chuyua/2020/03/18/P3374%20%E3%80%90%E6%A8%A1%E6%9D%BF%E3%80%91%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84%201/" class="index-excerpt">
+        
+        
+          
+        
+        <div>题目[^1]题目描述如题，已知一个数列，你需要进行下面两种操作：
+
+将某一个数加上 $x$
+求出某区间每一个数的和
+</div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>&nbsp;2020-03-18
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/chuyua/tags/OI/">OI</a>
+            
+              <a href="/chuyua/tags/c/">c++</a>
+            
+          </div>
+        
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/chuyua/2020/03/13/P1908%20%E9%80%86%E5%BA%8F%E5%AF%B9/" target="_self">
+          <img src="https://cos.royce2003.top/3500/index_img.webp-cover" alt="P1908 逆序对">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a class="index-header" href="/chuyua/2020/03/13/P1908%20%E9%80%86%E5%BA%8F%E5%AF%B9/">P1908 逆序对</a>
+
+      <a href="/chuyua/2020/03/13/P1908%20%E9%80%86%E5%BA%8F%E5%AF%B9/" class="index-excerpt">
+        
+        
+          
+        
+        <div>题目[^1]猫猫 TOM 和小老鼠 JERRY 最近又较量上了，但是毕竟都是成年人，他们已经不喜欢再玩那种你追我赶的游戏，现在他们喜欢玩统计。</div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>&nbsp;2020-03-13
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/chuyua/tags/OI/">OI</a>
+            
+              <a href="/chuyua/tags/c/">c++</a>
+            
+          </div>
+        
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/chuyua/2020/03/09/%E4%BD%A0%E6%9C%89%E6%80%A7%E5%88%AB%E6%AD%A7%E8%A7%86%E5%90%97/" target="_self">
+          <img src="https://cos.royce2003.top/58944/index_img.webp-cover" alt="观念小测试">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a class="index-header" href="/chuyua/2020/03/09/%E4%BD%A0%E6%9C%89%E6%80%A7%E5%88%AB%E6%AD%A7%E8%A7%86%E5%90%97/">观念小测试</a>
+
+      <a href="/chuyua/2020/03/09/%E4%BD%A0%E6%9C%89%E6%80%A7%E5%88%AB%E6%AD%A7%E8%A7%86%E5%90%97/" class="index-excerpt">
+        
+        
+          
+        
+        <div>对与许多判断，你可能是依靠着你的下意识，但你自己却不之情</div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>&nbsp;2020-03-09
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/chuyua/tags/others/">others</a>
+            
+          </div>
+        
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/chuyua/2020/03/07/2020-03%20%E9%9A%8F%E7%AC%94/" target="_self">
+          <img src="https://cos.royce2003.top/32314/index_img.webp-cover" alt="2020-03 随笔">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a class="index-header" href="/chuyua/2020/03/07/2020-03%20%E9%9A%8F%E7%AC%94/">2020-03 随笔</a>
+
+      <a href="/chuyua/2020/03/07/2020-03%20%E9%9A%8F%E7%AC%94/" class="index-excerpt">
+        
+        
+          
+        
+        <div>时代的尘埃，落在个人身上就是一座大山</div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>&nbsp;2020-03-07
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/chuyua/tags/%E9%9A%8F%E7%AC%94/">随笔</a>
+            
+          </div>
+        
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/chuyua/2020/02/27/Coding+GitHub%E5%8F%8C%E7%BA%BF%E9%83%A8%E7%BD%B2/" target="_self">
+          <img src="https://cos.royce2003.top/13128/index_img.webp-cover" alt="Coding+GitHub 双线部署">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a class="index-header" href="/chuyua/2020/02/27/Coding+GitHub%E5%8F%8C%E7%BA%BF%E9%83%A8%E7%BD%B2/">Coding+GitHub 双线部署</a>
+
+      <a href="/chuyua/2020/02/27/Coding+GitHub%E5%8F%8C%E7%BA%BF%E9%83%A8%E7%BD%B2/" class="index-excerpt">
+        
+        
+          
+        
+        <div>哪个孩子不想要一个流畅的博客
+奈何 github 一直处于半墙状态，访问速度贼慢所以我们可以选择境内访问走 coding（国内的平台），境外访问走 github</div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>&nbsp;2020-02-27
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/chuyua/tags/Hexo/">Hexo</a>
+            
+              <a href="/chuyua/tags/%E6%95%99%E7%A8%8B/">教程</a>
+            
+          </div>
+        
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/chuyua/2020/02/26/%E5%A4%B1%E8%AF%AD%E7%97%87/" target="_self">
+          <img src="https://cos.royce2003.top/60705/index_img.webp-cover" alt="失语症">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a class="index-header" href="/chuyua/2020/02/26/%E5%A4%B1%E8%AF%AD%E7%97%87/">失语症</a>
+
+      <a href="/chuyua/2020/02/26/%E5%A4%B1%E8%AF%AD%E7%97%87/" class="index-excerpt">
+        
+        
+          
+        
+        <div>脑子和嘴巴抢活，嘴巴敢怒不敢言？</div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>&nbsp;2020-02-26
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/chuyua/tags/others/">others</a>
+            
+              <a href="/chuyua/tags/%E8%BD%AC%E8%BD%BD/">转载</a>
+            
+          </div>
+        
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/chuyua/2020/02/26/CSS%E7%BE%8E%E5%8C%96%E5%8D%9A%E5%AE%A2%20%E7%AC%AC%E4%BA%8C%E6%9C%9F/" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/Royce2019/img/img/2335206_94a1b9ce_7356_3822@1600x719.jpeg" alt="CSS美化博客 第二期">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a class="index-header" href="/chuyua/2020/02/26/CSS%E7%BE%8E%E5%8C%96%E5%8D%9A%E5%AE%A2%20%E7%AC%AC%E4%BA%8C%E6%9C%9F/">CSS美化博客 第二期</a>
+
+      <a href="/chuyua/2020/02/26/CSS%E7%BE%8E%E5%8C%96%E5%8D%9A%E5%AE%A2%20%E7%AC%AC%E4%BA%8C%E6%9C%9F/" class="index-excerpt">
+        
+        
+          
+        
+        <div>
+首发于酷安，再转博客上，没怎么编辑。由于酷安不支持 Markdown 所以没 TOC 之类的
+
+第二期主要讲圆角动画
+
+在此期间已经有大佬 @Moce_Hu 催更，然鹅他自己已经做了圆角动画可能这就是大佬吧该教程面向小白，大佬请略过全文</div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>&nbsp;2020-02-26
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/chuyua/tags/Hexo/">Hexo</a>
+            
+              <a href="/chuyua/tags/%E6%95%99%E7%A8%8B/">教程</a>
+            
+              <a href="/chuyua/tags/CSS/">CSS</a>
+            
+              <a href="/chuyua/tags/NexT/">NexT</a>
+            
+          </div>
+        
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/chuyua/2020/02/22/CSS%E7%BE%8E%E5%8C%96%E5%8D%9A%E5%AE%A2%20%E7%AC%AC%E4%B8%80%E6%9C%9F/" target="_self">
+          <img src="https://gitee.com/Royce2003/blogimages/raw/master/img/2335206_83c5ad65_5449_5352@1080x485.jpeg" alt="CSS美化博客 第一期">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a class="index-header" href="/chuyua/2020/02/22/CSS%E7%BE%8E%E5%8C%96%E5%8D%9A%E5%AE%A2%20%E7%AC%AC%E4%B8%80%E6%9C%9F/">CSS美化博客 第一期</a>
+
+      <a href="/chuyua/2020/02/22/CSS%E7%BE%8E%E5%8C%96%E5%8D%9A%E5%AE%A2%20%E7%AC%AC%E4%B8%80%E6%9C%9F/" class="index-excerpt">
+        
+        
+          
+        
+        <div>
+首发于酷安，再转博客上，没怎么编辑。由于酷安不支持 Markdown 所以没 TOC 之类的
+
+封
+面感谢 @我是天小正 的教程哪个男孩子不想要一个炫酷的博客！哪个女孩子不想要一个超赞的博客！
+给博客加上动画绝对能让你的博客变得超帅当然啦，普通网站也是可以的</div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>&nbsp;2020-02-22
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/chuyua/tags/Hexo/">Hexo</a>
+            
+              <a href="/chuyua/tags/%E6%95%99%E7%A8%8B/">教程</a>
+            
+              <a href="/chuyua/tags/CSS/">CSS</a>
+            
+              <a href="/chuyua/tags/NexT/">NexT</a>
+            
+          </div>
+        
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/chuyua/2020/02/20/Valine%E9%82%AE%E4%BB%B6%E5%BE%AE%E4%BF%A1%E6%8F%90%E9%86%92/" target="_self">
+          <img src="https://cos.royce2003.top/22549/index_img.webp-cover" alt="Valine评论之微信提醒">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a class="index-header" href="/chuyua/2020/02/20/Valine%E9%82%AE%E4%BB%B6%E5%BE%AE%E4%BF%A1%E6%8F%90%E9%86%92/">Valine评论之微信提醒</a>
+
+      <a href="/chuyua/2020/02/20/Valine%E9%82%AE%E4%BB%B6%E5%BE%AE%E4%BF%A1%E6%8F%90%E9%86%92/" class="index-excerpt">
+        
+        
+          
+        
+        <div>该
+功能基于 Leancloud 的云引擎与云函数。可以提供邮件 通知站长 和 被@ 通知 的功能还支持自定义邮件模板哦![^1]
+项目来自 查看链接
+首先你需要一个可以正常使用 Valine 的博客
+邮件提醒Valine官方文档
+首先进入 LeanCloud
+华东节点的从这里进 查看链接
+华北节点从这里 查看链接
+修改代码库然后进入放评论数据的那个应用，云引擎–&gt;设置–&gt;修改代码库为</div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>&nbsp;2020-02-20
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/chuyua/tags/Hexo/">Hexo</a>
+            
+              <a href="/chuyua/tags/%E6%95%99%E7%A8%8B/">教程</a>
+            
+          </div>
+        
+        
+      </div>
+    </div>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/chuyua/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/chuyua/">1</a><span class="page-number current">2</span><a class="page-number" href="/chuyua/page/3/">3</a><a class="page-number" href="/chuyua/page/4/">4</a><a class="extend next" rel="next" href="/chuyua/page/3/"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
+  
+  <script>
+    for (ele of document.getElementById("pagination").getElementsByTagName("a")) {
+      ele.href += '#board';
+    }
+  </script>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    <div>
+      powered by <a href="https://cloud.tencent.com/product/tcb?from=12334" class="qr-trigger" target="_blank" rel="nofollow noopener">CloudBase<img class="qr-img" src="https://rmt.dogedoge.com/fetch/royce/storage/CloudBase.png?fmt=webp" alt="qrcode" /></a>
+    </div>
+    
+
+    
+  <!-- 备案信息 -->
+  <div>
+    <a href="http://beian.miit.gov.cn/" target="_blank" class="beian-icp"
+       rel="nofollow noopener">闽ICP备20005437号-1</a>
+    
+  </div>
+
+
+    
+    
+
+    
+    <a href="https://www.dogedoge.com/" target="_blank" rel="noopener"><img src="https://rmt.dogedoge.com/fetch/royce/storage/dogedoge.png?w=100&fmt=webp" alt="dogedoge" style="width:2.75rem"></a>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/chuyua/js/main.js" ></script>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Plugins -->
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?3b1c52021da1d2ea4a18cb97b7313fd0";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "今日任务：早起 (0/1)&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

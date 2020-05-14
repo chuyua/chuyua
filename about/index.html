@@ -7,32 +7,25 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/chuyua/img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" href="/chuyua/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/chuyua/img/favicon.ico">
+  <link rel="icon" type="image/png" href="/chuyua/img/favicon.ico">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
-  <meta name="theme-color" content="#FC9D9A">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   <title>关于 - Hexo</title>
-
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
 
 
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_fmb4a04yx8h.css">
-
-
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_1736904_akkflqzx7j.css">
 
 
 
@@ -41,16 +34,27 @@
 
 <!-- 自定义样式保持在最底部 -->
 
+  
+<link rel="stylesheet" href="/chuyua/css/custom.css">
+
+
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 
 <body>
-  <header style="height: 60vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <header style="height: 80vh;">
+    <a id="mdark" onclick="switchDarkMode()"></a>
+<script>
+  var isNight = new Date().getHours() >= 22 || new Date().getHours() <= 7;
+  if(((matchMedia('(prefers-color-scheme: dark)').matches)||isNight||(localStorage.getItem('dark') === '1'))&&!(isNight&&localStorage.getItem('noDark') === '1')) {
+    document.body.classList.add('dark');
+  }
+</script>
+<nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
-       href="/chuyua/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+       href="/chuyua/"><strong>Royce's world</strong></a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -66,27 +70,9 @@
           
           
           <li class="nav-item">
-            <a class="nav-link" href="/chuyua/">
-              <i class="iconfont icon-home-fill"></i>
-              首页</a>
-          </li>
-        
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/chuyua/archives/">
-              <i class="iconfont icon-archive-fill"></i>
-              归档</a>
-          </li>
-        
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/chuyua/categories/">
-              <i class="iconfont icon-category-fill"></i>
-              分类</a>
+            <a class="nav-link" href="https://travellings.now.sh/" target="_blank" rel="noopener">
+              <i class="iconfont icon-plane"></i>
+              开往</a>
           </li>
         
           
@@ -102,9 +88,18 @@
           
           
           <li class="nav-item">
-            <a class="nav-link" href="/chuyua/about/">
-              <i class="iconfont icon-user-fill"></i>
-              关于</a>
+            <a class="nav-link" href="/chuyua/gallery/">
+              <i class="iconfont icon-xiangce1"></i>
+              相册</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/chuyua/messageboard/">
+              <i class="iconfont icon-liuyan"></i>
+              留言</a>
           </li>
         
           
@@ -116,20 +111,32 @@
               友链</a>
           </li>
         
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/chuyua/about/">
+              <i class="iconfont icon-user-fill"></i>
+              关于</a>
           </li>
         
+        
+        <li class="nav-item">
+          <a id="dark" class="nav-link" onclick="switchDarkMode()"></a>
+        </li>
       </ul>
     </div>
   </div>
 </nav>
-
+<script>
+  document.getElementById('dark').innerHTML = document.querySelector("body").classList.contains("dark") ? '<i class="iconfont icon-moon"></i>' : '<i class="iconfont icon-sun"></i>';
+  document.getElementById('mdark').innerHTML = document.querySelector("body").classList.contains("dark") ? '<i class="iconfont icon-moon"></i>' : '<i class="iconfont icon-sun"></i>';
+</script>
+ 
     <div class="view intro-2" id="background" parallax=true
-         style="background: url('https://cdn.jsdelivr.net/gh/chuyua/imges@master/xiaojiejie.jpg') no-repeat center center;
-           background-size: cover;">
+      style="background: url('https://rmt.dogedoge.com/fetch/royce/storage/bg/1.jpg?fmt=webp') no-repeat center center;
+        background-size: cover;">
+    <div class="view intro-2" id="background">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="container text-center white-text fadeInUp">
@@ -153,7 +160,7 @@
           >
           
             <div class="about-avatar">
-              <img src="/chuyua/img/avatar.png" srcset="/chuyua/img/loading.gif"
+              <img src="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/about/Royce.webp"
                    class="img-fluid" alt="avatar">
             </div>
           
@@ -164,41 +171,50 @@
 
 <div class="text-center">
   <div class="about-info">
-    <div class="about-name">myname</div>
-    <div class="about-intro">info / info / info</div>
+    <div class="about-name">Royce</div>
+    <div class="about-intro"><span id="gradient" style="font-family: Sriracha,cursive;">less is more.</span></div>
     <div class="about-icons">
       
         
-        
-        
-        <a href="https://github.com" target="_blank" rel="noopener" class="">
-          <i class="iconfont icon-github-fill" aria-hidden="true"></i>
-          
-        </a>
-      
-        
-        
-        
-        <a href="https://douban.com" target="_blank" rel="noopener" class="">
-          <i class="iconfont icon-douban-fill" aria-hidden="true"></i>
-          
-        </a>
-      
-        
-        
-        
-        <a href="javascript:;" class="qr-trigger">
-          <i class="iconfont icon-wechat-fill" aria-hidden="true"></i>
-          
-            <img class="qr-img" src="/chuyua/img/favicon.png" srcset="/chuyua/img/loading.gif" alt="qrcode" />
-          
-        </a>
-      
     </div>
   </div>
 </div>
 <div class="mt-5 markdown-body">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet" media="print" onload='this.media="all"'>
+
+<h3 id="partly-sunny-关于我"><a href="#partly-sunny-关于我" class="headerlink" title=":partly_sunny: 关于我"></a>:partly_sunny: 关于我</h3><ul>
+<li>大一，:earth_asia:Fujian, China，喜欢数码科技</li>
+<li>个人水平有限，在博客分享的内容可能有错，希望指出:mag:</li>
+<li>:octopus: GitHub: <a href="https://github.com/royce003" target="_blank" rel="noopener">royce003</a></li>
+</ul>
+<h3 id="cyclone-关于博客"><a href="#cyclone-关于博客" class="headerlink" title=":cyclone: 关于博客"></a>:cyclone: 关于博客</h3><ul>
+<li><span><a href="https://hexo.io/zh-cn" target="_blank" rel="noopener">Hexo</a> + <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="noopener">Fluid</a> + <a href="https://github.com/features/actions" target="_blank" rel="noopener">GitHub Action</a></span></li>
+<li>除特殊说明，文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0 协议</a></li>
+<li>开始<del>返璞归真</del>了，折腾了挺久的了，还是简单点好，<del>多些优质内容少些花里胡哨</del></li>
+</ul>
+<!-- ### :partly_sunny: 博客历史
+
+
+            <input type="checkbox" class="" disabled checked="checked">
+            <p>2020.02.27 从 NexT 搬迁至 Fluid</p>
+          
+
+            <input type="checkbox" class="" disabled checked="checked">
+            <p>2020.03.05 搬迁全部完成</p>
+          
+
+            <input type="checkbox" class="" disabled checked="checked">
+            <p>2020.03.16 新增相册</p>
+          
+
+            <input type="checkbox" class="" disabled checked="checked">
+            <p>2020.03.24 使用增强版 Valine-Admin</p>
+          
+
+            <input type="checkbox" class="" disabled checked="checked">
+            <p>2020.03.26 新增暗黑模式</p>
+           -->
+
 </div>
 
               </div>
@@ -216,28 +232,6 @@
   
 
   
-    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
-    </div>
-  </div>
-</div>
-  
 
   
 
@@ -251,26 +245,37 @@
       <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
         <span>Fluid</span></a>
     </div>
+    <div>
+      powered by <a href="https://cloud.tencent.com/product/tcb?from=12334" class="qr-trigger" target="_blank" rel="nofollow noopener">CloudBase<img class="qr-img" src="https://rmt.dogedoge.com/fetch/royce/storage/CloudBase.png?fmt=webp" alt="qrcode" /></a>
+    </div>
     
 
     
-
+  <!-- 备案信息 -->
+  <div>
+    <a href="http://beian.miit.gov.cn/" target="_blank" class="beian-icp"
+       rel="nofollow noopener">闽ICP备20005437号-1</a>
     
   </div>
+
+
+    
+    
+
+    
+    <a href="https://www.dogedoge.com/" target="_blank" rel="noopener"><img src="https://rmt.dogedoge.com/fetch/royce/storage/dogedoge.png?w=100&fmt=webp" alt="dogedoge" style="width:2.75rem"></a>
+  </div>
+</footer>
+
 <!-- SCRIPTS -->
 <script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
 <script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
 <script  src="/chuyua/js/main.js" ></script>
 
 
-  <script  src="/chuyua/js/lazyload.js" ></script>
 
 
 
-
-
-  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
-  <script  src="/chuyua/js/clipboard-use.js" ></script>
 
 
 
@@ -280,13 +285,37 @@
 <!-- Plugins -->
 
 
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?3b1c52021da1d2ea4a18cb97b7313fd0";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
 
   <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
   <script>
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "关于&nbsp;",
+        "今后无论发生什么事也好<br>这个左手上的⋯⋯都是同伴的记号&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
@@ -301,32 +330,7 @@
 
 
 
-  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
-  <script>
-    anchors.options = {
-      placement: "right",
-      visible: "hover",
-      
-    };
-    var el = "h1,h2,h3,h4,h5,h6".split(",");
-    var res = [];
-    for (item of el) {
-      res.push(".markdown-body > " + item)
-    }
-    anchors.add(res.join(", "))
-  </script>
 
-
-
-  <script  src="/chuyua/js/local-search.js" ></script>
-  <script>
-    var path = "/chuyua/local-search.xml";
-    var inputArea = document.querySelector("#local-search-input");
-    inputArea.onclick = function () {
-      searchFunc(path, 'local-search-input', 'local-search-result');
-      this.onclick = null
-    }
-  </script>
 
 
 

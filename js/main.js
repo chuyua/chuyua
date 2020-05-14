@@ -128,3 +128,22 @@ $(document).ready(function() {
   scrollDownArrowEvent();
   scrollTopArrowEvent();
 });
+
+// Custom JS
+if ((sessionStorage.getItem('confirm') !== '1') && (/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent))) {
+  confirm('抱歉，本博客在 Safari 中大部分图片无法显示');
+  sessionStorage.setItem('confirm', '1');
+}
+function switchDarkMode() {
+  if ($('body').hasClass('dark')) {
+    $('#dark').html('<i class="iconfont icon-sun"></i>');
+    $('body').removeClass("dark");
+    localStorage.setItem('noDark', '1');
+    localStorage.setItem('dark', '0');
+  } else {
+    $('#dark').html('<i class="iconfont icon-moon"></i>'); 
+    $('body').addClass('dark');
+    localStorage.setItem('dark', '1');
+    localStorage.setItem('noDark', '0');
+  }
+}

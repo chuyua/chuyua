@@ -7,32 +7,25 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/chuyua/img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" href="/chuyua/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/chuyua/img/favicon.ico">
+  <link rel="icon" type="image/png" href="/chuyua/img/favicon.ico">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
-  <meta name="theme-color" content="#FC9D9A">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   <title>友链 - Hexo</title>
-
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
 
 
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_fmb4a04yx8h.css">
-
-
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_1736904_akkflqzx7j.css">
 
 
 
@@ -41,16 +34,27 @@
 
 <!-- 自定义样式保持在最底部 -->
 
+  
+<link rel="stylesheet" href="/chuyua/css/custom.css">
+
+
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 
 <body>
-  <header style="height: 60vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <header style="height: 80vh;">
+    <a id="mdark" onclick="switchDarkMode()"></a>
+<script>
+  var isNight = new Date().getHours() >= 22 || new Date().getHours() <= 7;
+  if(((matchMedia('(prefers-color-scheme: dark)').matches)||isNight||(localStorage.getItem('dark') === '1'))&&!(isNight&&localStorage.getItem('noDark') === '1')) {
+    document.body.classList.add('dark');
+  }
+</script>
+<nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
-       href="/chuyua/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+       href="/chuyua/"><strong>Royce's world</strong></a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -66,27 +70,9 @@
           
           
           <li class="nav-item">
-            <a class="nav-link" href="/chuyua/">
-              <i class="iconfont icon-home-fill"></i>
-              首页</a>
-          </li>
-        
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/chuyua/archives/">
-              <i class="iconfont icon-archive-fill"></i>
-              归档</a>
-          </li>
-        
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/chuyua/categories/">
-              <i class="iconfont icon-category-fill"></i>
-              分类</a>
+            <a class="nav-link" href="https://travellings.now.sh/" target="_blank" rel="noopener">
+              <i class="iconfont icon-plane"></i>
+              开往</a>
           </li>
         
           
@@ -102,9 +88,18 @@
           
           
           <li class="nav-item">
-            <a class="nav-link" href="/chuyua/about/">
-              <i class="iconfont icon-user-fill"></i>
-              关于</a>
+            <a class="nav-link" href="/chuyua/gallery/">
+              <i class="iconfont icon-xiangce1"></i>
+              相册</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/chuyua/messageboard/">
+              <i class="iconfont icon-liuyan"></i>
+              留言</a>
           </li>
         
           
@@ -116,20 +111,32 @@
               友链</a>
           </li>
         
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/chuyua/about/">
+              <i class="iconfont icon-user-fill"></i>
+              关于</a>
           </li>
         
+        
+        <li class="nav-item">
+          <a id="dark" class="nav-link" onclick="switchDarkMode()"></a>
+        </li>
       </ul>
     </div>
   </div>
 </nav>
-
+<script>
+  document.getElementById('dark').innerHTML = document.querySelector("body").classList.contains("dark") ? '<i class="iconfont icon-moon"></i>' : '<i class="iconfont icon-sun"></i>';
+  document.getElementById('mdark').innerHTML = document.querySelector("body").classList.contains("dark") ? '<i class="iconfont icon-moon"></i>' : '<i class="iconfont icon-sun"></i>';
+</script>
+ 
     <div class="view intro-2" id="background" parallax=true
-         style="background: url('https://cdn.jsdelivr.net/gh/chuyua/imges@master/xiaojiejie.jpg') no-repeat center center;
-           background-size: cover;">
+      style="background: url('https://rmt.dogedoge.com/fetch/royce/storage/bg/1.jpg?fmt=webp') no-repeat center center;
+        background-size: cover;">
+    <div class="view intro-2" id="background">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="container text-center white-text fadeInUp">
@@ -157,61 +164,688 @@
               <div class="col-12 col-md-10 m-auto">
                 
 
-<div class="row links">
+<h5 class="note note-success">🍭身边的大佬们</h5>
+<div class="row links" style="margin-top:-25px;">
   
     
     <div class="card col-lg-4 col-md-6 col-sm-12">
-      <a href="https://hexo.fluid-dev.com/docs/" class="card-body hover-with-bg" target="_blank" rel="noopener">
+      <a href="https:///chuyua/neworld2002.github.io" class="card-body hover-with-bg" target="_blank" rel="noopener">
         <div class="card-content">
-          
-            <div class="link-avatar my-auto">
-              <img src="/img/favicon.png" srcset="/chuyua/img/loading.gif" alt="Fluid Docs" />
-            </div>
-          
-          <div class="link-text">
-            <div class="link-title">Fluid Docs</div>
-            <div class="link-intro">主题使用指南</div>
-          </div>
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/Neworld2002.jpg?fmt=webp&w=100&h=100&q=100" alt="Neworld2002" />
+        </div>
+        <div class="link-text">
+          <div class="link-title">Neworld2002</div>
+          <div class="link-intro">蓝鸟</div>
+        </div>
         </div>
       </a>
     </div>
   
     
     <div class="card col-lg-4 col-md-6 col-sm-12">
-      <a href="https://github.com/fluid-dev/hexo-theme-fluid" class="card-body hover-with-bg" target="_blank" rel="noopener">
+      <a href="https:///chuyua/newsheep2003.github.io" class="card-body hover-with-bg" target="_blank" rel="noopener">
         <div class="card-content">
-          
-            <div class="link-avatar my-auto">
-              <img src="/img/favicon.png" srcset="/chuyua/img/loading.gif" alt="Fluid Repo" />
-            </div>
-          
-          <div class="link-text">
-            <div class="link-title">Fluid Repo</div>
-            <div class="link-intro">主题 GitHub 仓库</div>
-          </div>
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/Newsheep.jpg?fmt=webp&w=100&h=100&q=100" alt="Newsheep" />
         </div>
-      </a>
-    </div>
-  
-    
-    <div class="card col-lg-4 col-md-6 col-sm-12">
-      <a href="https://hexo.fluid-dev.com/docs/example/" class="card-body hover-with-bg" target="_blank" rel="noopener">
-        <div class="card-content">
-          
-            <div class="link-avatar my-auto">
-              <img src="/img/favicon.png" srcset="/chuyua/img/loading.gif" alt="Fluid Example" />
-            </div>
-          
-          <div class="link-text">
-            <div class="link-title">Fluid Example</div>
-            <div class="link-intro">主题操作示例</div>
-          </div>
+        <div class="link-text">
+          <div class="link-title">Newsheep</div>
+          <div class="link-intro">憨憨</div>
+        </div>
         </div>
       </a>
     </div>
   
 </div>
 
+<h5 class="note note-primary">⛅️五湖四海的朋友们</h5>
+<div class="row links" style="margin-top:-25px;">
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://travellings.now.sh" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/travellings.jpg?fmt=webp&w=100&h=100&q=100" alt="travellings" />
+        </div>
+        <div class="link-text">
+          <div class="link-title">travellings</div>
+          <div class="link-intro">开往-友链接力</div>
+        </div>
+        </div>
+      </a>
+    </div>
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://wtrwx.top" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/维他入我心.jpg?fmt=webp&w=100&h=100&q=100" alt="维他入我心" />
+        </div>
+        <div class="link-text">
+          <div class="link-title">维他入我心</div>
+          <div class="link-intro">科技/生活日常～</div>
+        </div>
+        </div>
+      </a>
+    </div>
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://blog.lhkstudio.me" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/Linhk1606.jpg?fmt=webp&w=100&h=100&q=100" alt="Linhk1606" />
+        </div>
+        <div class="link-text">
+          <div class="link-title">Linhk1606</div>
+          <div class="link-intro">...</div>
+        </div>
+        </div>
+      </a>
+    </div>
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://leflacon.top" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/LeFlacon.jpg?fmt=webp&w=100&h=100&q=100" alt="LeFlacon" />
+        </div>
+        <div class="link-text">
+          <div class="link-title">LeFlacon</div>
+          <div class="link-intro">Let’s think!</div>
+        </div>
+        </div>
+      </a>
+    </div>
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://www.antmoe.com" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/小康博客.jpg?fmt=webp&w=100&h=100&q=100" alt="小康博客" />
+        </div>
+        <div class="link-text">
+          <div class="link-title">小康博客</div>
+          <div class="link-intro">一个收藏回忆与分享技术的地方</div>
+        </div>
+        </div>
+      </a>
+    </div>
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://kksan.top" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/小K同學.jpg?fmt=webp&w=100&h=100&q=100" alt="小K同學" />
+        </div>
+        <div class="link-text">
+          <div class="link-title">小K同學</div>
+          <div class="link-intro">技术，日语，云旅游</div>
+        </div>
+        </div>
+      </a>
+    </div>
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://eatrice.top" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/吃白饭的休伯利安号.jpg?fmt=webp&w=100&h=100&q=100" alt="吃白饭的休伯利安号" />
+        </div>
+        <div class="link-text">
+          <div class="link-title">吃白饭的休伯利安号</div>
+          <div class="link-intro">卑微的考研狗</div>
+        </div>
+        </div>
+      </a>
+    </div>
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://blog.wubuster.com" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/IamWu555.jpg?fmt=webp&w=100&h=100&q=100" alt="IamWu555" />
+        </div>
+        <div class="link-text">
+          <div class="link-title">IamWu555</div>
+          <div class="link-intro">A man with superb shot</div>
+        </div>
+        </div>
+      </a>
+    </div>
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://www.geek-space.cn" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/极客空间.jpg?fmt=webp&w=100&h=100&q=100" alt="极客空间" />
+        </div>
+        <div class="link-text">
+          <div class="link-title">极客空间</div>
+          <div class="link-intro">一个准备高考的高三狗</div>
+        </div>
+        </div>
+      </a>
+    </div>
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://mocehu.top" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/MOCEHU.jpg?fmt=webp&w=100&h=100&q=100" alt="MOCEHU" />
+        </div>
+        <div class="link-text">
+          <div class="link-title">MOCEHU</div>
+          <div class="link-intro">一个没有技术贴的技术博客</div>
+        </div>
+        </div>
+      </a>
+    </div>
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://codgi.xin" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/Codgi.jpg?fmt=webp&w=100&h=100&q=100" alt="Codgi" />
+        </div>
+        <div class="link-text">
+          <div class="link-title">Codgi</div>
+          <div class="link-intro">Do what you love</div>
+        </div>
+        </div>
+      </a>
+    </div>
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://www.apde.workers.dev" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/JimmyQin.jpg?fmt=webp&w=100&h=100&q=100" alt="JimmyQin" />
+        </div>
+        <div class="link-text">
+          <div class="link-title">JimmyQin</div>
+          <div class="link-intro">挨拍的儿</div>
+        </div>
+        </div>
+      </a>
+    </div>
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://idkzr.com" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/惴与绕.jpg?fmt=webp&w=100&h=100&q=100" alt="惴与绕" />
+        </div>
+        <div class="link-text">
+          <div class="link-title">惴与绕</div>
+          <div class="link-intro">一条咸鱼的日常</div>
+        </div>
+        </div>
+      </a>
+    </div>
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://yyuzh.xyz" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/yuzh.jpg?fmt=webp&w=100&h=100&q=100" alt="yuzh" />
+        </div>
+        <div class="link-text">
+          <div class="link-title">yuzh</div>
+          <div class="link-intro">永不停歇--Never Settle</div>
+        </div>
+        </div>
+      </a>
+    </div>
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://ixfish.cn" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/Bert.jpg?fmt=webp&w=100&h=100&q=100" alt="Bert" />
+        </div>
+        <div class="link-text">
+          <div class="link-title">Bert</div>
+          <div class="link-intro">面朝大海，春暖花开</div>
+        </div>
+        </div>
+      </a>
+    </div>
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://yiki.tech" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/Guan FuQing.jpg?fmt=webp&w=100&h=100&q=100" alt="Guan FuQing" />
+        </div>
+        <div class="link-text">
+          <div class="link-title">Guan FuQing</div>
+          <div class="link-intro">Error:No object found!</div>
+        </div>
+        </div>
+      </a>
+    </div>
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://huishao.top" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/辉少菌.jpg?fmt=webp&w=100&h=100&q=100" alt="辉少菌" />
+        </div>
+        <div class="link-text">
+          <div class="link-title">辉少菌</div>
+          <div class="link-intro">一个爱搞技术的高一党</div>
+        </div>
+        </div>
+      </a>
+    </div>
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://skyhouse.xyz" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/星下小屋.jpg?fmt=webp&w=100&h=100&q=100" alt="星下小屋" />
+        </div>
+        <div class="link-text">
+          <div class="link-title">星下小屋</div>
+          <div class="link-intro">学习记录笔记本</div>
+        </div>
+        </div>
+      </a>
+    </div>
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://www.yunyoujun.cn" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/云游君.jpg?fmt=webp&w=100&h=100&q=100" alt="云游君" />
+        </div>
+        <div class="link-text">
+          <div class="link-title">云游君</div>
+          <div class="link-intro">All at sea.</div>
+        </div>
+        </div>
+      </a>
+    </div>
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://transion.cc" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/以成杂谈.jpg?fmt=webp&w=100&h=100&q=100" alt="以成杂谈" />
+        </div>
+        <div class="link-text">
+          <div class="link-title">以成杂谈</div>
+          <div class="link-intro">以成，却非已成</div>
+        </div>
+        </div>
+      </a>
+    </div>
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://xaoxuu.com" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/xaoxuu.jpg?fmt=webp&w=100&h=100&q=100" alt="xaoxuu" />
+        </div>
+        <div class="link-text">
+          <div class="link-title">xaoxuu</div>
+          <div class="link-intro">iOS</div>
+        </div>
+        </div>
+      </a>
+    </div>
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://bestzuo.cn" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/Sanarous.jpg?fmt=webp&w=100&h=100&q=100" alt="Sanarous" />
+        </div>
+        <div class="link-text">
+          <div class="link-title">Sanarous</div>
+          <div class="link-intro">码农人生</div>
+        </div>
+        </div>
+      </a>
+    </div>
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://xiamuyourenzhang.cn" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/夏目友人帐.jpg?fmt=webp&w=100&h=100&q=100" alt="夏目友人帐" />
+        </div>
+        <div class="link-text">
+          <div class="link-title">夏目友人帐</div>
+          <div class="link-intro">夏目友人帐</div>
+        </div>
+        </div>
+      </a>
+    </div>
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://tding.top" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/小丁.jpg?fmt=webp&w=100&h=100&q=100" alt="小丁" />
+        </div>
+        <div class="link-text">
+          <div class="link-title">小丁</div>
+          <div class="link-intro">世间所有的相遇，都是久别重逢</div>
+        </div>
+        </div>
+      </a>
+    </div>
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://713.moe" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/小太.jpg?fmt=webp&w=100&h=100&q=100" alt="小太" />
+        </div>
+        <div class="link-text">
+          <div class="link-title">小太</div>
+          <div class="link-intro">一个热爱 ACG 的技术宅</div>
+        </div>
+        </div>
+      </a>
+    </div>
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://www.julydate.com" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/七夏浅笑.jpg?fmt=webp&w=100&h=100&q=100" alt="七夏浅笑" />
+        </div>
+        <div class="link-text">
+          <div class="link-title">七夏浅笑</div>
+          <div class="link-intro">七月之约，夏末浅笑</div>
+        </div>
+        </div>
+      </a>
+    </div>
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://blog.say521.cn" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/Mystery.jpg?fmt=webp&w=100&h=100&q=100" alt="Mystery" />
+        </div>
+        <div class="link-text">
+          <div class="link-title">Mystery</div>
+          <div class="link-intro">心有猛虎，细嗅蔷薇</div>
+        </div>
+        </div>
+      </a>
+    </div>
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://barriery.cn" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/barriery.jpg?fmt=webp&w=100&h=100&q=100" alt="barriery" />
+        </div>
+        <div class="link-text">
+          <div class="link-title">barriery</div>
+          <div class="link-intro">A student, programmer and explorer.</div>
+        </div>
+        </div>
+      </a>
+    </div>
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://keithqwq.com" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/keith.jpg?fmt=webp&w=100&h=100&q=100" alt="keith" />
+        </div>
+        <div class="link-text">
+          <div class="link-title">keith</div>
+          <div class="link-intro">一个热爱网络的学生</div>
+        </div>
+        </div>
+      </a>
+    </div>
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://i.vince.pub" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/Vince.jpg?fmt=webp&w=100&h=100&q=100" alt="Vince" />
+        </div>
+        <div class="link-text">
+          <div class="link-title">Vince</div>
+          <div class="link-intro">努力学习技术的 Vince</div>
+        </div>
+        </div>
+      </a>
+    </div>
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://www.52efi.cn" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/飞雨晴忘乡.jpg?fmt=webp&w=100&h=100&q=100" alt="飞雨晴忘乡" />
+        </div>
+        <div class="link-text">
+          <div class="link-title">飞雨晴忘乡</div>
+          <div class="link-intro">享建站之香，解发少之苦</div>
+        </div>
+        </div>
+      </a>
+    </div>
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://blog.juanertu.com" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/ConstOwn.jpg?fmt=webp&w=100&h=100&q=100" alt="ConstOwn" />
+        </div>
+        <div class="link-text">
+          <div class="link-title">ConstOwn</div>
+          <div class="link-intro">能和你一起成长，我荣幸之至</div>
+        </div>
+        </div>
+      </a>
+    </div>
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://dmx.pub" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/DmxZ.jpg?fmt=webp&w=100&h=100&q=100" alt="DmxZ" />
+        </div>
+        <div class="link-text">
+          <div class="link-title">DmxZ</div>
+          <div class="link-intro">欢迎来到 DmxZ 的自留地！</div>
+        </div>
+        </div>
+      </a>
+    </div>
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://www.hcode.top" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/Hcode.jpg?fmt=webp&w=100&h=100&q=100" alt="Hcode" />
+        </div>
+        <div class="link-text">
+          <div class="link-title">Hcode</div>
+          <div class="link-intro">记录编程技术，实现在线小功能</div>
+        </div>
+        </div>
+      </a>
+    </div>
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://blog.6yfz.cn" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/LiuYun.jpg?fmt=webp&w=100&h=100&q=100" alt="LiuYun" />
+        </div>
+        <div class="link-text">
+          <div class="link-title">LiuYun</div>
+          <div class="link-intro">一位信息网络爱好者的博客</div>
+        </div>
+        </div>
+      </a>
+    </div>
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://bryce-huang.club" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/Bryce.jpg?fmt=webp&w=100&h=100&q=100" alt="Bryce" />
+        </div>
+        <div class="link-text">
+          <div class="link-title">Bryce</div>
+          <div class="link-intro">啥都想学的程序员</div>
+        </div>
+        </div>
+      </a>
+    </div>
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://fanfan.im" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/饭庄.jpg?fmt=webp&w=100&h=100&q=100" alt="饭庄" />
+        </div>
+        <div class="link-text">
+          <div class="link-title">饭庄</div>
+          <div class="link-intro">饭庄</div>
+        </div>
+        </div>
+      </a>
+    </div>
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://chungzh.cn" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/ChungZH.jpg?fmt=webp&w=100&h=100&q=100" alt="ChungZH" />
+        </div>
+        <div class="link-text">
+          <div class="link-title">ChungZH</div>
+          <div class="link-intro">Young, Simple, Naive</div>
+        </div>
+        </div>
+      </a>
+    </div>
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://blog.cugxuan.cn" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/泫.jpg?fmt=webp&w=100&h=100&q=100" alt="泫" />
+        </div>
+        <div class="link-text">
+          <div class="link-title">泫</div>
+          <div class="link-intro">Xuan’ blog</div>
+        </div>
+        </div>
+      </a>
+    </div>
+  
+    
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="https://www.flexiston.com" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+        <div class="link-avatar my-auto">
+          <img src="https://rmt.dogedoge.com/fetch/royce/storage/links/Flexiston.jpg?fmt=webp&w=100&h=100&q=100" alt="Flexiston" />
+        </div>
+        <div class="link-text">
+          <div class="link-title">Flexiston</div>
+          <div class="link-intro">长风破浪会有时，直挂云帆济沧海</div>
+        </div>
+        </div>
+      </a>
+    </div>
+  
+</div>
+<div class="mt-5 markdown-body">
+  <hr>
+<p align="center"><strong>欢迎申请🌟</strong></p>
+
+<h3 id="link-申请要求"><a href="#link-申请要求" class="headerlink" title=":link: 申请要求"></a>:link: 申请要求</h3><div>
+            <input type="radio" class=" red" disabled >
+            <p>全站 HTTPS</p>
+          </div>
+<div>
+            <input type="radio" class=" red" disabled >
+            <p>非资源站的原创类博客</p>
+          </div>
+<div>
+            <input type="radio" class=" red" disabled >
+            <p>正版主题（仅针对付费主题）</p>
+          </div>
+<div>
+            <input type="radio" class=" red" disabled >
+            <p>稳定访问，无广告推广（看情况）</p>
+          </div>
+
+<br>
+
+<p>最近清理了些不符合申请要求的友链 :thinking:<br>但友链还是很多，所以之后的友链会非常认真审核<br>要求有点多，介意就不要申请啦 :see_no_evil:</p>
+<hr>
+<h3 id="mailbox-closed-留言申请"><a href="#mailbox-closed-留言申请" class="headerlink" title=":mailbox_closed: 留言申请"></a>:mailbox_closed: 留言申请</h3><ul>
+<li>名称: Royce</li>
+<li>网站: <a href="https://www.royce2003.top" target="_blank" rel="noopener">https://www.royce2003.top</a></li>
+<li>简介: less is more.</li>
+<li>头像: <a href="https://cdn.jsdelivr.net/gh/royce003/BlogSource/about/Royce.png" target="_blank" rel="noopener">https://cdn.jsdelivr.net/gh/royce003/BlogSource/about/Royce.png</a></li>
+</ul>
+<h3 id="pencil-PR-申请"><a href="#pencil-PR-申请" class="headerlink" title=":pencil: PR 申请"></a>:pencil: PR 申请</h3><ul>
+<li>在配置文件末尾添加博客信息</li>
+<li>参考之前格式，只需填写名字、简介和==不带 https 的链接==</li>
+<li>PR 时提供头像链接</li>
+</ul>
+<br>
+<div>
+<a class="btn" href="/messageboard/"  title="留言" target="_blank">留言</a>
+<a class="btn" href="https://github.com/royce003/blog/edit/master/source/_data/fluid_config.yml#L435"  title="PR" target="_blank">PR</a>
+</div>
+
+</div>
               </div>
             </div>
           </div>
@@ -227,28 +861,6 @@
   
 
   
-    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
-    </div>
-  </div>
-</div>
-  
 
   
 
@@ -262,26 +874,37 @@
       <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
         <span>Fluid</span></a>
     </div>
+    <div>
+      powered by <a href="https://cloud.tencent.com/product/tcb?from=12334" class="qr-trigger" target="_blank" rel="nofollow noopener">CloudBase<img class="qr-img" src="https://rmt.dogedoge.com/fetch/royce/storage/CloudBase.png?fmt=webp" alt="qrcode" /></a>
+    </div>
     
 
     
-
+  <!-- 备案信息 -->
+  <div>
+    <a href="http://beian.miit.gov.cn/" target="_blank" class="beian-icp"
+       rel="nofollow noopener">闽ICP备20005437号-1</a>
     
   </div>
+
+
+    
+    
+
+    
+    <a href="https://www.dogedoge.com/" target="_blank" rel="noopener"><img src="https://rmt.dogedoge.com/fetch/royce/storage/dogedoge.png?w=100&fmt=webp" alt="dogedoge" style="width:2.75rem"></a>
+  </div>
+</footer>
+
 <!-- SCRIPTS -->
 <script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
 <script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
 <script  src="/chuyua/js/main.js" ></script>
 
 
-  <script  src="/chuyua/js/lazyload.js" ></script>
 
 
 
-
-
-  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
-  <script  src="/chuyua/js/clipboard-use.js" ></script>
 
 
 
@@ -291,13 +914,37 @@
 <!-- Plugins -->
 
 
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?3b1c52021da1d2ea4a18cb97b7313fd0";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
 
   <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
   <script>
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "友情链接&nbsp;",
+        "我们的船上没有手下，只有伙伴&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
@@ -312,32 +959,7 @@
 
 
 
-  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
-  <script>
-    anchors.options = {
-      placement: "right",
-      visible: "hover",
-      
-    };
-    var el = "h1,h2,h3,h4,h5,h6".split(",");
-    var res = [];
-    for (item of el) {
-      res.push(".markdown-body > " + item)
-    }
-    anchors.add(res.join(", "))
-  </script>
 
-
-
-  <script  src="/chuyua/js/local-search.js" ></script>
-  <script>
-    var path = "/chuyua/local-search.xml";
-    var inputArea = document.querySelector("#local-search-input");
-    inputArea.onclick = function () {
-      searchFunc(path, 'local-search-input', 'local-search-result');
-      this.onclick = null
-    }
-  </script>
 
 
 

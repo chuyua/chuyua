@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/chuyua/img/favicon.ico">
+  <link rel="icon" type="image/png" href="/chuyua/img/favicon.ico">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>Hexo+GitHub 静态博客搭建教程 - Hexo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+<link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_1736904_akkflqzx7j.css">
+
+
+
+
+<link  rel="stylesheet" href="/chuyua/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="/chuyua/css/custom.css">
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+  <header style="height: 80vh;">
+    <a id="mdark" onclick="switchDarkMode()"></a>
+<script>
+  var isNight = new Date().getHours() >= 22 || new Date().getHours() <= 7;
+  if(((matchMedia('(prefers-color-scheme: dark)').matches)||isNight||(localStorage.getItem('dark') === '1'))&&!(isNight&&localStorage.getItem('noDark') === '1')) {
+    document.body.classList.add('dark');
+  }
+</script>
+<nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/chuyua/"><strong>Royce's world</strong></a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://travellings.now.sh/" target="_blank" rel="noopener">
+              <i class="iconfont icon-plane"></i>
+              开往</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/chuyua/tags/">
+              <i class="iconfont icon-tags-fill"></i>
+              标签</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/chuyua/gallery/">
+              <i class="iconfont icon-xiangce1"></i>
+              相册</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/chuyua/messageboard/">
+              <i class="iconfont icon-liuyan"></i>
+              留言</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/chuyua/links/">
+              <i class="iconfont icon-link-fill"></i>
+              友链</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/chuyua/about/">
+              <i class="iconfont icon-user-fill"></i>
+              关于</a>
+          </li>
+        
+        
+        <li class="nav-item">
+          <a id="dark" class="nav-link" onclick="switchDarkMode()"></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<script>
+  document.getElementById('dark').innerHTML = document.querySelector("body").classList.contains("dark") ? '<i class="iconfont icon-moon"></i>' : '<i class="iconfont icon-sun"></i>';
+  document.getElementById('mdark').innerHTML = document.querySelector("body").classList.contains("dark") ? '<i class="iconfont icon-moon"></i>' : '<i class="iconfont icon-sun"></i>';
+</script>
+ 
+    <div class="view intro-2" id="background" parallax=true
+      style="background: url('https://rmt.dogedoge.com/fetch/royce/storage/bg/1.jpg?fmt=webp') no-repeat center center;
+        background-size: cover;">
+    <div class="view intro-2" id="background">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+                <div class="mt-3 post-meta">
+                  <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+                  <time datetime="2020-02-12 12:16">
+                    周三 2月 12 2020
+                  </time>
+                </div>
+              
+
+              <div class="mt-1">
+                
+                  
+                  <span class="post-meta mr-2">
+                    <i class="iconfont icon-chart"></i>
+                    3k
+                  </span>
+                
+
+                
+
+                
+              </div>
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <div class="post-content mx-auto" id="post">
+            
+            <article class="markdown-body">
+              <p><img src="https://i.loli.net/2020/02/12/kPWqXHzFxO7Tgvh.jpg" alt=""></p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><span class="drop-cap">2</span>
+<p>019 年 11 月 CSP Day1 当晚，发现身边大佬都在写游记，我也因此心血来潮，咕咕咕，几天之后我才开始写。同时又碰巧学长退役，看见了巨佬的博客，我的天哪，这完善程度，这流畅度，这内容的深度 emmm 不愧是巨佬，厚着脸皮求教程，要来一个链接，在教程的帮助下，折腾了好久终于有了自己的博客。现在距离建站已经过去了差不多 3,4 个月，博客越来越完善了 <del>(就差内容了)</del><a id="more"></a></p>
+<p>故写下此教程，记录搭建过程和自己踩过的坑</p>
+<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a>是一款基于 Node.js 的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在 GitHub 或 Coding 上，是搭建博客的首选框架。这里我们选用的是 <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>，你没看错，<del>全球最大的同性恋交友网站</del>。Hexo 同时也是 GitHub 上的开源项目，参见： <a href="https://github.com/hexojs/hexo" target="_blank" rel="noopener">hexojs/hexo</a> 如果想要更加全面的了解 Hexo，可以到其官网 <a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a> 了解更多的细节，因为 Hexo 的创建者是台湾人，对中文的支持很友好，可以选择中文进行查看。</p>
+<p>前面说过 Hexo 是一个静态博客框架，基于 Node.js，它将 Markdown 文章通过渲染引擎，在几秒内，即可利用靓丽的主题生成静态网页，再结合 Git 命令进行部署。这使其成为一个快速、简洁且高效的博客框架。</p>
+<p> <del>(前面都在扯淡)</del></p>
+<p>这是我的个人博客效果: <a href="https://royce2003.github.io" target="_blank" rel="noopener">Royce</a></p>
+<h1 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h1><h2 id="在Github创建仓库"><a href="#在Github创建仓库" class="headerlink" title="在Github创建仓库"></a>在Github创建仓库</h2><p>登录 <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>，如果没有 GitHub 帐号，使用你的邮箱注册注册</p>
+<p>点击 GitHub 中的右上角的 + 创建新仓库（new repository），仓库名应该为：yourname.github.io 这里的 yourname 使用你的 GitHub 帐号名称代替，这是固定写法 <strong>（文章接下来出现的yourname皆为你的GitHub账号名）</strong><br><img src="https://i.loli.net/2020/02/12/d9Ua8O1yk2AfelX.png" alt="Snipaste_2020-02-12_13-31-25.png"></p>
+<h2 id="安装所需软件并连接-GitHub"><a href="#安装所需软件并连接-GitHub" class="headerlink" title="安装所需软件并连接 GitHub"></a>安装所需软件并连接 GitHub</h2><h3 id="安装-Git"><a href="#安装-Git" class="headerlink" title="安装 Git"></a>安装 Git</h3><p><img src="https://www.runoob.com/wp-content/uploads/2015/02/f7246b600c338744a9591cd7530fd9f9d62aa0f8.png" alt="Git"></p>
+<p>Git 是一个开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理。Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。</p>
+<p>在 <a href="https://git-scm.com/" target="_blank" rel="noopener">官网</a>下载安装，安装时一路继续就好了。</p>
+<p>安装完成后在命令行内输入 <code>git</code> 查看是否成功<br>若提示 <code>‘git’是内部或外部命令，也不是可运行的程序或批处理文件。</code> 就说明失败了。</p>
+<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>Hexo 基于 Node.js，Node 官网地址：<a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">Download</a> 在官网下载安装包，注意安装 Node.js 会包含环境变量及 npm 的安装<br>安装后检测 Node.js 和 npm 是否安装成功，在命令行中输入 <code>node -v</code> 和 <code>npm -v</code>:<br>（显示版本号即安装成功）<br><img src="https://i.loli.net/2020/02/12/DPsrECaUHhL6elb.png" alt="Snipaste_02-12_14-19-06.png"></p>
+<h2 id="连接GitHub"><a href="#连接GitHub" class="headerlink" title="连接GitHub"></a>连接GitHub</h2><p>成功安装后在桌面右键点击 <code>Git Bash Here</code><br><img src="https://i.loli.net/2020/02/12/E5D8AtoN7FYVTkm.png" alt="Snipaste_2020-02-12_14-09-11.png"></p>
+<p>设置user.name和user.email配置信息，<br>在弹出界面中输入以下内容</p>
+<div class="hljs"><pre><code class="hljs bash">git config --global user.name <span class="hljs-string">"你的GitHub用户名"</span>
+git config --global user.email <span class="hljs-string">"你的GitHub注册邮箱"</span></code></pre></div>
+<p>然后创建 <code>SSH</code></p>
+<div class="hljs"><pre><code class="hljs bash">ssh-keygen -t rsa -C <span class="hljs-string">"你的GitHub注册邮箱"</span></code></pre></div>
+<p>然后直接三个回车即可，即不设置密码</p>
+<p>然后在 <code>C:\Users\Username\.ssh</code> 路径下找到名为 <code>id_rsa.pub</code> 的文件，就是你刚刚创建的密钥，右键用记事本打开然后复制全部内容</p>
+<p>然后进入 GitHub 添加密钥<br><img src="https://i.loli.net/2020/02/12/vF19hOiTDaEGdWL.png" alt="Snipaste_2020-02-12_14-30-04.png"><br>将复制的内容粘贴至 Key 中，title 随便填然后点击 <code>Add SSH key</code><br><img src="https://i.loli.net/2020/02/12/lFQmqtGL51CzrT6.png" alt="Snipaste_02-12_14-31-56.png"><br>在 Git Bash 中检测 GitHub 公钥设置是否成功</p>
+<div class="hljs"><pre><code class="hljs bash">ssh -T git@github.com</code></pre></div>
+<p>当出现 <code>Hi,yourname! You&#39;ve successfully......</code> 则已经成功<br>这里之所以设置 GitHub 密钥原因是，通过非对称加密的公钥与私钥来完成加密，公钥放置在 GitHub 上，私钥放置在自己的电脑里。GitHub 要求每次推送代码都是合法用户，所以每次推送都需要输入账号密码验证推送用户是否是合法用户，为了 <strong>省去每次输入密码的步骤</strong> ，采用了 ssh，当你推送的时候，git 就会匹配你的私钥跟 GitHub 上面的公钥是否是配对的，若是匹配就认为你是合法用户，则允许推送。这样可以保证每次的推送都是正确合法的。</p>
+<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>Hexo 就是我们的个人博客网站的框架，我们需要在电脑里创建一个文件夹（称之为博客根目录），用来存放 Hexo 的相关文件以及博客文章，文件夹名字随意（建议不要出现中文），我文件夹名字为 <code>Hexo-Blog</code>。创建好后，<strong>进入文件夹中</strong>，右键进入 <code>Git Bash Here</code></p>
+<p>（注意，之后有关操作都需要在博客根目录进入 <code>Git Bash Here</code>）</p>
+<p>输入以下内容</p>
+<div class="hljs"><pre><code class="hljs avrasm">npm install -g hexo-<span class="hljs-keyword">cli</span></code></pre></div>
+
+<h2 id="初始化博客："><a href="#初始化博客：" class="headerlink" title="初始化博客："></a>初始化博客：</h2><div class="hljs"><pre><code class="hljs ebnf"><span class="hljs-attribute">hexo init</span></code></pre></div>
+
+<p>文件夹中大致如下</p>
+<div class="hljs"><pre><code class="hljs 1c">Hexo-Bolg
+<span class="hljs-string">|----node_modules</span>
+<span class="hljs-string">|----public</span>
+<span class="hljs-string">|----scaffolds</span>
+<span class="hljs-string">|---- source</span>
+    <span class="hljs-string">|---- _post</span>
+<span class="hljs-string">|---- themes</span>
+<span class="hljs-string">|---- _config.yaml</span></code></pre></div>
+<ol>
+<li><code>node_modules</code> 是 <code>node.js</code> 各种库的目录，</li>
+<li><code>public</code> 是生成的网页文件目录（一开始可能没有）</li>
+<li><code>scaffolds</code> 里面就三个文件，存储着新文章和新页面的初始设置</li>
+<li><code>source</code> 是我们最常用到的一个目录，里面存放着文章、各类页面、图像等文件</li>
+<li><code>themes</code> 存放着主题文件</li>
+<li><code>_config.yaml</code> 站点配置文件</li>
+</ol>
+<h2 id="本地预览"><a href="#本地预览" class="headerlink" title="本地预览"></a>本地预览</h2><p>按顺序输入以下命令：</p>
+<div class="hljs"><pre><code class="hljs verilog">hexo <span class="hljs-keyword">generate</span>
+hexo server</code></pre></div>
+<p>Hexo命令后面会作介绍，完成后，会看到</p>
+<div class="hljs"><pre><code class="hljs pgsql"><span class="hljs-keyword">INFO</span>  <span class="hljs-keyword">Start</span> processing
+<span class="hljs-keyword">INFO</span>  Hexo <span class="hljs-keyword">is</span> running at http://localhost:<span class="hljs-number">4000</span> . Press Ctrl+C <span class="hljs-keyword">to</span> stop.</code></pre></div>
+<p>Hexo 正在 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 运行，按 Ctrl+C 可停止</p>
+<p>可以按住 Ctrl 用鼠标直接点链接，也可以在浏览器输入 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 就可以看到你生成的博客了<br><img src="https://i.loli.net/2020/02/12/rZVgGTtFyXUEs43.png" alt="Snipaste_02-12_15-27-32.png"><br>但是目前只能本地预览，所以还需部署到 GitHub</p>
+<h2 id="将hexo部署到GitHub"><a href="#将hexo部署到GitHub" class="headerlink" title="将hexo部署到GitHub"></a>将hexo部署到GitHub</h2><p>我们需要将 hexo 和 GitHub 关联起来，也就是将 hexo 生成的文章部署到 GitHub 上，打开站点配置文件 _config.yml（博客根目录中），划到最后,将 deploy 中的内容修改成下面的样子（yourname改成你GitHub的用户名）</p>
+<div class="hljs"><pre><code class="hljs less"><span class="hljs-attribute">deploy</span>:
+  <span class="hljs-attribute">type</span>: git
+  <span class="hljs-attribute">repo</span>: git<span class="hljs-variable">@github</span>.<span class="hljs-attribute">com</span>:Royce2019/Royce2019.github.io.git
+  <span class="hljs-attribute">branch</span>: master</code></pre></div>
+<p>然后我们还需要安装部署所需插件 <code>deploy-git</code></p>
+<div class="hljs"><pre><code class="hljs sql">npm <span class="hljs-keyword">install</span> hexo-deployer-git <span class="hljs-comment">--save</span></code></pre></div>
+<p>然后按顺序输入以下命令</p>
+<div class="hljs"><pre><code class="hljs verilog">hexo clean
+hexo <span class="hljs-keyword">generate</span>
+hexo deploy</code></pre></div>
+<p>全部完成后访问，恭喜，你的博客已经搭建完成，当然，只是一个雏形</p>
+<p>博客地址： <a href="http://yourname.github.io" target="_blank" rel="noopener">http://yourname.github.io</a></p>
+<h2 id="Hexo命令"><a href="#Hexo命令" class="headerlink" title="Hexo命令"></a>Hexo命令</h2><p>下面会介绍常用的Hexo命令（若有<code>==&gt;</code>则右边为简写）</p>
+<ol>
+<li>npm install hexo -g # 安装 Hexo</li>
+<li>npm update hexo -g  # 升级</li>
+<li>hexo init # 初始化博客</li>
+<li>hexo new “mypost” ==&gt; hexo n “mypost”   # 新建文章（在 <code>/source/_posts</code> 文件夹中创建 <code>mypost.md</code> 文件）</li>
+<li>hexo generate ==&gt; hexo g # 生成页面(页面在 public 文件夹中)</li>
+<li>hexo server ==&gt; hexo s # 本地预览</li>
+<li>hexo deploy ==&gt; hexo d # 部署</li>
+<li>hexo clean # 清除缓存</li>
+<li>hexo server # Hexo 会监视文件变动并自动更新，无须重启服务器</li>
+<li>hexo server -s # 静态模式</li>
+<li>hexo server -p 5000 # 更改端口</li>
+<li>hexo server -i 192.168.1.1 # 自定义 IP</li>
+</ol>
+<p>配置修改后需 <code>hexo g</code> 重新生成界面，<code>hexo s</code> 本地预览过程中若对某些配置文件（好像主题配置文件可以）修改，可直接刷新本地预览页面，按 Ctrl+C 可停止本地预览</p>
+<p>命令之间可用 <code>&amp;&amp;</code> 相连接<br>如 <code>hexo g &amp;&amp; hexo s</code> 和 <code>hexo g &amp;&amp; hexo d</code> 等等<br>当然 对于上面两种常用的命令，hexo提供了简写 <code>hexo s -g</code>（生成界面并本地预览） 和 <code>hexo g -d</code>（生成界面并部署）</p>
+<p>对博客修改之后只有进行了部署才会发布到网上</p>
+<h2 id="完善配置文件-config-yaml"><a href="#完善配置文件-config-yaml" class="headerlink" title="完善配置文件 _config.yaml"></a>完善配置文件 <code>_config.yaml</code></h2><p>只提供主要配置的中文<br>按 <code>Ctrl+F</code> 可进行搜索<br>(#后为注释)</p>
+<p>首先修改网站基本信息</p>
+<div class="hljs"><pre><code class="hljs yaml"><span class="hljs-comment"># Site</span>
+<span class="hljs-attr">title:</span>          <span class="hljs-comment"># 网站标题</span>
+<span class="hljs-attr">subtitle:</span> <span class="hljs-string">''</span>
+<span class="hljs-attr">description:</span>    <span class="hljs-comment"># 网站描述</span>
+<span class="hljs-attr">keywords:</span>       <span class="hljs-comment"># 网站关键词</span>
+<span class="hljs-attr">author:</span>         <span class="hljs-comment"># 博客作者名字</span>
+<span class="hljs-attr">language:</span> <span class="hljs-string">zh-CN</span> <span class="hljs-comment"># 语言</span>
+<span class="hljs-attr">timezone:</span> <span class="hljs-string">''</span></code></pre></div>
+<p>将链接改为你博客域名（yourname.github.io）</p>
+<div class="hljs"><pre><code class="hljs yaml"><span class="hljs-attr">url:</span> <span class="hljs-string">http://yoursite.com</span></code></pre></div>
+<p>你博客文章的地址，默认为 yourname.github.io/year/mouth/day/title<br>，可自行修改<br>例如你的一篇文章叫 post，如果按照默认设置则文章地址是 xxxxxxx/2020/02/10/post<br>如果是我图片上的设置则地址是 xxxxxxx/2020/post</p>
+<div class="hljs"><pre><code class="hljs yaml"><span class="hljs-attr">permalink:</span> <span class="hljs-string">:year/:month/:day/:title/</span></code></pre></div>
+<p>每页的文章数量</p>
+<div class="hljs"><pre><code class="hljs yaml"><span class="hljs-attr">per_page:</span> <span class="hljs-number">10</span></code></pre></div>
+<p>你选择的主题，默认即为<code>landscape</code>，接下来会介绍</p>
+<div class="hljs"><pre><code class="hljs yaml"><span class="hljs-attr">theme:</span> <span class="hljs-string">landscape</span></code></pre></div>
+
+<h2 id="文章编写"><a href="#文章编写" class="headerlink" title="文章编写"></a>文章编写</h2><h3 id="初识Markdown"><a href="#初识Markdown" class="headerlink" title="初识Markdown"></a>初识Markdown</h3><p>Hexo 文章使用 markdown 语法</p>
+<blockquote>
+<p>Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。</p>
+<p>Markdown具有一系列衍生版本，用于扩展Markdown的功能（如表格、脚注、内嵌HTML等等），这些功能原初的Markdown尚不具备，它们能让Markdown转换成更多的格式，例如LaTeX，Docbook。Markdown增强版中比较有名的有Markdown Extra、MultiMarkdown、 Maruku等。这些衍生版本要么基于工具，如Pandoc；要么基于网站，如GitHub和Wikipedia，在语法上基本兼容，但在一些语法和渲染效果上有改动。</p>
+<p>Markdown的语法简洁明了、学习容易，而且功能比纯文本更强，因此有很多人用它写博客。世界上最流行的博客平台WordPress和大型CMS如Joomla、Drupal都能很好的支持Markdown。</p>
+</blockquote>
+<p>推荐一个Markdown教程：<a href="https://segmentfault.com/markdown" target="_blank" rel="noopener">教程</a></p>
+<p>初始化的时候，已经自动帮我们创建了一个名为 <code>hello-world.md</code> 的文件 <code>.md</code> 即为markdown文章的后缀名</p>
+<div class="hljs"><pre><code class="hljs markdown">---
+title: Hello World
+---
+Welcome to [<span class="hljs-string">Hexo</span>](<span class="hljs-link">https://hexo.io/</span>)! This is your very first post. Check [<span class="hljs-string">documentation</span>](<span class="hljs-link">https://hexo.io/docs/</span>) for more info. If you get any problems when using Hexo, you can find the answer in [<span class="hljs-string">troubleshooting</span>](<span class="hljs-link">https://hexo.io/docs/troubleshooting.html</span>) or you can ask me on [<span class="hljs-string">GitHub</span>](<span class="hljs-link">https://github.com/hexojs/hexo/issues</span>).
+............
+............</code></pre></div>
+<p>两个 <code>---</code> 中间的部分我们称之为 <code>Front-matter</code> ，即文章的属性，该部分来自 <code>\scaffolds\post.md</code> ,这个md文件中放着一份模板，之后用 <code>hexo n “xxx”</code> 命令新建的文件的 <code>Front-matter</code> 都来自这，我们可以自己修改该文件。  </p>
+<p>title 标题，date 建立日期，updated 更新日期，tags 标签，categories 分类 </p>
+<p>除了使用命令新建文章还可以自己在 <code>_post</code> 文件夹中创建 <code>.md</code> 文件，需要注意的是，使用命令创建的文章会自动帮我们写好 <code>Front-matter</code>，而手动创建的需要我们自己写。</p>
+<h3 id="图床"><a href="#图床" class="headerlink" title="图床"></a>图床</h3><p>图床一般是指储存图片的服务器，就是专门用来存放图片，同时允许你把图片对外连接的网上空间，不少图床都是免费的。<br>就是将图片传到网站上，然后在写文章时通过该网站提供的图片链接插入图片，markdown 教程中应该会提到</p>
+<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>可访问 <a href="https://hexo.io/themes/" target="_blank" rel="noopener">hexo主题商店</a>挑选喜欢的主题<br>，接下来的演示采用 <a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">NexT主题</a></p>
+<h3 id="安装主题"><a href="#安装主题" class="headerlink" title="安装主题"></a>安装主题</h3><p>不同主题不同方式，可以查看对应主题网站</p>
+<div class="hljs"><pre><code class="hljs bash">git <span class="hljs-built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next</code></pre></div>
+<p>此时 <code>/themes</code> 下多了一个 <code>next</code> 文件夹，该文件夹内存放该主题文件<br>你会发现文件夹中也有一个 <code>_config.yaml</code> ，我们称之为 <code>主题配置文件</code> 。另一个是 <code>站点配置文件</code> 。这个 <code>主题配置文件</code> 以后再讲<br>安装完成之后在 <code>站点配置文件</code> 中更改主题即可</p>
+<h1 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h1><p>至此博客已经基本搭建完成，关于主题配置的详细内容下篇文章再写。<br>接下来还会写 绑定自已域名，Github+Coding 国内外双线部署，主题美化，网站SEO，搭建自己的图床等内容，虽然很多我自己带还没搞，不过已经在计划之中了，希望不要咕咕咕咕咕咕咕</p>
+<hr>
+<p><a href="https://zhuanlan.zhihu.com/p/80140564" target="_blank" rel="noopener">参考文章</a></p>
+
+            </article>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/chuyua/tags/Hexo/">Hexo</a>
+                    
+                      <a class="hover-with-bg" href="/chuyua/tags/%E6%95%99%E7%A8%8B/">教程</a>
+                    
+                  </div>
+                
+              </div>
+              
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <div class="comments" id="comments">
+                
+                
+  <script defer src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/royce2019/BlogSource/js/Valine.min.js"></script>
+
+  <script type="text/javascript">
+    var oldLoadVa = window.onload;
+    window.onload = function () {
+      oldLoadVa && oldLoadVa();
+
+      new Valine({
+        lang: 'zh-cn',
+        el: '#comments' ,
+        app_id: 'KIkO2HJm1qz9uykOuuU41i8F-9Nh9j0Va',
+        app_key: 'oJgS2mVg227GJIkndK0bFGtF',
+        admin_email: '1098870059@qq.com',
+        placeholder: '说点什么...',
+        emoticon_url: 'https://rmt.dogedoge.com/fetch/royce/storage/comments',
+        emoticon_list: ["抓狂.png","无奈2.png","惊讶.png","托腮.png","快哭了.png","可怜.png","吃瓜.png","打哈欠.png","辣眼睛.png","脑阔疼.png","doge.png","动耳朵.gif","抖脚脚.gif","抖眼.gif","抖眼镜.gif","风吹秀发.gif","慌张.gif","夹住.gif","开车.gif","哭唧唧.gif","绿色的.gif","跳舞.gif","跳着走.gif","小花花.gif","眼睛转.gif","摇头.gif","眨眼.gif","吃东西.gif","弹肚皮.gif","动次打次.gif?fmt=webp ","比心心.gif","吹风.gif","打篮球.gif","都是小心心.gif","吐.png","喷血.png","狂汗.png","不说话.png","汗.png","坐等.png","献花.png","不高兴.png","中刀.png","害羞.png","皱眉.png","小眼睛.png","中指.png","尴尬.png","瞅你.png","想一想.png","中枪.png","得意.png","肿包.png","扇耳光.png","亲亲.png","惊喜.png","脸红.png","无所谓.png","便便.png","愤怒.png","蜡烛.png","献黄瓜.png","内伤.png","投降.png","观察.png","看不见.png","击掌.png","抠鼻.png","邪恶.png","看热闹.png","口水.png","抽烟.png","锁眉.png","装大款.png","吐舌.png","无奈.png","长草.png","赞一个.png","呲牙.png","无语.png","阴暗.png","不出所料.png","咽气.png","期待.png","高兴.png","吐血倒地.png","哭泣.png","欢呼.png","黑线.png","喜极而泣.png","喷水.png","深思.png","鼓掌.png","暗地观察.png"],
+      });
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" target="_blank" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    <div>
+      powered by <a href="https://cloud.tencent.com/product/tcb?from=12334" class="qr-trigger" target="_blank" rel="nofollow noopener">CloudBase<img class="qr-img" src="https://rmt.dogedoge.com/fetch/royce/storage/CloudBase.png?fmt=webp" alt="qrcode" /></a>
+    </div>
+    
+
+    
+  <!-- 备案信息 -->
+  <div>
+    <a href="http://beian.miit.gov.cn/" target="_blank" class="beian-icp"
+       rel="nofollow noopener">闽ICP备20005437号-1</a>
+    
+  </div>
+
+
+    
+    
+
+    
+    <a href="https://www.dogedoge.com/" target="_blank" rel="noopener"><img src="https://rmt.dogedoge.com/fetch/royce/storage/dogedoge.png?w=100&fmt=webp" alt="dogedoge" style="width:2.75rem"></a>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/chuyua/js/main.js" ></script>
+
+
+
+
+  
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '.post-content',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+<!-- Plugins -->
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?3b1c52021da1d2ea4a18cb97b7313fd0";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "Hexo+GitHub 静态博客搭建教程&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
