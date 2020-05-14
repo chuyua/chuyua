@@ -70,15 +70,6 @@
           
           
           <li class="nav-item">
-            <a class="nav-link" href="https://travellings.now.sh/" target="_blank" rel="noopener">
-              <i class="iconfont icon-plane"></i>
-              开往</a>
-          </li>
-        
-          
-          
-          
-          <li class="nav-item">
             <a class="nav-link" href="/tags/">
               <i class="iconfont icon-tags-fill"></i>
               标签</a>
@@ -120,6 +111,11 @@
               关于</a>
           </li>
         
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
         
         <li class="nav-item">
           <a id="dark" class="nav-link" onclick="switchDarkMode()"></a>
@@ -223,7 +219,7 @@
 <p>对于 $100%$ 的数据，$1\le n,m \le 5\times 10^5$。</p>
 <p>样例说明：</p>
 <p>故输出结果 14、16</p>
-<p><img src="https://gitee.com/royce2003/blog/raw/master/img/2256.png" alt=""></p>
+<p><img src="https://gitee.com/royce2003/blog/raw/master/img/2256.png" srcset="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/loading.webp" alt=""></p>
 <p>(写这篇呢其实是因为自己已经不会树状数组了，正好借此机会复习下 QAQ)</p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h3 id="树状数组"><a href="#树状数组" class="headerlink" title="树状数组"></a>树状数组</h3><p>首先需要了解什么是 <code>树状数组</code></p>
 <p>树状数组用的是树结构的思想，即树型逻辑结构，但他不是树形结构啦</p>
@@ -234,7 +230,7 @@
 <p>树状数组的优势就在于其维护的时间复杂度为 $O(log , n)$ ，而类似的前缀和数组维护的时间复杂度为 $O(n)$，两者的查询都是 $O(1)$ </p>
 <p>（说到这我就想起来某次校内赛的xzt买煎饼。。。。还好我拿了20分）</p>
 <h3 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h3><h4 id="lowbit"><a href="#lowbit" class="headerlink" title="lowbit"></a>lowbit</h4><p>实际上，对于树状数组 $tree$ 的每一个 $i$，其实际意义应该为：算上其本身的讯息，总共存储了 $2^k$ 个元素的信息，其中 $k$ 表示 $i$ 在二进制下，末尾零的个数，同时也可以表示最小的含 1 位的二进制权值——换句话讲，$2^k$ 即可表示成：对于每个二进制意义下的 $i$，从最末位数 $k+1$ 位，保留这 $k+1$ 位并删除 $k+1$ 位以左的所有数位上的数，留下的新二进制数的实际大</p>
-<p><img src="https://gitee.com/royce2003/blog/raw/master/img/0dd7912397dda14482d369acbfb7d0a20df486d1.jpg" alt=""></p>
+<p><img src="https://gitee.com/royce2003/blog/raw/master/img/0dd7912397dda14482d369acbfb7d0a20df486d1.jpg" srcset="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/loading.webp" alt=""></p>
 <table>
 <thead>
 <tr>
@@ -300,7 +296,7 @@
 <p>我们先列出 1~8 的 $lowbit$ </p>
 <p>$1;2;1;4;1;2;1;8$</p>
 <p>我们让 $C[i]$ 管理 $A[i-lowbit(i)+1,,i]$ 这段区间，如下图</p>
-<p><img src="https://gitee.com/royce2003/blog/raw/master/img/Snipaste_03-19_11-45-31.png" alt=""></p>
+<p><img src="https://gitee.com/royce2003/blog/raw/master/img/Snipaste_03-19_11-45-31.png" srcset="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/loading.webp" alt=""></p>
 <p>那么我们把某个点 $+x$ 的时候只需要把能管到这个点的都 $+x$ 就好啦，那我们如何找哪些能管到我们修改的点呢，这时候就需要 $lowbit$ 了</p>
 <h4 id="前缀和"><a href="#前缀和" class="headerlink" title="前缀和"></a>前缀和</h4><h5 id="一维前缀和"><a href="#一维前缀和" class="headerlink" title="一维前缀和"></a>一维前缀和</h5><p>现有一个长度为 $N$ 的序列 $A$，需要进行 $M$ 次操作，每次操作选取从 $A_i$ 到 $A_j$ 共 $j-i+1$ 个数并求出他们的总和 （N 和 M 可以很大）  </p>
 <p>例：<br>$$<br>N=9，;A={3,1,4,1,5,9,2,6,5}<br>$$<br>如果按照题意暴力，最坏情况下时间复杂度 $O(n\times m)$（是这个吗，我咋感觉时间复杂度好像大概可能不是这个QAQ）</p>
@@ -311,7 +307,7 @@
 <h5 id="二维前缀和"><a href="#二维前缀和" class="headerlink" title="二维前缀和"></a>二维前缀和</h5><p>一维前缀和会了二维的也很简单</p>
 <p>$$<br>A=<br>\left[<br>\begin{matrix}<br>5 &amp; 6 &amp; 6 &amp; 1 &amp; 4 &amp; 6\<br>3 &amp; 4 &amp; 2 &amp; 4 &amp; 1 &amp; 7 \<br>0 &amp; 9 &amp; 4 &amp; 6 &amp; 2 &amp; 4<br>\end{matrix}<br>\right]<br>;<br>B=<br>\left[<br>\begin{matrix}<br>5 &amp; 11 &amp; 17 &amp; 18 &amp; 21 &amp; 27\<br>8 &amp; 18 &amp; 26 &amp; \cdots &amp; \cdots &amp; \cdots \<br>\cdots &amp; \cdots &amp; \cdots &amp; \cdots  &amp; \cdots &amp; \cdots<br>\end{matrix}<br>\right]<br>$$<br>若我们要求 $x_1,,y_1$ 与 $x_2,,y_2$ 两点所围成矩形内数字的和<br>公式 $sum=B_{x_2,y_2}-B_{x_2,1}-B_{1,y_1}+B_{x_1-1,y_1-1}$</p>
 <h3 id="储存"><a href="#储存" class="headerlink" title="储存"></a>储存</h3><p>树状数组本质就是一个数组，我们用 C 来表示，然后把 C 排成数🎄的样子，就像前面的那个图那样</p>
-<p><img src="https://gitee.com/royce2003/blog/raw/master/img/0dd7912397dda14482d369acbfb7d0a20df486d1.jpg" alt=""></p>
+<p><img src="https://gitee.com/royce2003/blog/raw/master/img/0dd7912397dda14482d369acbfb7d0a20df486d1.jpg" srcset="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/loading.webp" alt=""></p>
 <p>$C[1]=A[1]$<br>$C[2]=A[1]+A[2]$<br>$C[3]=A[3]$<br>$C[4]=A[1]+A[2]+A[3]+A[4]$<br>$C[5]=A[5]$<br>$C[6]=A[5]+A[6]$<br>$C[7]=A[7]$<br>$C[8]=A[1]+A[2] \cdots A[8]$</p>
 <p>很明显 $C[i]=A[i-lowbit(i)+1]+A[i-lowbit(i)+2]+ \cdots +A[i]$</p>
 <p>用代码写就是</p>
@@ -460,6 +456,51 @@
   
 
   
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+    <!-- APlayer 音乐播放器 -->
+    <div id="aplayer"></div>
+    <script defer src="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.js" ></script>
+<link  rel="stylesheet" href="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.css" />
+<script type="text/javascript">
+  var oldLoadAp = window.onload;
+  window.onload = function () {
+    oldLoadAp && oldLoadAp();
+
+    new APlayer({
+      container: document.getElementById('aplayer'),
+      fixed: true,
+      autoplay: 'false' === 'true',
+      loop: 'all',
+      order: 'random',
+      theme: '#b7daff',
+      preload: 'none',
+      audio: [{"name":"となりのトトロ","artist":"伊藤サチコ","url":"https://cdn.jsdelivr.net/gh/Royce2019/img/01.mp3","cover":"https://cdn.jsdelivr.net/gh/Royce2019/img/img/109951163028865726.jpg"},{"name":"それがあなたの幸せとしても (カバー)","artist":"rairu","url":"https://cdn.jsdelivr.net/gh/Royce2019/img/02.mp3","cover":"https://cdn.jsdelivr.net/gh/Royce2019/img/img/109951163597938340.jpg"}]
+    });
+  }
+</script>
 
   
 
@@ -501,6 +542,8 @@
 <script  src="/js/main.js" ></script>
 
 
+  <script  src="/js/lazyload.js" ></script>
+
 
 
   
@@ -541,30 +584,6 @@
 <!-- Plugins -->
 
 
-  
-    <!-- Baidu Analytics -->
-    <script defer>
-      var _hmt = _hmt || [];
-      (function () {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?3b1c52021da1d2ea4a18cb97b7313fd0";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-      })();
-    </script>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
 
   <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
   <script>
@@ -587,6 +606,16 @@
 
 
 
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
 
 
 
@@ -616,6 +645,56 @@
   
 
 
+
+  
+  
+    <script type="text/javascript">
+      //定义获取词语下标
+      var a_idx = 0;
+      jQuery(document).ready(function ($) {
+        //点击body时触发事件
+        $("body").click(function (e) {
+          //需要显示的词语
+          var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善");
+          //设置词语给span标签
+          var $i = $("<span/>").text(a[a_idx]);
+          //下标等于原来下标+1  余 词语总数
+          a_idx = (a_idx + 1) % a.length;
+          //获取鼠标指针的位置，分别相对于文档的左和右边缘。
+          //获取x和y的指针坐标
+          var x = e.pageX, y = e.pageY;
+          //在鼠标的指针的位置给$i定义的span标签添加css样式
+          $i.css({
+            "z-index": 999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "color": rand_color()
+          });
+          // 随机颜色
+          function rand_color() {
+            return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
+          }
+          //在body添加这个标签
+          $("body").append($i);
+          //animate() 方法执行 CSS 属性集的自定义动画。
+          //该方法通过CSS样式将元素从一个状态改变为另一个状态。CSS属性值是逐渐改变的，这样就可以创建动画效果。
+          //详情请看http://www.w3school.com.cn/jquery/effect_animate.asp
+          $i.animate({
+            //将原来的位置向上移动180
+            "top": y - 180,
+            "opacity": 0
+            //1500动画的速度
+          }, 1500, function () {
+            //时间到了自动删除
+            $i.remove();
+          });
+        });
+      })
+      ;
+    </script>
+  
 
 
 

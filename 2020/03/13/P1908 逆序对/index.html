@@ -70,15 +70,6 @@
           
           
           <li class="nav-item">
-            <a class="nav-link" href="https://travellings.now.sh/" target="_blank" rel="noopener">
-              <i class="iconfont icon-plane"></i>
-              开往</a>
-          </li>
-        
-          
-          
-          
-          <li class="nav-item">
             <a class="nav-link" href="/tags/">
               <i class="iconfont icon-tags-fill"></i>
               标签</a>
@@ -120,6 +111,11 @@
               关于</a>
           </li>
         
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
         
         <li class="nav-item">
           <a id="dark" class="nav-link" onclick="switchDarkMode()"></a>
@@ -210,10 +206,10 @@
 </blockquote>
 <p>归并排序<br>时间复杂度 $O(n;log;n)$<br>空间复杂度 $O(n)$</p>
 <p>算法图解</p>
-<p><img src="https://gitee.com/royce2003/blog/raw/master/img/c8177f3e6709c93d673b9ed49d3df8dcd00054c3.png" alt=""></p>
+<p><img src="https://gitee.com/royce2003/blog/raw/master/img/c8177f3e6709c93d673b9ed49d3df8dcd00054c3.png" srcset="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/loading.webp" alt=""></p>
 <p>就是先进行拆分，拆到只剩下自己的时候再进行合并</p>
 <p>以样例作为例子</p>
-<p><img src="https://gitee.com/royce2003/blog/raw/master/img/Snipaste_03-13_14-15-30.png" alt=""></p>
+<p><img src="https://gitee.com/royce2003/blog/raw/master/img/Snipaste_03-13_14-15-30.png" srcset="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/loading.webp" alt=""></p>
 <h4 id="拆分"><a href="#拆分" class="headerlink" title="拆分"></a>拆分</h4><p>先定义一个 msort 函数将原序列拆分</p>
 <div class="hljs"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">msort</span><span class="hljs-params">(<span class="hljs-keyword">int</span> L, <span class="hljs-keyword">int</span> R)</span> </span>&#123;
 	<span class="hljs-keyword">int</span> mid = (L + R) / <span class="hljs-number">2</span>;
@@ -249,18 +245,18 @@
 	a[k] = temp[k];</code></pre></div>
 
 <h4 id="步骤分解"><a href="#步骤分解" class="headerlink" title="步骤分解"></a>步骤分解</h4><p>肯能看到这还是很懵<br>那就看看详细的步骤分解吧</p>
-<p><img src="https://gitee.com/royce2003/blog/raw/master/img/Snipaste_03-13_14-15-30.png" alt=""></p>
+<p><img src="https://gitee.com/royce2003/blog/raw/master/img/Snipaste_03-13_14-15-30.png" srcset="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/loading.webp" alt=""></p>
 <p>合并 5 4，$i=L=1$， $mid=\frac{L+R}{2}=1$ ，$j=mid+1=2$，$a_i&gt;a_j$，将 $a_j$ 存入 temp，temp 数组：4 5 0 0 0 ，j++，j=3，超出范围，将剩余的 5 存入，temp 数组：4 5 2 6 3 1</p>
-<p><img src="https://gitee.com/royce2003/blog/raw/master/img/Snipaste_03-13_14-16-00.png" alt=""></p>
+<p><img src="https://gitee.com/royce2003/blog/raw/master/img/Snipaste_03-13_14-16-00.png" srcset="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/loading.webp" alt=""></p>
 <p>合并 3 6，$i=L=4$，，$mid=\frac{L+R}{2}=4$，$j=mid+1=5$，$a_i&gt;a_j$，将$a_j$存入 temp，temp 数组：4 5 0 3 6 0，j++，j=6，超出范围，将剩余 3 存入，temp 数组：4 5 2 3 6 1</p>
-<p><img src="https://gitee.com/royce2003/blog/raw/master/img/Snipaste_03-13_14-16-14.png" alt=""></p>
+<p><img src="https://gitee.com/royce2003/blog/raw/master/img/Snipaste_03-13_14-16-14.png" srcset="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/loading.webp" alt=""></p>
 <p>合并 3,5 和 2，$i=L=1$，$mid=\frac{L+R}{2}=2$，$j=mid+1=3$，$a_i&gt;a_j$，将 $a_j$ 存入 temp，temp 数组：2 5 0 3 6 0，j++，j=4，超出范围，将剩余 4 5 存入，temp 数组：2 4 5 3 6 0</p>
-<p><img src="https://gitee.com/royce2003/blog/raw/master/img/Snipaste_03-13_14-16-35.png" alt=""></p>
+<p><img src="https://gitee.com/royce2003/blog/raw/master/img/Snipaste_03-13_14-16-35.png" srcset="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/loading.webp" alt=""></p>
 <p>合并 1 和 3,6，$i=L=4$，$mid=\frac{L+R}{2}=4$，$j=mid+1=6$，$a_i&gt;a_j$，将 $a_j$ 存入 temp，temp 数组：2 5 0 1 6 0，j++，j=7，超出范围，将剩余 3 6 存入，temp 数组：2 4 5 1 3 6</p>
-<p><img src="https://gitee.com/royce2003/blog/raw/master/img/Snipaste_03-13_14-16-54.png" alt=""></p>
+<p><img src="https://gitee.com/royce2003/blog/raw/master/img/Snipaste_03-13_14-16-54.png" srcset="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/loading.webp" alt=""></p>
 <p>合并 2 4 5 和 1 3 6</p>
 <p>$$<br>i=L=1,\ mid=\frac{L+R}{2}=3,\ j=mid+1=4  \<br>~\<br>a_i&gt;a_j,\ 将a_j存入temp,\ temp数组：1,5,0,1,6,0  \<br>~\<br>j++,\ j=5,\ a_i&lt;a_j,\ 将a_i存入temp,\ temp数组：1,2,0,1,6,0  \<br>~\<br>i++,\ i=2,\ a_i&gt;a_j,\ 将a_j存入temp,\ temp数组：1,2,3,1,6,0  \<br>~\<br>j++,\ j=6,\ a_i&lt;a_j,\ 将a_i存入temp,\ temp数组：1,2,3,4,6,0  \<br>~\<br>i++,\ i=3,\ a_i&lt;a_j,\ 将a_i存入temp,\ temp数组：1,2,3,4,5,0  \<br>~\<br>i++,\ i=3,\ 超出mid,\ 将剩余 6 存入,\ temp数组：1,2,3,4,5,6\<br>$$</p>
-<p><img src="https://gitee.com/royce2003/blog/raw/master/img/Snipaste_03-13_14-17-25.png" alt=""></p>
+<p><img src="https://gitee.com/royce2003/blog/raw/master/img/Snipaste_03-13_14-17-25.png" srcset="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/loading.webp" alt=""></p>
 <p>这样就能得到一个有序数列了，例子中讲的是升序，降序也是同样的道理</p>
 <h4 id="逆序对"><a href="#逆序对" class="headerlink" title="逆序对"></a>逆序对</h4><p>然鹅这题是求逆序对，所以我们还需要在此基础上加上一行</p>
 <p>在判断$a_i&lt;a_j$的时候，前面的数小于后面的数，这时逆序对就出现了！</p>
@@ -400,6 +396,51 @@
   
 
   
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+    <!-- APlayer 音乐播放器 -->
+    <div id="aplayer"></div>
+    <script defer src="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.js" ></script>
+<link  rel="stylesheet" href="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.css" />
+<script type="text/javascript">
+  var oldLoadAp = window.onload;
+  window.onload = function () {
+    oldLoadAp && oldLoadAp();
+
+    new APlayer({
+      container: document.getElementById('aplayer'),
+      fixed: true,
+      autoplay: 'false' === 'true',
+      loop: 'all',
+      order: 'random',
+      theme: '#b7daff',
+      preload: 'none',
+      audio: [{"name":"となりのトトロ","artist":"伊藤サチコ","url":"https://cdn.jsdelivr.net/gh/Royce2019/img/01.mp3","cover":"https://cdn.jsdelivr.net/gh/Royce2019/img/img/109951163028865726.jpg"},{"name":"それがあなたの幸せとしても (カバー)","artist":"rairu","url":"https://cdn.jsdelivr.net/gh/Royce2019/img/02.mp3","cover":"https://cdn.jsdelivr.net/gh/Royce2019/img/img/109951163597938340.jpg"}]
+    });
+  }
+</script>
 
   
 
@@ -441,6 +482,8 @@
 <script  src="/js/main.js" ></script>
 
 
+  <script  src="/js/lazyload.js" ></script>
+
 
 
   
@@ -481,30 +524,6 @@
 <!-- Plugins -->
 
 
-  
-    <!-- Baidu Analytics -->
-    <script defer>
-      var _hmt = _hmt || [];
-      (function () {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?3b1c52021da1d2ea4a18cb97b7313fd0";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-      })();
-    </script>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
 
   <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
   <script>
@@ -527,6 +546,16 @@
 
 
 
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
 
 
 
@@ -556,6 +585,56 @@
   
 
 
+
+  
+  
+    <script type="text/javascript">
+      //定义获取词语下标
+      var a_idx = 0;
+      jQuery(document).ready(function ($) {
+        //点击body时触发事件
+        $("body").click(function (e) {
+          //需要显示的词语
+          var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善");
+          //设置词语给span标签
+          var $i = $("<span/>").text(a[a_idx]);
+          //下标等于原来下标+1  余 词语总数
+          a_idx = (a_idx + 1) % a.length;
+          //获取鼠标指针的位置，分别相对于文档的左和右边缘。
+          //获取x和y的指针坐标
+          var x = e.pageX, y = e.pageY;
+          //在鼠标的指针的位置给$i定义的span标签添加css样式
+          $i.css({
+            "z-index": 999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "color": rand_color()
+          });
+          // 随机颜色
+          function rand_color() {
+            return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
+          }
+          //在body添加这个标签
+          $("body").append($i);
+          //animate() 方法执行 CSS 属性集的自定义动画。
+          //该方法通过CSS样式将元素从一个状态改变为另一个状态。CSS属性值是逐渐改变的，这样就可以创建动画效果。
+          //详情请看http://www.w3school.com.cn/jquery/effect_animate.asp
+          $i.animate({
+            //将原来的位置向上移动180
+            "top": y - 180,
+            "opacity": 0
+            //1500动画的速度
+          }, 1500, function () {
+            //时间到了自动删除
+            $i.remove();
+          });
+        });
+      })
+      ;
+    </script>
+  
 
 
 

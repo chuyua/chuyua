@@ -70,15 +70,6 @@
           
           
           <li class="nav-item">
-            <a class="nav-link" href="https://travellings.now.sh/" target="_blank" rel="noopener">
-              <i class="iconfont icon-plane"></i>
-              开往</a>
-          </li>
-        
-          
-          
-          
-          <li class="nav-item">
             <a class="nav-link" href="/tags/">
               <i class="iconfont icon-tags-fill"></i>
               标签</a>
@@ -120,6 +111,11 @@
               关于</a>
           </li>
         
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
         
         <li class="nav-item">
           <a id="dark" class="nav-link" onclick="switchDarkMode()"></a>
@@ -205,7 +201,7 @@
 <p>当时觉得是多么痛苦 <del>（其实我觉得也还好啦）</del>  </p>
 <p>再回想起曾经生活过的城市——上海<br>有一说一，我生活在这里的时候并不是很喜欢这座城市，每天上学挤地铁，碰巧家又在市中心人民广场，真的把我挤🤮了<br>还有随处可见的人山人海……</p>
 <p>但是现在想想，当时的自己……<br>那里充满了我童年记忆，即使我在在老家上完了高中，我在那生活的时间还是更长…..<br>现在，那是我既怀念又向往的地方</p>
-<h3 id="疫情"><a href="#疫情" class="headerlink" title="疫情"></a>疫情</h3><p>最近国内疫情已经控制的差不多了，国外的疫情开始爆发了<br><img src="https://cos.royce2003.top/32314/01.webp-default" alt=""><br>刚和一个在加拿大的初中同学聊了聊<br>他说那边最近开始爆发了，挺严重的，顺便抱怨那边的政府瞎搞🤣<br>奥运会都推迟了，见证历史啊</p>
+<h3 id="疫情"><a href="#疫情" class="headerlink" title="疫情"></a>疫情</h3><p>最近国内疫情已经控制的差不多了，国外的疫情开始爆发了<br><img src="https://cos.royce2003.top/32314/01.webp-default" srcset="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/loading.webp" alt=""><br>刚和一个在加拿大的初中同学聊了聊<br>他说那边最近开始爆发了，挺严重的，顺便抱怨那边的政府瞎搞🤣<br>奥运会都推迟了，见证历史啊</p>
 <h3 id="高考推迟"><a href="#高考推迟" class="headerlink" title="高考推迟"></a>高考推迟</h3><p>2020年3月31日，距离2020年高考原定于6月7日的开考时间还剩下68天。教育部官网发布了重大消息：经党中央、国务院同意，2020年高考延期一个月，将于7月7日开考。</p>
 <p>考试时间为7月7日至8日，具体科目考试时间安排为：7月7日，语文9:00至11:30；数学15:00至17:00。7月8日，文科综合/理科综合9:00至11:30；外语15:00至17:00。而，湖北省、北京市可根据疫情防控情况，研究提出本地区高考时间安排的意见，经教育部同意后及时向社会发布。</p>
 <p>自1977年高考恢复以来，高考从未因突发事件改期。2020年高考，还是第一次改期。</p>
@@ -305,6 +301,51 @@
   
 
   
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+    <!-- APlayer 音乐播放器 -->
+    <div id="aplayer"></div>
+    <script defer src="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.js" ></script>
+<link  rel="stylesheet" href="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.css" />
+<script type="text/javascript">
+  var oldLoadAp = window.onload;
+  window.onload = function () {
+    oldLoadAp && oldLoadAp();
+
+    new APlayer({
+      container: document.getElementById('aplayer'),
+      fixed: true,
+      autoplay: 'false' === 'true',
+      loop: 'all',
+      order: 'random',
+      theme: '#b7daff',
+      preload: 'none',
+      audio: [{"name":"となりのトトロ","artist":"伊藤サチコ","url":"https://cdn.jsdelivr.net/gh/Royce2019/img/01.mp3","cover":"https://cdn.jsdelivr.net/gh/Royce2019/img/img/109951163028865726.jpg"},{"name":"それがあなたの幸せとしても (カバー)","artist":"rairu","url":"https://cdn.jsdelivr.net/gh/Royce2019/img/02.mp3","cover":"https://cdn.jsdelivr.net/gh/Royce2019/img/img/109951163597938340.jpg"}]
+    });
+  }
+</script>
 
   
 
@@ -346,6 +387,8 @@
 <script  src="/js/main.js" ></script>
 
 
+  <script  src="/js/lazyload.js" ></script>
+
 
 
   
@@ -386,30 +429,6 @@
 <!-- Plugins -->
 
 
-  
-    <!-- Baidu Analytics -->
-    <script defer>
-      var _hmt = _hmt || [];
-      (function () {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?3b1c52021da1d2ea4a18cb97b7313fd0";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-      })();
-    </script>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
 
   <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
   <script>
@@ -433,6 +452,16 @@
 
 
 
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
 
 
   <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
@@ -454,6 +483,56 @@
 
 
 
+
+  
+  
+    <script type="text/javascript">
+      //定义获取词语下标
+      var a_idx = 0;
+      jQuery(document).ready(function ($) {
+        //点击body时触发事件
+        $("body").click(function (e) {
+          //需要显示的词语
+          var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善");
+          //设置词语给span标签
+          var $i = $("<span/>").text(a[a_idx]);
+          //下标等于原来下标+1  余 词语总数
+          a_idx = (a_idx + 1) % a.length;
+          //获取鼠标指针的位置，分别相对于文档的左和右边缘。
+          //获取x和y的指针坐标
+          var x = e.pageX, y = e.pageY;
+          //在鼠标的指针的位置给$i定义的span标签添加css样式
+          $i.css({
+            "z-index": 999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "color": rand_color()
+          });
+          // 随机颜色
+          function rand_color() {
+            return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
+          }
+          //在body添加这个标签
+          $("body").append($i);
+          //animate() 方法执行 CSS 属性集的自定义动画。
+          //该方法通过CSS样式将元素从一个状态改变为另一个状态。CSS属性值是逐渐改变的，这样就可以创建动画效果。
+          //详情请看http://www.w3school.com.cn/jquery/effect_animate.asp
+          $i.animate({
+            //将原来的位置向上移动180
+            "top": y - 180,
+            "opacity": 0
+            //1500动画的速度
+          }, 1500, function () {
+            //时间到了自动删除
+            $i.remove();
+          });
+        });
+      })
+      ;
+    </script>
+  
 
 
 
