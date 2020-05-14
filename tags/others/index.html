@@ -112,11 +112,6 @@
           </li>
         
         
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
-          </li>
-        
         <li class="nav-item">
           <a id="dark" class="nav-link" onclick="switchDarkMode()"></a>
         </li>
@@ -161,18 +156,12 @@
                 
 
 <div class="list-group">
-<!--  <p class="h4">共计 4 篇文章</p>-->
+<!--  <p class="h4">共计 3 篇文章</p>-->
   <hr>
   
     
       
       <p class="h5">2020</p>
-    
-    <a href="/2020/04/15/emoji-list/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Github Emoji 速查</span>
-      <span style="float: right;">04-15</span>
-    </a>
-  
     
     <a href="/2020/03/26/2019-2020%20%E7%A0%94%E7%A9%B6%E5%9E%8B%E5%AD%A6%E4%B9%A0/" class="list-group-item list-group-item-action">
       <span class="archive-post-title">研究型学习</span>
@@ -209,28 +198,6 @@
     </a>
   
 
-  
-    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
-    </div>
-  </div>
-</div>
   
 
   
@@ -331,16 +298,6 @@
 
 
 
-
-  <script  src="/js/local-search.js" ></script>
-  <script>
-    var path = "/local-search.xml";
-    var inputArea = document.querySelector("#local-search-input");
-    inputArea.onclick = function () {
-      searchFunc(path, 'local-search-input', 'local-search-result');
-      this.onclick = null
-    }
-  </script>
 
 
 
