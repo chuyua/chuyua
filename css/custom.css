@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'Edo-SZ';
-  src: url("https://cdn.jsdelivr.net/gh/chuyua/imges@master/BlogSource/fonts/Edo-SZ.woff2") format('woff2'), url("https://cdn.jsdelivr.net/gh/chuyua/imges@master/BlogSource/fonts/Edo-SZ.woff") format('woff');
+  src: url("/fonts/Edo-SZ.woff2") format('woff2'), url("/fonts/Edo-SZ.woff") format('woff');
 }
 @font-face {
   font-family: 'Fira Code';
-  src: url("https://cdn.jsdelivr.net/gh/chuyua/imges@master/BlogSource/fonts/FiraCode.woff2") format('woff2'), url("https://cdn.jsdelivr.net/gh/chuyua/imges@master/BlogSource/fonts/FiraCode.woff") format('woff');
+  src: url("/fonts/FiraCode.woff2") format('woff2'), url("/fonts/FiraCode.woff") format('woff');
 }
 @media (max-width: 767px) {
   body,
