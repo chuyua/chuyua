@@ -323,29 +323,6 @@
   
 
   
-    <!-- APlayer 音乐播放器 -->
-    <div id="aplayer"></div>
-    <script defer src="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.js" ></script>
-<link  rel="stylesheet" href="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.css" />
-<script type="text/javascript">
-  var oldLoadAp = window.onload;
-  window.onload = function () {
-    oldLoadAp && oldLoadAp();
-
-    new APlayer({
-      container: document.getElementById('aplayer'),
-      fixed: true,
-      autoplay: 'false' === 'true',
-      loop: 'all',
-      order: 'random',
-      theme: '#b7daff',
-      preload: 'none',
-      audio: [{"name":"となりのトトロ","artist":"伊藤サチコ","url":"https://cdn.jsdelivr.net/gh/Royce2019/img/01.mp3","cover":"https://cdn.jsdelivr.net/gh/Royce2019/img/img/109951163028865726.jpg"},{"name":"それがあなたの幸せとしても (カバー)","artist":"rairu","url":"https://cdn.jsdelivr.net/gh/Royce2019/img/02.mp3","cover":"https://cdn.jsdelivr.net/gh/Royce2019/img/img/109951163597938340.jpg"}]
-    });
-  }
-</script>
-
-  
 
   
 
