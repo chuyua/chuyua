@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://linik.ml/"/>
-  <updated>2020-05-21T15:55:59.314Z</updated>
+  <updated>2020-05-22T13:12:32.432Z</updated>
   <id>https://linik.ml/</id>
   
   <author>
@@ -20,8 +20,8 @@
     <title>最近的一些事</title>
     <link href="https://linik.ml/posts/7174.html"/>
     <id>https://linik.ml/posts/7174.html</id>
-    <published>2020-05-21T15:55:59.314Z</published>
-    <updated>2020-05-21T15:55:59.314Z</updated>
+    <published>2020-05-22T13:12:32.432Z</published>
+    <updated>2020-05-22T13:12:32.432Z</updated>
     
     <summary type="html">
     
@@ -44,7 +44,7 @@
     <link href="https://linik.ml/posts/38633.html"/>
     <id>https://linik.ml/posts/38633.html</id>
     <published>2020-05-12T03:38:06.000Z</published>
-    <updated>2020-05-21T15:55:59.314Z</updated>
+    <updated>2020-05-22T13:12:32.428Z</updated>
     
     <summary type="html">
     
@@ -69,7 +69,7 @@
     <link href="https://linik.ml/posts/17291.html"/>
     <id>https://linik.ml/posts/17291.html</id>
     <published>2020-04-26T12:56:01.000Z</published>
-    <updated>2020-05-21T15:55:59.314Z</updated>
+    <updated>2020-05-22T13:12:32.428Z</updated>
     
     <summary type="html">
     
@@ -90,7 +90,7 @@
     <link href="https://linik.ml/posts/12013.html"/>
     <id>https://linik.ml/posts/12013.html</id>
     <published>2020-04-20T07:00:51.000Z</published>
-    <updated>2020-05-21T15:55:59.314Z</updated>
+    <updated>2020-05-22T13:12:32.432Z</updated>
     
     <summary type="html">
     
@@ -105,11 +105,49 @@
   </entry>
   
   <entry>
+    <title>坦克大战</title>
+    <link href="https://linik.ml/posts/51049.html"/>
+    <id>https://linik.ml/posts/51049.html</id>
+    <published>2020-04-16T09:57:54.000Z</published>
+    <updated>2020-05-22T13:12:32.432Z</updated>
+    
+    <summary type="html">
+    
+      人生第一次写游戏，虽然是跟着教程走，但收获还是非常多，还在开发中
+    
+    </summary>
+    
+    
+    
+      <category term="Kotlin" scheme="https://linik.ml/tags/Kotlin/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Github Emoji 速查</title>
+    <link href="https://linik.ml/posts/13858.html"/>
+    <id>https://linik.ml/posts/13858.html</id>
+    <published>2020-04-15T10:57:21.000Z</published>
+    <updated>2020-05-22T13:12:32.432Z</updated>
+    
+    <summary type="html">
+    
+      GitHub 上的 emoji，commit 的时候喜欢前面加个 emoji 但又不怎么习惯用 Desktop 版，之后搬到博客上，方便查阅
+    
+    </summary>
+    
+    
+    
+      <category term="others" scheme="https://linik.ml/tags/others/"/>
+    
+  </entry>
+  
+  <entry>
     <title>P3865 【模板】ST表</title>
     <link href="https://linik.ml/posts/55323.html"/>
     <id>https://linik.ml/posts/55323.html</id>
     <published>2020-04-15T04:24:36.000Z</published>
-    <updated>2020-05-21T15:55:59.314Z</updated>
+    <updated>2020-05-22T13:12:32.432Z</updated>
     
     <summary type="html">
     
@@ -126,11 +164,57 @@
   </entry>
   
   <entry>
+    <title>Hexo Fluid 暗黑模式</title>
+    <link href="https://linik.ml/posts/41212.html"/>
+    <id>https://linik.ml/posts/41212.html</id>
+    <published>2020-04-02T10:04:57.000Z</published>
+    <updated>2020-05-22T13:12:32.428Z</updated>
+    
+    <summary type="html">
+    
+      适用于 Hexo 的暗黑模式，目前博客已经基本上适配完成了
+    
+    </summary>
+    
+    
+    
+      <category term="Hexo" scheme="https://linik.ml/tags/Hexo/"/>
+    
+      <category term="Fluid" scheme="https://linik.ml/tags/Fluid/"/>
+    
+      <category term="CSS" scheme="https://linik.ml/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo Fluid 瞎折腾</title>
+    <link href="https://linik.ml/posts/60394.html"/>
+    <id>https://linik.ml/posts/60394.html</id>
+    <published>2020-04-01T04:20:51.000Z</published>
+    <updated>2020-05-22T13:12:32.428Z</updated>
+    
+    <summary type="html">
+    
+      2020.04.28 更新
+    
+    </summary>
+    
+    
+    
+      <category term="Hexo" scheme="https://linik.ml/tags/Hexo/"/>
+    
+      <category term="Fluid" scheme="https://linik.ml/tags/Fluid/"/>
+    
+      <category term="CSS" scheme="https://linik.ml/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>P3368 【模板】树状数组 2</title>
     <link href="https://linik.ml/posts/49770.html"/>
     <id>https://linik.ml/posts/49770.html</id>
     <published>2020-03-26T14:55:33.000Z</published>
-    <updated>2020-05-21T15:55:59.314Z</updated>
+    <updated>2020-05-22T13:12:32.432Z</updated>
     
     <summary type="html">
     
@@ -151,7 +235,7 @@
     <link href="https://linik.ml/posts/23195.html"/>
     <id>https://linik.ml/posts/23195.html</id>
     <published>2020-03-26T13:35:58.000Z</published>
-    <updated>2020-05-21T15:55:59.314Z</updated>
+    <updated>2020-05-22T13:12:32.428Z</updated>
     
     <summary type="html">
     
@@ -172,7 +256,7 @@
     <link href="https://linik.ml/posts/759.html"/>
     <id>https://linik.ml/posts/759.html</id>
     <published>2020-03-18T15:13:06.000Z</published>
-    <updated>2020-05-21T15:55:59.314Z</updated>
+    <updated>2020-05-22T13:12:32.432Z</updated>
     
     <summary type="html">
     
@@ -193,7 +277,7 @@
     <link href="https://linik.ml/posts/3500.html"/>
     <id>https://linik.ml/posts/3500.html</id>
     <published>2020-03-13T06:59:22.000Z</published>
-    <updated>2020-05-21T15:55:59.314Z</updated>
+    <updated>2020-05-22T13:12:32.432Z</updated>
     
     <summary type="html">
     
@@ -214,7 +298,7 @@
     <link href="https://linik.ml/posts/58944.html"/>
     <id>https://linik.ml/posts/58944.html</id>
     <published>2020-03-09T15:37:44.000Z</published>
-    <updated>2020-05-21T15:55:59.314Z</updated>
+    <updated>2020-05-22T13:12:32.432Z</updated>
     
     <summary type="html">
     
@@ -233,7 +317,7 @@
     <link href="https://linik.ml/posts/32314.html"/>
     <id>https://linik.ml/posts/32314.html</id>
     <published>2020-03-07T08:47:28.000Z</published>
-    <updated>2020-05-21T15:55:59.314Z</updated>
+    <updated>2020-05-22T13:12:32.428Z</updated>
     
     <summary type="html">
     
@@ -252,11 +336,11 @@
     <link href="https://linik.ml/posts/13128.html"/>
     <id>https://linik.ml/posts/13128.html</id>
     <published>2020-02-27T08:32:48.000Z</published>
-    <updated>2020-05-21T15:55:59.314Z</updated>
+    <updated>2020-05-22T13:12:32.428Z</updated>
     
     <summary type="html">
     
-      &lt;span class=&quot;drop-cap&quot;&gt;哪&lt;/span&gt;个孩子不想要一个流畅的博客&lt;p&gt;奈何 github 一直处于半墙状态，访问速度贼慢&lt;br&gt;所以我们可以选择境内访问走 coding（国内的平台），境外访问走 github&lt;/p&gt;
+      &lt;p&gt;哪个孩子不想要一个流畅的博客&lt;br&gt;奈何 github 一直处于半墙状态，访问速度贼慢&lt;br&gt;所以我们可以选择境内访问走 coding（国内的平台），境外访问走 github&lt;/p&gt;
     
     </summary>
     
@@ -273,7 +357,7 @@
     <link href="https://linik.ml/posts/60705.html"/>
     <id>https://linik.ml/posts/60705.html</id>
     <published>2020-02-26T10:46:21.000Z</published>
-    <updated>2020-05-21T15:55:59.314Z</updated>
+    <updated>2020-05-22T13:12:32.432Z</updated>
     
     <summary type="html">
     
@@ -294,7 +378,7 @@
     <link href="https://linik.ml/posts/17142.html"/>
     <id>https://linik.ml/posts/17142.html</id>
     <published>2020-02-26T08:43:12.000Z</published>
-    <updated>2020-05-21T15:55:59.314Z</updated>
+    <updated>2020-05-22T13:12:32.428Z</updated>
     
     <summary type="html">
     
@@ -308,9 +392,9 @@
     
       <category term="教程" scheme="https://linik.ml/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="NexT" scheme="https://linik.ml/tags/NexT/"/>
-    
       <category term="CSS" scheme="https://linik.ml/tags/CSS/"/>
+    
+      <category term="NexT" scheme="https://linik.ml/tags/NexT/"/>
     
   </entry>
   
@@ -319,7 +403,7 @@
     <link href="https://linik.ml/posts/25976.html"/>
     <id>https://linik.ml/posts/25976.html</id>
     <published>2020-02-22T10:20:53.000Z</published>
-    <updated>2020-05-21T15:55:59.314Z</updated>
+    <updated>2020-05-22T13:12:32.428Z</updated>
     
     <summary type="html">
     
@@ -333,9 +417,9 @@
     
       <category term="教程" scheme="https://linik.ml/tags/%E6%95%99%E7%A8%8B/"/>
     
-      <category term="NexT" scheme="https://linik.ml/tags/NexT/"/>
-    
       <category term="CSS" scheme="https://linik.ml/tags/CSS/"/>
+    
+      <category term="NexT" scheme="https://linik.ml/tags/NexT/"/>
     
   </entry>
   
@@ -344,7 +428,7 @@
     <link href="https://linik.ml/posts/22549.html"/>
     <id>https://linik.ml/posts/22549.html</id>
     <published>2020-02-20T06:42:29.000Z</published>
-    <updated>2020-05-21T15:55:59.314Z</updated>
+    <updated>2020-05-22T13:12:32.432Z</updated>
     
     <summary type="html">
     
@@ -371,11 +455,11 @@
     <link href="https://linik.ml/posts/7797efbf.html"/>
     <id>https://linik.ml/posts/7797efbf.html</id>
     <published>2020-02-15T15:22:55.000Z</published>
-    <updated>2020-05-21T15:55:59.314Z</updated>
+    <updated>2020-05-22T13:12:32.428Z</updated>
     
     <summary type="html">
     
-      &lt;span class=&quot;drop-cap&quot;&gt;文&lt;/span&gt;章转载自魅族系统性能优化工程师，对于某些要求开启无障碍的应用，不开源，不盈利又掌握着你系统的“最高权限”
+      &lt;p&gt;文章转载自魅族系统性能优化工程师，对于某些要求开启无障碍的应用，不开源，不盈利又掌握着你系统的“最高权限”&lt;/p&gt;
     
     </summary>
     
@@ -392,11 +476,11 @@
     <link href="https://linik.ml/posts/f909dd9a.html"/>
     <id>https://linik.ml/posts/f909dd9a.html</id>
     <published>2020-02-13T06:18:22.000Z</published>
-    <updated>2020-05-21T15:55:59.314Z</updated>
+    <updated>2020-05-22T13:12:32.432Z</updated>
     
     <summary type="html">
     
-      &lt;span class=&quot;drop-cap&quot;&gt;N&lt;/span&gt;&lt;p&gt;exT 本身的友链放在侧栏，不能显示头像简介，只有链接，而且友链多了之后就显得非常乱，于是乎，我没可以新建一个页面来存放友链&lt;/p&gt;
+      &lt;p&gt;NexT 本身的友链放在侧栏，不能显示头像简介，只有链接，而且友链多了之后就显得非常乱，于是乎，我没可以新建一个页面来存放友链&lt;/p&gt;
     
     </summary>
     
@@ -413,11 +497,11 @@
     <link href="https://linik.ml/posts/d5003dee.html"/>
     <id>https://linik.ml/posts/d5003dee.html</id>
     <published>2020-02-12T04:16:55.000Z</published>
-    <updated>2020-05-21T15:55:59.314Z</updated>
+    <updated>2020-05-22T13:12:32.432Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2020/02/12/kPWqXHzFxO7Tgvh.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;&lt;h1 id=&quot;前言&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#前言&quot;&gt;&lt;/a&gt; 前言&lt;/h1&gt;&lt;span class=&quot;drop-cap&quot;&gt;2&lt;/span&gt;&lt;p&gt;019 年 11 月 CSP Day1 当晚，发现身边大佬都在写游记，我也因此心血来潮，咕咕咕，几天之后我才开始写。同时又碰巧学长退役，看见了巨佬的博客，我的天哪，这完善程度，这流畅度，这内容的深度 emmm 不愧是巨佬，厚着脸皮求教程，要来一个链接，在教程的帮助下，折腾了好久终于有了自己的博客。现在距离建站已经过去了差不多 3,4 个月，博客越来越完善了 &lt;s&gt;(就差内容了)&lt;/s&gt;
+      &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2020/02/12/kPWqXHzFxO7Tgvh.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;&lt;h1 id=&quot;前言&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#前言&quot;&gt;&lt;/a&gt; 前言&lt;/h1&gt;&lt;p&gt;2019 年 11 月 CSP Day1 当晚，发现身边大佬都在写游记，我也因此心血来潮，咕咕咕，几天之后我才开始写。同时又碰巧学长退役，看见了巨佬的博客，我的天哪，这完善程度，这流畅度，这内容的深度 emmm 不愧是巨佬，厚着脸皮求教程，要来一个链接，在教程的帮助下，折腾了好久终于有了自己的博客。现在距离建站已经过去了差不多 3,4 个月，博客越来越完善了 &lt;s&gt;(就差内容了)&lt;/s&gt;
     
     </summary>
     
@@ -430,11 +514,34 @@
   </entry>
   
   <entry>
+    <title>最大公约数算法之横向评测</title>
+    <link href="https://linik.ml/posts/aa07c4d0.html"/>
+    <id>https://linik.ml/posts/aa07c4d0.html</id>
+    <published>2020-02-09T15:43:12.000Z</published>
+    <updated>2020-05-22T13:12:32.432Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最大公约数&lt;br&gt;简称 &lt;code&gt;Gcd&lt;/code&gt;&lt;br&gt;当然还有一个简称 &lt;code&gt;hcf&lt;/code&gt; 嘿嘿嘿&lt;br&gt;（可我不敢用 hcf QAQ）&lt;/p&gt;&lt;p&gt;求法有好多种&lt;/p&gt;&lt;ul&gt;&lt;li&gt;穷举法&lt;/li&gt;&lt;li&gt;碾转相除法&lt;/li&gt;&lt;li&gt;&lt;ul&gt;&lt;li&gt;欧几里得算法&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;ul&gt;&lt;li&gt;扩展欧几里得算法&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;Stein 算法&lt;/li&gt;&lt;li&gt;碾转相减法&lt;/li&gt;&lt;li&gt;利用位运算（不知道叫什么，非常快就对了）&lt;/li&gt;&lt;/ul&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="OI" scheme="https://linik.ml/tags/OI/"/>
+    
+      <category term="c++" scheme="https://linik.ml/tags/c/"/>
+    
+      <category term="横向评测" scheme="https://linik.ml/tags/%E6%A8%AA%E5%90%91%E8%AF%84%E6%B5%8B/"/>
+    
+  </entry>
+  
+  <entry>
     <title>再见 2019，你好 2020</title>
     <link href="https://linik.ml/posts/ac33bbfd.html"/>
     <id>https://linik.ml/posts/ac33bbfd.html</id>
     <published>2019-12-31T15:59:59.000Z</published>
-    <updated>2020-05-21T15:55:59.314Z</updated>
+    <updated>2020-05-22T13:12:32.428Z</updated>
     
     <summary type="html">
     
@@ -455,11 +562,11 @@
     <link href="https://linik.ml/posts/1e08804e.html"/>
     <id>https://linik.ml/posts/1e08804e.html</id>
     <published>2019-12-10T14:00:50.000Z</published>
-    <updated>2020-05-21T15:55:59.314Z</updated>
+    <updated>2020-05-22T13:12:32.432Z</updated>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;题目&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#题目&quot;&gt;&lt;/a&gt; 题目&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;/h3&gt;&lt;h4 id=&quot;题目描述&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#题目描述&quot;&gt;&lt;/a&gt; 题目描述&lt;/h4&gt;&lt;span class=&quot;drop-cap&quot;&gt;在&lt;/span&gt;&lt;p&gt;一个神奇的小镇上有着一个特别的电车网络，它由一些路口和轨道组成，每个路口都连接着若干个轨道，每个轨道都通向一个路口（不排除有的观光轨道转一圈后返回路口的可能）。在每个路口，都有一个开关决定着出去的轨道，每个开关都有一个默认的状态，每辆电车行驶到路口之后，只能从开关所指向的轨道出去，如果电车司机想走另一个轨道，他就必须下车切换开关的状态。&lt;/p&gt;&lt;p&gt;为了行驶向目标地点，电车司机不得不经常下车来切换开关，于是，他们想请你写一个程序，计算一辆从路口 A 路口 B 最少需要下车切换几次开关。&lt;/p&gt;
+      &lt;h3 id=&quot;题目&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#题目&quot;&gt;&lt;/a&gt; 题目&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;/h3&gt;&lt;h4 id=&quot;题目描述&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#题目描述&quot;&gt;&lt;/a&gt; 题目描述&lt;/h4&gt;&lt;p&gt;在一个神奇的小镇上有着一个特别的电车网络，它由一些路口和轨道组成，每个路口都连接着若干个轨道，每个轨道都通向一个路口（不排除有的观光轨道转一圈后返回路口的可能）。在每个路口，都有一个开关决定着出去的轨道，每个开关都有一个默认的状态，每辆电车行驶到路口之后，只能从开关所指向的轨道出去，如果电车司机想走另一个轨道，他就必须下车切换开关的状态。&lt;/p&gt;&lt;p&gt;为了行驶向目标地点，电车司机不得不经常下车来切换开关，于是，他们想请你写一个程序，计算一辆从路口 A 路口 B 最少需要下车切换几次开关。&lt;/p&gt;
     
     </summary>
     
@@ -476,7 +583,7 @@
     <link href="https://linik.ml/posts/55a00e88.html"/>
     <id>https://linik.ml/posts/55a00e88.html</id>
     <published>2019-12-07T11:37:02.000Z</published>
-    <updated>2020-05-21T15:55:59.314Z</updated>
+    <updated>2020-05-22T13:12:32.432Z</updated>
     
     <summary type="html">
     
@@ -497,7 +604,7 @@
     <link href="https://linik.ml/posts/fd36a626.html"/>
     <id>https://linik.ml/posts/fd36a626.html</id>
     <published>2019-11-28T16:00:00.000Z</published>
-    <updated>2020-05-21T15:55:59.314Z</updated>
+    <updated>2020-05-22T13:12:32.432Z</updated>
     
     <summary type="html">
     
@@ -518,7 +625,7 @@
     <link href="https://linik.ml/posts/4d5decec.html"/>
     <id>https://linik.ml/posts/4d5decec.html</id>
     <published>2019-11-27T16:00:00.000Z</published>
-    <updated>2020-05-21T15:55:59.314Z</updated>
+    <updated>2020-05-22T13:12:32.432Z</updated>
     
     <summary type="html">
     
@@ -535,15 +642,55 @@
   </entry>
   
   <entry>
+    <title>Hello World</title>
+    <link href="https://linik.ml/posts/9408.html"/>
+    <id>https://linik.ml/posts/9408.html</id>
+    <published>2019-11-24T07:43:27.000Z</published>
+    <updated>2020-05-22T13:12:32.432Z</updated>
+    
+    <summary type="html">
+    
+      庆祝我的 Hexo 博客诞生😃
+    
+    </summary>
+    
+    
+    
+      <category term="Royce" scheme="https://linik.ml/tags/Royce/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2019 CSP 游记</title>
+    <link href="https://linik.ml/posts/d66957d.html"/>
+    <id>https://linik.ml/posts/d66957d.html</id>
+    <published>2019-11-23T16:00:00.000Z</published>
+    <updated>2020-05-22T13:12:32.428Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;OI第一年，不忘初心砥砺前行！&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="Royce" scheme="https://linik.ml/tags/Royce/"/>
+    
+      <category term="游记" scheme="https://linik.ml/tags/%E6%B8%B8%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>【转载】2019信息社十月推送</title>
     <link href="https://linik.ml/posts/1cc325d4.html"/>
     <id>https://linik.ml/posts/1cc325d4.html</id>
     <published>2019-10-30T13:53:00.000Z</published>
-    <updated>2020-05-21T15:55:59.314Z</updated>
+    <updated>2020-05-22T13:12:32.428Z</updated>
     
     <summary type="html">
     
-      &lt;span class=&quot;drop-cap&quot;&gt;十&lt;/span&gt;月推送：科普向&lt;p&gt;逻辑真假与电路有什么关系？如何利用布尔表达式优化电路？&lt;br&gt;感谢来自中国人民警察大学的前二中学长来稿！&lt;/p&gt;
+      &lt;p&gt;十月推送：科普向&lt;br&gt;逻辑真假与电路有什么关系？如何利用布尔表达式优化电路？&lt;br&gt;感谢来自中国人民警察大学的前二中学长来稿！&lt;/p&gt;
     
     </summary>
     

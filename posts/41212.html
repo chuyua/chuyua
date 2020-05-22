@@ -1,0 +1,144 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.ico"><link rel="icon" type="image/png" href="/img/favicon.ico"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"><meta name="theme-color" content="#2f4154"><meta name="description" content="小白 | OIer | 科技生活 | 大学"><meta name="author" content="Lioil"><meta name="keywords" content="Lioil"><title>Hexo Fluid 暗黑模式 - Lioil</title><link href="https://fonts.dogedoge.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet" media="print" onload='this.media="all"'><link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css"><link rel="stylesheet" href="https://at.alicdn.com/t/font_1736904_lru2zlw1wl8.css"><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Lioil" type="application/atom+xml"></head><body><header style="height:80vh"><a id="mdark" onclick="switchDarkMode()"></a><script>var isNight=22<=(new Date).getHours()||(new Date).getHours()<=7;!matchMedia("(prefers-color-scheme: dark)").matches&&!isNight&&"1"!==localStorage.getItem("dark")||isNight&&"1"===localStorage.getItem("noDark")||document.body.classList.add("dark")</script><nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"><div class="container"><a class="navbar-brand" href="/"><strong>Royce's world</strong></a> <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><div class="animated-icon"><span></span><span></span><span></span></div></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav ml-auto text-center"><li class="nav-item"><a class="nav-link" href="https://dl.linik.ml/" target="_blank" rel="noopener"><i class="iconfont icon-plane"></i> 开往</a></li><li class="nav-item"><a class="nav-link" href="/tags/"><i class="iconfont icon-tags-fill"></i> 标签</a></li><li class="nav-item"><a class="nav-link" href="/messageboard/"><i class="iconfont icon-liuyan"></i> 留言</a></li><li class="nav-item"><a class="nav-link" href="/links/"><i class="iconfont icon-link-fill"></i> 友链</a></li><li class="nav-item"><a class="nav-link" href="/about/"><i class="iconfont icon-user-fill"></i> 关于</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="iconfont icon-explore-fill"></i> 探索</a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="/artitalk/"><i class="iconfont icon-shiguangji"></i> 时光机 </a><a class="dropdown-item" href="/archive/"><i class="iconfont icon-archive-fill"></i> 归档 </a><a class="dropdown-item" href="/gallery/"><i class="iconfont icon-xiangce1"></i> 相册</a></div></li><li class="nav-item"><a id="dark" class="nav-link" onclick="switchDarkMode()"></a></li></ul></div></div></nav><script>document.getElementById("dark").innerHTML=document.querySelector("body").classList.contains("dark")?'<i class="iconfont icon-moon"></i>':'<i class="iconfont icon-sun"></i>',document.getElementById("mdark").innerHTML=document.querySelector("body").classList.contains("dark")?'<i class="iconfont icon-moon"></i>':'<i class="iconfont icon-sun"></i>'</script><div class="view intro-2" id="background" parallax="true" style="background:url(https://rmt.dogedoge.com/fetch/royce/storage/bg/1.jpg?fmt=webp) no-repeat center center;background-size:cover"><div class="view intro-2" id="background"><div class="full-bg-img"><div class="mask flex-center" style="background-color:rgba(0,0,0,.3)"><div class="container text-center white-text fadeInUp"><span class="h2" id="subtitle"></span><div class="mt-3 post-meta"><i class="iconfont icon-date-fill" aria-hidden="true"></i> <time datetime="2020-04-02 18:04">Thu Apr 02 2020</time></div><div class="mt-1"><span class="post-meta mr-2"><i class="iconfont icon-chart"></i> 931</span></div></div></div></div></div></div></header><main><div class="container-fluid"><div class="row"><div class="d-none d-lg-block col-lg-2"></div><div class="col-lg-8 nopadding-md"><div class="container nopadding-md" id="board-ctn"><div class="py-5" id="board"><div class="post-content mx-auto" id="post"><article class="markdown-body"><p>大概花了一个晚上搞暗黑模式，之后几天陆续优化了下<br>目前博客已经基本上适配完成了<br>目前是三种方案（优先级递减）</p><ol><li>媒体查询</li><li>定时开启</li><li>localStorage/sessionStorage 查询</li></ol><!--more--><p><code>媒体查询</code>，判断系统是否处于暗黑模式，支持大部分系统<br>Win10 需要浏览器开启深色模式<br>Android 同理，需要浏览器支持手机开启夜间模式的时候将自身切换到神色模式，目前 Chrome 支持，Edge 不支持，其他没测<br>iOS、MacOS 上的 Safari 也支持</p><p><code>定时开启</code>，在规定时间自动开启，如果在该时间段内取消了暗黑模式，能一直保持</p><p><code>localStorage/sessionStorage 查询</code>，能一直保持某一个模式的依赖</p><h3 id="html"><a class="markdownIt-Anchor" href="#html"></a> HTML</h3><p>在 <code>\themes\fluid\layout\layout.ejs</code> 中找到 <code>&lt;body&gt;</code>，在其之后加入如下代码</p><div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"dark"</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"switchDarkMode()"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span>
+<span class="javascript">  <span class="hljs-keyword">var</span> isNight = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getHours() &gt;= <span class="hljs-number">22</span> || <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getHours() &lt; <span class="hljs-number">7</span>;</span>
+<span class="actionscript">  <span class="hljs-keyword">if</span>( matchMedia(<span class="hljs-string">'(prefers-color-scheme: dark)'</span>).matches || isNight || localStorage.getItem(<span class="hljs-string">'dark'</span>) === <span class="hljs-string">'1'</span>) &#123;</span>
+<span class="actionscript">    <span class="hljs-keyword">if</span>(!(isNight&amp;&amp;localStorage.getItem(<span class="hljs-string">'noDark'</span>) === <span class="hljs-string">'1'</span>)) &#123;</span>
+<span class="javascript">      <span class="hljs-built_in">document</span>.body.classList.add(<span class="hljs-string">'dark'</span>);</span>
+    &#125;
+  &#125;
+<span class="javascript">  <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'dark'</span>).innerHTML = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">"body"</span>).classList.contains(<span class="hljs-string">"dark"</span>)?<span class="hljs-string">"🌙"</span>:<span class="hljs-string">"🌞"</span>;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre></div><div class="note note-danger"><p>注意！一定紧跟在 <code>body</code> 标签之后，否则会出现闪烁</p></div><h3 id="js"><a class="markdownIt-Anchor" href="#js"></a> JS</h3><p>然后随便找个 JS 把下面代码加进去，直接加到 <code>&lt;/body&gt;</code> 之前也行</p><div class="hljs"><pre><code class="hljs js"><span class="hljs-comment">//点击事件</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">switchDarkMode</span>(<span class="hljs-params"></span>) </span>&#123;
+	<span class="hljs-keyword">if</span> ($(<span class="hljs-string">'body'</span>).hasClass(<span class="hljs-string">'dark'</span>)) &#123;
+		$(<span class="hljs-string">"#dark"</span>).html(<span class="hljs-string">"🌞"</span>);
+		<span class="hljs-built_in">document</span>.body.classList.remove(<span class="hljs-string">'dark'</span>);
+		localStorage.setItem(<span class="hljs-string">'noDark'</span>, <span class="hljs-string">'1'</span>);
+		localStorage.setItem(<span class="hljs-string">'dark'</span>, <span class="hljs-string">'0'</span>);
+	&#125; <span class="hljs-keyword">else</span> &#123;
+		$(<span class="hljs-string">"#dark"</span>).html(<span class="hljs-string">"🌙"</span>); 
+		<span class="hljs-built_in">document</span>.body.classList.add(<span class="hljs-string">'dark'</span>);
+		localStorage.setItem(<span class="hljs-string">'dark'</span>, <span class="hljs-string">'1'</span>);
+		localStorage.setItem(<span class="hljs-string">'noDark'</span>, <span class="hljs-string">'0'</span>);
+	&#125;
+&#125;</code></pre></div><h3 id="css"><a class="markdownIt-Anchor" href="#css"></a> CSS</h3><p>在自定义 CSS 中加入代码</p><div class="note note-primary"><p>可以用 <code>stylus</code>，能少些写<br>但是引入时记得后缀还是 <code>.css</code> 不要变</p></div><p>下面是我的样式代码，基本覆盖所有内容，根据自身情况修改</p><div class="hljs"><pre><code class="hljs stylus"><span class="hljs-comment">/* 切换按钮 */</span>
+#dark
+  <span class="hljs-attribute">cursor</span> pointer
+  <span class="hljs-attribute">position</span> fixed
+  <span class="hljs-attribute">right</span> <span class="hljs-number">40px</span>
+  <span class="hljs-attribute">bottom</span> <span class="hljs-number">98px</span>
+  <span class="hljs-attribute">width</span> <span class="hljs-number">16px</span>
+  <span class="hljs-attribute">height</span> <span class="hljs-number">14px</span>
+  <span class="hljs-attribute">z-index</span> <span class="hljs-number">100</span>
+  <span class="hljs-attribute">font-size</span> <span class="hljs-number">20px</span>
+
+<span class="hljs-comment">/*暗黑模式*/</span>
+.dark
+
+  <span class="hljs-comment">/* 主体 */</span>
+  <span class="hljs-selector-id">#board</span> 
+    <span class="hljs-attribute">background-color</span> <span class="hljs-number">#282c34</span>
+    <span class="hljs-attribute">color</span> <span class="hljs-number">#a09c9c</span>
+  
+  <span class="hljs-selector-tag">img</span>  
+    <span class="hljs-attribute">filter</span> brightness(<span class="hljs-number">50%</span>)
+
+  p
+  <span class="hljs-selector-class">.index-info</span> <span class="hljs-selector-tag">a</span>  
+    <span class="hljs-attribute">color</span> <span class="hljs-number">#a09c9c</span> !important
+
+  .markdown-body
+    <span class="hljs-selector-tag">h1</span>,<span class="hljs-selector-tag">h2</span>,<span class="hljs-selector-tag">h3</span>,<span class="hljs-selector-tag">h4</span>,<span class="hljs-selector-tag">h5</span>,<span class="hljs-selector-tag">h6</span>,s,<span class="hljs-selector-tag">li</span>  
+      <span class="hljs-attribute">color</span>:<span class="hljs-number">#a09c9c</span> !important
+    
+
+  <span class="hljs-comment">/* 顶栏 */</span>
+  .navbar-col-show
+  <span class="hljs-selector-class">.top-nav-collapse</span>  
+    <span class="hljs-attribute">background-color</span> <span class="hljs-number">#282c34</span>
+    
+  <span class="hljs-selector-class">.navbar</span> <span class="hljs-selector-tag">a</span>  
+    <span class="hljs-attribute">color</span> <span class="hljs-number">#a09c9c</span> !important
+    
+  <span class="hljs-selector-class">.animated-icon</span> <span class="hljs-selector-tag">span</span>   <span class="hljs-comment">/* 手机端 */</span>
+    <span class="hljs-attribute">background-color</span> <span class="hljs-number">#a09c9c</span>
+
+
+  <span class="hljs-comment">/* page-number */</span>
+  <span class="hljs-selector-class">.pagination</span> <span class="hljs-selector-tag">a</span>:hover
+  <span class="hljs-selector-class">.pagination</span> <span class="hljs-selector-class">.current</span>  
+    <span class="hljs-attribute">background-color</span> <span class="hljs-number">#6b6b6b</span>73;
+
+
+  <span class="hljs-comment">/* 打字机 */</span>
+  #subtitle
+  <span class="hljs-selector-class">.dark</span>.typed-<span class="hljs-attribute">cursor</span>--blink
+  .scroll-down-arrow
+    <span class="hljs-attribute">color</span> <span class="hljs-number">#dfdfdf</span>
+
+
+  <span class="hljs-comment">/* back to top */</span>
+  #scroll-<span class="hljs-attribute">top</span>-button
+    <span class="hljs-attribute">background-color</span> <span class="hljs-number">#282c34</span>
+
+    i
+      <span class="hljs-attribute">color</span> <span class="hljs-number">#a09c9c</span>
+    
+
+  <span class="hljs-comment">/* Toc */</span>
+  <span class="hljs-selector-class">.tocbot-list</span> a
+    <span class="hljs-attribute">color</span> <span class="hljs-number">#a09c9c</span>
+
+  .tocbot-active-link
+  <span class="hljs-selector-tag">footer</span> <span class="hljs-selector-tag">a</span>:hover
+    <span class="hljs-attribute">color</span> <span class="hljs-number">#1abc9c</span> !important
+
+
+  <span class="hljs-comment">/* footer */</span>
+  footer
+  <span class="hljs-selector-tag">footer</span> a
+    <span class="hljs-attribute">color</span> <span class="hljs-number">#a09c9c</span>
+    
+
+  <span class="hljs-comment">/* 归档页 */</span>
+  .list-group-item
+    <span class="hljs-attribute">color</span> <span class="hljs-number">#a09c9c</span>
+    <span class="hljs-attribute">background-color</span> <span class="hljs-number">#282c34</span>
+    
+  <span class="hljs-selector-class">.list-group-item</span>:hover
+  <span class="hljs-selector-class">.tagcloud</span> <span class="hljs-selector-tag">a</span>:hover
+    <span class="hljs-attribute">background-color</span> <span class="hljs-number">#46484d</span>
+
+
+  <span class="hljs-comment">/* 友链页 */</span>
+  .links
+    <span class="hljs-selector-class">.card</span>  
+      <span class="hljs-attribute">background-color</span> <span class="hljs-number">#282c34</span>
+        
+    <span class="hljs-selector-class">.card-body</span>:hover  
+      <span class="hljs-attribute">background-color</span> <span class="hljs-number">#46484d</span>
+        
+    .link-title
+    <span class="hljs-selector-class">.link-intro</span>  
+      <span class="hljs-attribute">color</span> <span class="hljs-number">#a09c9c</span>
+    
+
+  <span class="hljs-comment">/* note标签 可能这配色有点丑 */</span>
+  .note-info
+    <span class="hljs-attribute">background-color</span> <span class="hljs-number">#3b5359</span>
+    <span class="hljs-attribute">border-color</span> <span class="hljs-number">#006d80</span>
+
+  .note-danger
+    <span class="hljs-attribute">background-color</span> <span class="hljs-number">#783f42</span>
+    <span class="hljs-attribute">border-color</span> <span class="hljs-number">#670009</span>
+
+  .note-success
+    <span class="hljs-attribute">background-color</span> <span class="hljs-number">#2a3e2e</span>
+    <span class="hljs-attribute">border-color</span> <span class="hljs-number">#005915</span>
+
+  .note-warning
+    <span class="hljs-attribute">background-color</span> <span class="hljs-number">#5b543e</span>
+    <span class="hljs-attribute">border-color</span> <span class="hljs-number">#846500</span>
+
+  .note-primary
+    <span class="hljs-attribute">background-color</span> <span class="hljs-number">#455a6f</span>
+    <span class="hljs-attribute">border-color</span> <span class="hljs-number">#004188</span></code></pre></div><h3 id="localstorage-还是-sessionstorage"><a class="markdownIt-Anchor" href="#localstorage-还是-sessionstorage"></a> localStorage 还是 sessionStorage</h3><p>仔细观察刚刚的 js 代码，在其中用的是 localStorage<br>除了 localStorage，你还可以用 sessionStorage<br>两者的区别也非常简单</p><blockquote><p>localStorage：除非被手动清除，否则将会永久保存。<br>sessionStorage： 仅在当前网页会话下有效，关闭页面或浏览器后就会被清除。</p></blockquote><p>举个简单例子，如果现在是白天（即没有触发夜间自动开启暗黑模式）<br>你手动点击切换成了暗黑模式，当你关闭当前网页再次进入时<br>如果你用的是 localStorage，那么此时就还是暗黑模式<br>而如果你用的是 sessionStorage，此时就不是暗黑模式了</p><p>两者的使用方法相同<br>直接替换就可以了</p><p>感谢 <span class="label label-success"><a href="https://crosschannel.cc" target="_blank" rel="external nofollow noreferrer noopener">@track13</a></span> 建议</p><div class="note note-info"><p>sessionStorage 在手机浏览器上问题很多，不推荐使用</p></div><p>下面是支持该特性的最低版本<br><img src="https://cos.royce2003.top/41212/01.webp-default" srcset="https://cdn.jsdelivr.net/gh/chuyua/imges@master/BlogSource/loading.svg" alt=""></p><p>可以在浏览器控制台中查看他们的值<br><img src="https://cos.royce2003.top/41212/02.webp-default" srcset="https://cdn.jsdelivr.net/gh/chuyua/imges@master/BlogSource/loading.svg" alt=""></p><hr><h3 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h3><ol><li><a href="https://crosschannel.cc/daily/hexo%E6%B7%BB%E5%8A%A0%E6%9A%97%E8%89%B2%E6%A8%A1%E5%BC%8F.html" target="_blank" rel="noopener external nofollow noreferrer">面向小白的Hexo添加暗色模式教程 | 宅日记</a></li></ol></article><hr><div><div class="post-metas mb-3"><div class="post-meta"><a class="hover-with-bg" href="/tags/Hexo/">Hexo</a> <a class="hover-with-bg" href="/tags/Fluid/">Fluid</a> <a class="hover-with-bg" href="/tags/CSS/">CSS</a></div></div></div><br><br><div class="markdown-body"><div class="text-center"><a class="btn" id="valine-btn">Valine</a> <a class="btn" id="utterances-btn">Utterances</a></div></div><div class="comments valine" id="comments"><script defer src="https://cdn.jsdelivr.net/npm/leancloud-storage@3.0.4/dist/av-min.js"></script><script defer src="https://cdn.jsdelivr.net/gh/royce003/BlogSource/js/Valine.min.js"></script><script type="text/javascript">var oldLoadVa=window.onload;window.onload=function(){oldLoadVa&&oldLoadVa(),new Valine({lang:"zh-cn",el:"#comments",app_id:"BP0WteqAi1rLTH6C13A1Jfw8-gzGzoHsz",app_key:"Xhohtk79OfxwRIBRi4ew2KhF",admin_email:"979093525@qq.com",placeholder:"说点什么...",emoticon_url:"https://rmt.dogedoge.com/fetch/royce/storage/comments",emoticon_list:["抓狂.png","无奈2.png","惊讶.png","托腮.png","快哭了.png","可怜.png","吃瓜.png","打哈欠.png","辣眼睛.png","脑阔疼.png","doge.png","动耳朵.gif","抖脚脚.gif","抖眼.gif","抖眼镜.gif","风吹秀发.gif","慌张.gif","夹住.gif","开车.gif","哭唧唧.gif","绿色的.gif","跳舞.gif","跳着走.gif","小花花.gif","眼睛转.gif","摇头.gif","眨眼.gif","吃东西.gif","弹肚皮.gif","动次打次.gif?fmt=webp ","比心心.gif","吹风.gif","打篮球.gif","都是小心心.gif","吐.png","喷血.png","狂汗.png","不说话.png","汗.png","坐等.png","献花.png","不高兴.png","中刀.png","害羞.png","皱眉.png","小眼睛.png","中指.png","尴尬.png","瞅你.png","想一想.png","中枪.png","得意.png","肿包.png","扇耳光.png","亲亲.png","惊喜.png","脸红.png","无所谓.png","便便.png","愤怒.png","蜡烛.png","献黄瓜.png","内伤.png","投降.png","观察.png","看不见.png","击掌.png","抠鼻.png","邪恶.png","看热闹.png","口水.png","抽烟.png","锁眉.png","装大款.png","吐舌.png","无奈.png","长草.png","赞一个.png","呲牙.png","无语.png","阴暗.png","不出所料.png","咽气.png","期待.png","高兴.png","吐血倒地.png","哭泣.png","欢呼.png","黑线.png","喜极而泣.png","喷水.png","深思.png","鼓掌.png","暗地观察.png"]})}</script><noscript>Please enable JavaScript to view the <a href="https://valine.js.org" target="_blank" rel="nofollow noopener noopener">comments powered by Valine.</a></noscript></div><div class="comments utterances" id="comments" style="display:none"><script defer src="https://utteranc.es/client.js" repo="chuyua/commit-utterance" issue-term="pathname" label="utterances" theme="preferred-color-scheme" crossorigin="anonymous"></script></div></div></div></div></div><div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn"><div id="toc"><p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p><div id="tocbot"></div></div></div></div></div></main><a id="scroll-top-button" href="#" role="button"><i class="iconfont icon-arrowup" aria-hidden="true"></i></a><footer class="mt-5"><div class="text-center py-3"><div><a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a></div><div>Powered by <a href="https://pages.github.com/" class="qr-trigger" target="_blank" rel="nofollow noopener">GitHub Pages</a></div><div><a href="http://beian.miit.gov.cn/" target="_blank" class="beian-icp" rel="nofollow noopener">闽ICP备20005437号-1</a></div></div></footer><script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script><script src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script><script src="/js/debouncer.js"></script><script src="/js/main.js"></script><script src="/js/lazyload.js"></script><script src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js"></script><script>$(document).ready(function(){var t=$("#board-ctn").offset().top;tocbot.init({tocSelector:"#tocbot",contentSelector:".post-content",headingSelector:"h1,h2,h3,h4,h5,h6",linkClass:"tocbot-link",activeLinkClass:"tocbot-active-link",listClass:"tocbot-list",isCollapsedClass:"tocbot-is-collapsed",collapsibleClass:"tocbot-is-collapsible",collapseDepth:0,scrollSmooth:!0,headingsOffset:-t}),0<$(".toc-list-item").length&&$("#toc").css("visibility","visible")})</script><script defer>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?ff40c47e72e383767b9bcd0a82d13218";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><script src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js"></script><script>var typed=new Typed("#subtitle",{strings:["  ","Hexo Fluid 暗黑模式&nbsp;"],cursorChar:"_",typeSpeed:70,loop:!1});typed.stop(),$(document).ready(function(){$(".typed-cursor").addClass("h2"),typed.start()})</script><script src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js"></script><link rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css"><script>$("#post img:not(.no-zoom img, img[no-zoom]), img[zoom]").each(function(){var t=document.createElement("a");$(t).attr("data-fancybox","images"),$(t).attr("href",$(this).attr("src")),$(this).wrap(t)})</script><script type="text/javascript">var a_idx=0;jQuery(document).ready(function(d){d("body").click(function(a){var o=new Array("富强","民主","文明","和谐","自由","平等","公正","法治","爱国","敬业","诚信","友善"),t=d("<span/>").text(o[a_idx]);a_idx=(a_idx+1)%o.length;var n=a.pageX,e=a.pageY;t.css({"z-index":999,top:e-20,left:n,position:"absolute","font-weight":"bold",color:"rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"}),d("body").append(t),t.animate({top:e-180,opacity:0},1500,function(){t.remove()})})})</script></body></html>

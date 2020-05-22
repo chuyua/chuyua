@@ -1,0 +1,773 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.ico"><link rel="icon" type="image/png" href="/img/favicon.ico"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"><meta name="theme-color" content="#2f4154"><meta name="description" content="小白 | OIer | 科技生活 | 大学"><meta name="author" content="Lioil"><meta name="keywords" content="Lioil"><title>Hexo Fluid 瞎折腾 - Lioil</title><link href="https://fonts.dogedoge.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet" media="print" onload='this.media="all"'><link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css"><link rel="stylesheet" href="https://at.alicdn.com/t/font_1736904_lru2zlw1wl8.css"><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Lioil" type="application/atom+xml"></head><body><header style="height:80vh"><a id="mdark" onclick="switchDarkMode()"></a><script>var isNight=22<=(new Date).getHours()||(new Date).getHours()<=7;!matchMedia("(prefers-color-scheme: dark)").matches&&!isNight&&"1"!==localStorage.getItem("dark")||isNight&&"1"===localStorage.getItem("noDark")||document.body.classList.add("dark")</script><nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"><div class="container"><a class="navbar-brand" href="/"><strong>Royce's world</strong></a> <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><div class="animated-icon"><span></span><span></span><span></span></div></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav ml-auto text-center"><li class="nav-item"><a class="nav-link" href="https://dl.linik.ml/" target="_blank" rel="noopener"><i class="iconfont icon-plane"></i> 开往</a></li><li class="nav-item"><a class="nav-link" href="/tags/"><i class="iconfont icon-tags-fill"></i> 标签</a></li><li class="nav-item"><a class="nav-link" href="/messageboard/"><i class="iconfont icon-liuyan"></i> 留言</a></li><li class="nav-item"><a class="nav-link" href="/links/"><i class="iconfont icon-link-fill"></i> 友链</a></li><li class="nav-item"><a class="nav-link" href="/about/"><i class="iconfont icon-user-fill"></i> 关于</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="iconfont icon-explore-fill"></i> 探索</a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="/artitalk/"><i class="iconfont icon-shiguangji"></i> 时光机 </a><a class="dropdown-item" href="/archive/"><i class="iconfont icon-archive-fill"></i> 归档 </a><a class="dropdown-item" href="/gallery/"><i class="iconfont icon-xiangce1"></i> 相册</a></div></li><li class="nav-item"><a id="dark" class="nav-link" onclick="switchDarkMode()"></a></li></ul></div></div></nav><script>document.getElementById("dark").innerHTML=document.querySelector("body").classList.contains("dark")?'<i class="iconfont icon-moon"></i>':'<i class="iconfont icon-sun"></i>',document.getElementById("mdark").innerHTML=document.querySelector("body").classList.contains("dark")?'<i class="iconfont icon-moon"></i>':'<i class="iconfont icon-sun"></i>'</script><div class="view intro-2" id="background" parallax="true" style="background:url(https://rmt.dogedoge.com/fetch/royce/storage/bg/1.jpg?fmt=webp) no-repeat center center;background-size:cover"><div class="view intro-2" id="background"><div class="full-bg-img"><div class="mask flex-center" style="background-color:rgba(0,0,0,.3)"><div class="container text-center white-text fadeInUp"><span class="h2" id="subtitle"></span><div class="mt-3 post-meta"><i class="iconfont icon-date-fill" aria-hidden="true"></i> <time datetime="2020-04-01 12:20">Wed Apr 01 2020</time></div><div class="mt-1"><span class="post-meta mr-2"><i class="iconfont icon-chart"></i> 4.9k</span></div></div></div></div></div></div></header><main><div class="container-fluid"><div class="row"><div class="d-none d-lg-block col-lg-2"></div><div class="col-lg-8 nopadding-md"><div class="container nopadding-md" id="board-ctn"><div class="py-5" id="board"><div class="post-content mx-auto" id="post"><article class="markdown-body"><div class="note note-primary"><p>2020.04.10 新增超好看的复选框<br>2020.04.13 更新动态背景代码<br>2020.04.28 自定义返回顶部图片和球形标签云<br><mark>随着主题的更新，文中的代码可能失效或引起错误，请自行修改</mark></p></div><h3 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h3><p>好像还没有看到大佬写关于 Fluid 折腾的文章，就开了这个坑<br>文章放了源码进来，所以挺长的，大部分是改 CSS，JS 很少<br>首先，按照 Fluid 配置文件中的方法，新建自定义 CSS 和 JS<br>建议创建 .styl 而不是 .css<br>下方代码会是 .styl，因为写着更省事…</p><div class="note note-danger"><p>不管是什么，配置文件中都填 <code>.css</code></p></div><div class="hljs"><pre><code class="hljs yaml"><span class="hljs-attr">custom_js:</span> <span class="hljs-string">/js/custom.js</span> <span class="hljs-comment"># 指定自定义 js 文件路径，路径是相对 source 目录，如 /js/custom.js</span>
+<span class="hljs-attr">custom_css:</span> <span class="hljs-string">/css/custom.css</span> <span class="hljs-comment"># 指定自定义 css 文件路径，路径是相对 source 目录，如 /css/custom.css</span>
+<span class="hljs-attr">custom_html:</span> <span class="hljs-string">''</span>  <span class="hljs-comment"># 自定义底部 HTML 内容（位于 footer 上方），也可用于外部引入 js css 这些操作，注意不要和 post.custom 配置冲突</span></code></pre></div><h3 id="动态背景"><a class="markdownIt-Anchor" href="#动态背景"></a> 动态背景</h3><p><sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p><p>主题本身采用的是头图滚动视差，非常 nice，但我可能更喜欢花里胡哨吧<br>自定义 CSS 中加入如下代码</p><div class="hljs"><pre><code class="hljs stylus">.slideshow
+  <span class="hljs-attribute">position</span>: fixed; 
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100vw</span>; 
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100vh</span>; 
+
+  .slideshow-image
+    <span class="hljs-attribute">position</span>: fixed; 
+    <span class="hljs-attribute">background-size</span>: cover;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>; <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>; 
+    <span class="hljs-attribute">background</span>: repeat <span class="hljs-number">50%</span> <span class="hljs-number">50%</span>; 
+    <span class="hljs-attribute">animation-name</span>: kenburns;
+    <span class="hljs-attribute">animation-timing-function</span>: linear;
+    <span class="hljs-attribute">animation-iteration-count</span>: infinite;
+    <span class="hljs-attribute">animation-duration</span>: <span class="hljs-number">24s</span>; <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;
+    <span class="hljs-attribute">transform</span>: scale(<span class="hljs-number">1.2</span>);
+    <span class="hljs-attribute">filter</span>: brightness(<span class="hljs-number">70%</span>) //背景遮罩，<span class="hljs-number">100%</span> 正常，<span class="hljs-number">0%</span> 完全黑色
+
+    &amp;:nth-child(<span class="hljs-number">1</span>)&#123;-webkit-<span class="hljs-attribute">animation-name</span>: kenburns-<span class="hljs-number">1</span>; <span class="hljs-attribute">animation-name</span>: kenburns-<span class="hljs-number">1</span>; <span class="hljs-attribute">z-index</span>: -<span class="hljs-number">2</span>;&#125;
+    &amp;:nth-child(<span class="hljs-number">2</span>)&#123;-webkit-<span class="hljs-attribute">animation-name</span>: kenburns-<span class="hljs-number">2</span>; <span class="hljs-attribute">animation-name</span>: kenburns-<span class="hljs-number">2</span>; <span class="hljs-attribute">z-index</span>: -<span class="hljs-number">3</span>;&#125;
+    &amp;:nth-child(<span class="hljs-number">3</span>)&#123;-webkit-<span class="hljs-attribute">animation-name</span>: kenburns-<span class="hljs-number">3</span>; <span class="hljs-attribute">animation-name</span>: kenburns-<span class="hljs-number">3</span>; <span class="hljs-attribute">z-index</span>: -<span class="hljs-number">4</span>;&#125;
+    &amp;:nth-child(<span class="hljs-number">4</span>)&#123;-webkit-<span class="hljs-attribute">animation-name</span>: kenburns-<span class="hljs-number">4</span>; <span class="hljs-attribute">animation-name</span>: kenburns-<span class="hljs-number">4</span>; <span class="hljs-attribute">z-index</span>: -<span class="hljs-number">5</span>;&#125;
+
+@keyframes kenburns-<span class="hljs-number">1</span>&#123;<span class="hljs-number">0%</span>&#123;<span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>; -webkit-<span class="hljs-attribute">transform</span>: scale(<span class="hljs-number">1.2</span>); <span class="hljs-attribute">transform</span>: scale(<span class="hljs-number">1.2</span>);&#125; <span class="hljs-number">1.5625%</span>&#123;<span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;&#125; <span class="hljs-number">23.4375%</span>&#123;<span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;&#125; <span class="hljs-number">26.5625%</span>&#123;<span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>; -webkit-<span class="hljs-attribute">transform</span>: scale(<span class="hljs-number">1</span>); <span class="hljs-attribute">transform</span>: scale(<span class="hljs-number">1</span>);&#125; <span class="hljs-number">100%</span>&#123;<span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>; -webkit-<span class="hljs-attribute">transform</span>: scale(<span class="hljs-number">1.2</span>); <span class="hljs-attribute">transform</span>: scale(<span class="hljs-number">1.2</span>);&#125; <span class="hljs-number">98.4375%</span>&#123;<span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>; -webkit-<span class="hljs-attribute">transform</span>: scale(<span class="hljs-number">1.21176</span>); <span class="hljs-attribute">transform</span>: scale(<span class="hljs-number">1.21176</span>);&#125; <span class="hljs-number">100%</span>&#123;<span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;&#125;&#125;
+@keyframes kenburns-<span class="hljs-number">2</span>&#123;<span class="hljs-number">23.4375%</span>&#123;<span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>; -webkit-<span class="hljs-attribute">transform</span>: scale(<span class="hljs-number">1.2</span>); <span class="hljs-attribute">transform</span>: scale(<span class="hljs-number">1.2</span>);&#125; <span class="hljs-number">26.5625%</span>&#123;<span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;&#125; <span class="hljs-number">48.4375%</span>&#123;<span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;&#125; <span class="hljs-number">51.5625%</span>&#123;<span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>; -webkit-<span class="hljs-attribute">transform</span>: scale(<span class="hljs-number">1</span>); <span class="hljs-attribute">transform</span>: scale(<span class="hljs-number">1</span>);&#125; <span class="hljs-number">100%</span>&#123;<span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>; -webkit-<span class="hljs-attribute">transform</span>: scale(<span class="hljs-number">1.2</span>); <span class="hljs-attribute">transform</span>: scale(<span class="hljs-number">1.2</span>);&#125;&#125;
+@keyframes kenburns-<span class="hljs-number">3</span>&#123;<span class="hljs-number">48.4375%</span>&#123;<span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>; -webkit-<span class="hljs-attribute">transform</span>: scale(<span class="hljs-number">1.2</span>); <span class="hljs-attribute">transform</span>: scale(<span class="hljs-number">1.2</span>);&#125; <span class="hljs-number">51.5625%</span>&#123;<span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;&#125; <span class="hljs-number">73.4375%</span>&#123;<span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;&#125; <span class="hljs-number">76.5625%</span>&#123;<span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>; -webkit-<span class="hljs-attribute">transform</span>: scale(<span class="hljs-number">1</span>); <span class="hljs-attribute">transform</span>: scale(<span class="hljs-number">1</span>);&#125; <span class="hljs-number">100%</span>&#123;<span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>; -webkit-<span class="hljs-attribute">transform</span>: scale(<span class="hljs-number">1.2</span>); <span class="hljs-attribute">transform</span>: scale(<span class="hljs-number">1.2</span>);&#125;&#125;
+@keyframes kenburns-<span class="hljs-number">4</span>&#123;<span class="hljs-number">73.4375%</span>&#123;<span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>; -webkit-<span class="hljs-attribute">transform</span>: scale(<span class="hljs-number">1.2</span>); <span class="hljs-attribute">transform</span>: scale(<span class="hljs-number">1.2</span>);&#125; <span class="hljs-number">76.5625%</span>&#123;<span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;&#125; <span class="hljs-number">98.4375%</span>&#123;<span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;&#125; <span class="hljs-number">100%</span>&#123;<span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>; -webkit-<span class="hljs-attribute">transform</span>: scale(<span class="hljs-number">1</span>); <span class="hljs-attribute">transform</span>: scale(<span class="hljs-number">1</span>);&#125;&#125;</code></pre></div><p>接着在 <code>themes\fluid\layout\layout.ejs</code> 中 <code>&lt;body&gt;</code> 后加入如下代码<br><code>background-image: url</code> 中填入图片链接</p><div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"slideshow"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"slideshow-image"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"background-image: url('1')"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"slideshow-image"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"background-image: url('2')"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"slideshow-image"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"background-image: url('3')"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"slideshow-image"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"background-image: url('4')"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre></div><p>然后取消原本头图的获取<br>用最简单的方法，直接删去获取头图的代码，保留标签(代码前面的减号是吧这行删掉的意思，加号同理)</p><div class="hljs"><pre><code class="hljs diff">  &lt;header style="height: &lt;%- banner_img_height %&gt;vh;"&gt;
+    &lt;%- partial('_partial/nav') %&gt; 
+<span class="hljs-deletion">-    &lt;div class="view intro-2" id="background" &lt;%- theme.banner_parallax &amp;&amp; 'parallax=true' %&gt;</span>
+<span class="hljs-deletion">-      style="background: url('&lt;%- url_for(banner_img) %&gt;') no-repeat center center;</span>
+<span class="hljs-deletion">-        background-size: cover;"&gt;</span>
+<span class="hljs-addition">+    &lt;div class="view intro-2" id="background"&gt;</span>
+      &lt;div class="full-bg-img"&gt;
+        &lt;div class="mask flex-center"&gt;</code></pre></div><p>将主题配置中<span class="label label-danger">所有</span>头图的黑色蒙版设为 0</p><div class="hljs"><pre><code class="hljs yaml"><span class="hljs-attr">banner_mask_alpha:</span> <span class="hljs-number">0</span>  <span class="hljs-comment"># 头图黑色蒙版的透明度，available: 0 - 1.0， 0 是完全透明（无蒙版），1 是完全不透明</span></code></pre></div><p>如果出现背景跟随滚动，请在配置文件中关闭头图滚动视差</p><div class="hljs"><pre><code class="hljs yaml"><span class="hljs-attr">banner_parallax:</span> <span class="hljs-literal">false</span> <span class="hljs-comment"># 头图滚动视差</span></code></pre></div><p>因为是依赖 <code>z-index</code> 实现的切换，建议图片大小递增排序，避免第一张图还没加载出来，第二张图先出现的情况</p><h3 id="侧边滚动条"><a class="markdownIt-Anchor" href="#侧边滚动条"></a> 侧边滚动条</h3><div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-pseudo">::-webkit-scrollbar-button</span>
+  <span class="hljs-selector-tag">display</span> <span class="hljs-selector-tag">none</span>
+
+<span class="hljs-selector-pseudo">::-webkit-scrollbar</span>
+  <span class="hljs-selector-tag">width</span> 10<span class="hljs-selector-tag">px</span>
+  <span class="hljs-selector-tag">height</span> 10<span class="hljs-selector-tag">px</span>
+  <span class="hljs-selector-tag">background-color</span>: <span class="hljs-selector-id">#2f415452</span>
+
+<span class="hljs-selector-pseudo">::-webkit-scrollbar-thumb</span>
+  <span class="hljs-selector-tag">border-radius</span> 5<span class="hljs-selector-tag">px</span>
+  <span class="hljs-selector-tag">background-color</span> <span class="hljs-selector-id">#2f4154</span>
+  <span class="hljs-selector-tag">background-image</span> <span class="hljs-selector-tag">-webkit-linear-gradient</span>(45<span class="hljs-selector-tag">deg</span>,<span class="hljs-selector-tag">rgba</span>(255,255,255,<span class="hljs-selector-class">.2</span>) 25%,<span class="hljs-selector-tag">transparent</span> 25%,<span class="hljs-selector-tag">transparent</span> 50%,<span class="hljs-selector-tag">rgba</span>(255,255,255,<span class="hljs-selector-class">.2</span>) 50%,<span class="hljs-selector-tag">rgba</span>(255,255,255,<span class="hljs-selector-class">.2</span>) 75%,<span class="hljs-selector-tag">transparent</span> 75%,<span class="hljs-selector-tag">transparent</span>)
+
+  &amp;<span class="hljs-selector-pseudo">:hover</span>
+    <span class="hljs-selector-tag">background-color</span> <span class="hljs-selector-id">#2f4154b8</span>;</code></pre></div><div class="note note-info"><p>会同时对所有滚动条生效</p></div><h3 id="返回顶部按钮"><a class="markdownIt-Anchor" href="#返回顶部按钮"></a> 返回顶部按钮</h3><p>增加动画</p><div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-id">#scroll-top-button</span> 
+  <span class="hljs-selector-tag">border-radius</span> 25<span class="hljs-selector-tag">px</span>
+  <span class="hljs-selector-tag">-webkit-transition</span> <span class="hljs-selector-tag">all</span> <span class="hljs-selector-class">.6s</span>
+  <span class="hljs-selector-tag">-moz-transition</span> <span class="hljs-selector-tag">all</span> <span class="hljs-selector-class">.6s</span>
+  <span class="hljs-selector-tag">-o-transition</span> <span class="hljs-selector-tag">all</span> <span class="hljs-selector-class">.6s</span>
+  <span class="hljs-selector-tag">transition</span> <span class="hljs-selector-tag">all</span> <span class="hljs-selector-class">.6s</span>
+
+  &amp;<span class="hljs-selector-pseudo">:hover</span> 
+    <span class="hljs-selector-tag">transform</span> <span class="hljs-selector-tag">scale</span>(1<span class="hljs-selector-class">.2</span>)
+    <span class="hljs-selector-tag">border-radius</span> 20%</code></pre></div><p>或者来试试这个样式</p><p><img src="https://gitee.com/Royce2003/blogimages/raw/master/img/20200305084052.png" srcset="https://cdn.jsdelivr.net/gh/chuyua/imges@master/BlogSource/loading.svg" alt=""></p><h4 id="css"><a class="markdownIt-Anchor" href="#css"></a> CSS</h4><p>自定义 CSS 加入下方代码</p><div class="hljs"><pre><code class="hljs stylus">#scroll-<span class="hljs-attribute">top</span>-button
+  <span class="hljs-attribute">right</span> <span class="hljs-number">50px</span> !important
+  <span class="hljs-attribute">width</span> <span class="hljs-number">70px</span>
+  <span class="hljs-attribute">height</span> <span class="hljs-number">651px</span>
+  <span class="hljs-attribute">top</span> -<span class="hljs-number">90px</span>
+  <span class="hljs-attribute">background</span> url(<span class="hljs-string">"/img/scroll.png"</span>); <span class="hljs-comment">/* 图片路径 */</span>
+  <span class="hljs-attribute">box-shadow</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-comment">/* 去除外边框的阴影 */</span>
+
+  &amp; &gt; i
+    <span class="hljs-attribute">display</span> none <span class="hljs-comment">/* 隐藏一个小箭头图标，否则会在图片上出现箭头 */</span></code></pre></div><p>最后附上图片地址</p><a class="btn" href="https://cdn.jsdelivr.net/gh/Royce2019/img/img/scroll.png" rel="external nofollow noreferrer" target="_blank">点我下载</a><p>（图源网，侵删）</p><h3 id="标题前-emoji"><a class="markdownIt-Anchor" href="#标题前-emoji"></a> 标题前 Emoji</h3><p><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p><div class="hljs"><pre><code class="hljs stylus"><span class="hljs-comment">/* 想在手机端也显示，去除最外层的 @media，并更改缩进 */</span>
+@media (<span class="hljs-attribute">min-width</span>:<span class="hljs-number">768px</span>) 
+  <span class="hljs-selector-class">.post-content</span> 
+    <span class="hljs-selector-tag">h1</span>::before
+      <span class="hljs-attribute">content</span>: <span class="hljs-string">"🌈"</span>;
+      <span class="hljs-attribute">visibility</span>: visible;
+      <span class="hljs-attribute">display</span>: inline;
+    <span class="hljs-selector-tag">h2</span>::before
+      <span class="hljs-attribute">content</span>: <span class="hljs-string">"🚀"</span>;
+      <span class="hljs-attribute">visibility</span>: visible;
+      <span class="hljs-attribute">display</span>: inline;
+    <span class="hljs-selector-tag">h3</span>::before
+      <span class="hljs-attribute">content</span>: <span class="hljs-string">"🔍"</span>;
+      <span class="hljs-attribute">visibility</span>: visible;
+      <span class="hljs-attribute">display</span>: inline;</code></pre></div><h3 id="首页图片动画"><a class="markdownIt-Anchor" href="#首页图片动画"></a> 首页图片动画</h3><p>鼠标触碰放大</p><div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-class">.index-img</span>
+  <span class="hljs-selector-tag">transition</span>: <span class="hljs-selector-class">.4s</span>;
+
+<span class="hljs-selector-class">.index-card</span><span class="hljs-selector-pseudo">:hover</span> <span class="hljs-selector-class">.index-img</span>
+  <span class="hljs-selector-tag">transform</span>: <span class="hljs-selector-tag">scale</span>(1<span class="hljs-selector-class">.1</span>);
+  <span class="hljs-selector-tag">box-shadow</span>: 0 5<span class="hljs-selector-tag">px</span> 11<span class="hljs-selector-tag">px</span> 0 <span class="hljs-selector-tag">rgba</span>(0,0,0,0<span class="hljs-selector-class">.38</span>), 0 4<span class="hljs-selector-tag">px</span> 15<span class="hljs-selector-tag">px</span> 0 <span class="hljs-selector-tag">rgba</span>(0,0,0,0<span class="hljs-selector-class">.35</span>);</code></pre></div><h3 id="底部及-toc-样式更改"><a class="markdownIt-Anchor" href="#底部及-toc-样式更改"></a> 底部及 TOC 样式更改</h3><p>因为之前的动态背景添加了遮罩导致底部链接等看不起</p><div class="hljs"><pre><code class="hljs stylus"><span class="hljs-selector-class">.tocbot-list</span> a
+<span class="hljs-selector-id">#toc</span>, <span class="hljs-selector-tag">footer</span>, <span class="hljs-selector-tag">footer</span> a
+  <span class="hljs-attribute">color</span> <span class="hljs-number">#ffffff</span>
+
+<span class="hljs-selector-tag">footer</span> <span class="hljs-selector-tag">a</span>:hover
+.tocbot-active-link
+  <span class="hljs-attribute">color</span> <span class="hljs-number">#1abc9c</span> !important</code></pre></div><h3 id="标题文字特效"><a class="markdownIt-Anchor" href="#标题文字特效"></a> 标题文字特效</h3><p><img src="https://cos.royce2003.top/60394/01.webp-default" srcset="https://cdn.jsdelivr.net/gh/chuyua/imges@master/BlogSource/loading.svg" alt="演示"></p><p>文字触碰动画（源网，找不到原站链接了）</p><div class="hljs"><pre><code class="hljs stylus"><span class="hljs-comment">/* 注意避免类名相同造成样式冲突 */</span>
+<span class="hljs-selector-class">.link</span> &#123;
+  <span class="hljs-attribute">outline</span>: none;
+  <span class="hljs-attribute">text-decoration</span>: none;
+  <span class="hljs-attribute">position</span>: relative;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">2em</span>;
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#9e9ba4</span>;
+  <span class="hljs-attribute">display</span>: inline-block;
+&#125;
+<span class="hljs-selector-class">.link--kukuri</span> &#123;
+  <span class="hljs-attribute">text-transform</span>: uppercase;
+  <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">700</span>;
+  <span class="hljs-attribute">overflow</span>: hidden;
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#2f4144</span>;
+&#125;
+
+<span class="hljs-selector-class">.link--kukuri</span>:hover &#123;
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#2f4144</span>;
+&#125;
+
+<span class="hljs-selector-class">.link--kukuri</span>::after &#123;
+  <span class="hljs-attribute">content</span>: <span class="hljs-string">''</span>;
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">top</span>: <span class="hljs-number">42%</span>;
+  <span class="hljs-attribute">margin</span>: auto;
+  <span class="hljs-attribute">right</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">background</span>: <span class="hljs-number">#F9F9F9</span>;
+  -webkit-<span class="hljs-attribute">transform</span>: translate3d(-<span class="hljs-number">100%</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>);
+  <span class="hljs-attribute">transform</span>: translate3d(-<span class="hljs-number">100%</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>);
+  -webkit-<span class="hljs-attribute">transition</span>: -webkit-transform <span class="hljs-number">0.4s</span>;
+  <span class="hljs-attribute">transition</span>: transform <span class="hljs-number">0.4s</span>;
+  -webkit-<span class="hljs-attribute">transition-timing-function</span>: cubic-bezier(<span class="hljs-number">0.7</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0.3</span>,<span class="hljs-number">1</span>);
+  <span class="hljs-attribute">transition-timing-function</span>: cubic-bezier(<span class="hljs-number">0.7</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0.3</span>,<span class="hljs-number">1</span>);
+&#125;
+
+<span class="hljs-selector-class">.link--kukuri</span>:hover::after &#123;
+  -webkit-<span class="hljs-attribute">transform</span>: translate3d(<span class="hljs-number">100%</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>);
+  <span class="hljs-attribute">transform</span>: translate3d(<span class="hljs-number">100%</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>);
+&#125;
+
+<span class="hljs-selector-class">.link--kukuri</span>::before &#123;
+  <span class="hljs-attribute">border</span>:<span class="hljs-number">0px</span> solid;
+  <span class="hljs-attribute">content</span>: attr(data-letters);
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">z-index</span>: <span class="hljs-number">2</span>;
+  <span class="hljs-attribute">overflow</span>: hidden;
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#ff779a</span>;
+  <span class="hljs-attribute">white-space</span>: nowrap;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">0%</span>;
+  -webkit-<span class="hljs-attribute">transition</span>: width <span class="hljs-number">0.4s</span> <span class="hljs-number">0.3s</span>;
+  <span class="hljs-attribute">transition</span>: width <span class="hljs-number">0.4s</span> <span class="hljs-number">0.3s</span>;
+&#125;
+
+<span class="hljs-selector-class">.link--kukuri</span>:hover::before &#123;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+&#125;</code></pre></div><p>然后在你想显示的地方插入如下 HTML</p><div class="note note-primary"><p>data-letters 中需要和内容保持一致<br>不用 a 标签也可以，保证类名正确</p></div><div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"link link--kukuri"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"test.test"</span> <span class="hljs-attr">data-letters</span>=<span class="hljs-string">"test"</span>&gt;</span>test<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></code></pre></div><h3 id="留言板"><a class="markdownIt-Anchor" href="#留言板"></a> 留言板</h3><p>在 <code>themes\hexo-theme-fluid-master\layout\</code> 中新建 <code>messageboard.ejs</code> 文件<br>先写上头图之类的设定</p><div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">%</span></span>
+<span class="hljs-tag"><span class="hljs-attr">page.layout</span> = <span class="hljs-string">"messageboard"</span></span>
+<span class="hljs-tag"><span class="hljs-attr">page.title</span> = <span class="hljs-string">theme.messageboard.title</span> || <span class="hljs-attr">__</span>('<span class="hljs-attr">messageboard.title</span>')</span>
+<span class="hljs-tag"><span class="hljs-attr">page.subtitle</span> = <span class="hljs-string">theme.messageboard.subtitle</span> || <span class="hljs-attr">__</span>('<span class="hljs-attr">messageboard.subtitle</span>')</span>
+<span class="hljs-tag"><span class="hljs-attr">page.banner_img</span> = <span class="hljs-string">theme.messageboard.banner_img</span></span>
+<span class="hljs-tag"><span class="hljs-attr">page.banner_img_height</span> = <span class="hljs-string">theme.messageboard.banner_img_height</span></span>
+<span class="hljs-tag">%&gt;</span></code></pre></div><p>然后在配置文件中加入相应内容，当然，你也可以直接在上面的代码中指定</p><div class="hljs"><pre><code class="hljs yaml"><span class="hljs-comment">#---------------------------</span>
+<span class="hljs-comment"># 留言板页</span>
+<span class="hljs-comment"># Messageboard Page</span>
+<span class="hljs-comment">#---------------------------</span>
+<span class="hljs-attr">messageboard:</span>
+  <span class="hljs-attr">banner_img:</span> 			<span class="hljs-comment"># 头图</span>
+  <span class="hljs-attr">banner_img_height:</span>  	<span class="hljs-comment"># available: 0 - 100</span>
+  <span class="hljs-attr">subtitle:</span>  			<span class="hljs-comment"># 打字机内容</span></code></pre></div><p>语言文件中也是一样的，这里就不写了</p><h4 id="引入评论"><a class="markdownIt-Anchor" href="#引入评论"></a> 引入评论</h4><p>刚刚创建的 ejs 文件中</p><div class="hljs"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- Comments --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container comments mx-auto"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"comments"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">%</span> <span class="hljs-attr">if</span>(<span class="hljs-attr">theme.post.comments.enable</span>) &#123; %&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">%</span> <span class="hljs-attr">var</span> <span class="hljs-attr">type</span> = <span class="hljs-string">'_partial/comments/'</span> + <span class="hljs-attr">theme.post.comments.type</span> %&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">%-</span> <span class="hljs-attr">partial</span>(<span class="hljs-attr">type</span>) %&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">%</span> &#125; %&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre></div><p>自定义内容写在评论代码之前就好了，支持 HTML</p><p>然后两种方法开启，二选一即可</p><h4 id="1"><a class="markdownIt-Anchor" href="#1"></a> 1</h4><p>在根目录的 <code>source</code> 文件夹中创建 <code>messageboard.md</code><br>并在 <code>front-matter</code> 中加上 <code>layout: messageboard</code><br>和 about 界面的方法一样</p><h4 id="2"><a class="markdownIt-Anchor" href="#2"></a> 2</h4><p>在 <code>themes\fluid\scripts\pages.js</code> 文件中加入如下代码</p><div class="hljs"><pre><code class="hljs js"><span class="hljs-comment">// generate messageboard page</span>
+hexo.extend.generator.register(<span class="hljs-string">'_messageboard'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">locals</span>) </span>&#123;
+  <span class="hljs-keyword">return</span> &#123;
+    path: <span class="hljs-string">'messageboard/index.html'</span>,
+    data: locals.theme,
+    layout: <span class="hljs-string">'messageboard'</span>,
+  &#125;;
+&#125;);</code></pre></div><h3 id="更好看的音乐播放器"><a class="markdownIt-Anchor" href="#更好看的音乐播放器"></a> 更好看的音乐播放器</h3><p><sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></p><p>本身的 aplayer 个人觉得并不是很好看，而且是全局的<br>换了给好看点的播放器，在指定页面加载<br>需要加载的页面加入</p><p><img src="https://cos.royce2003.top/60394/02.webp-default" srcset="https://cdn.jsdelivr.net/gh/chuyua/imges@master/BlogSource/loading.svg" alt=""></p><h4 id="js"><a class="markdownIt-Anchor" href="#js"></a> JS</h4><p>自定义 js 里加入</p><div class="hljs"><pre><code class="hljs js">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">var</span> dr = $(<span class="hljs-string">"#dowebok"</span>);
+    <span class="hljs-keyword">if</span>(!dr.length &gt; <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span>;
+    dr.append(<span class="hljs-string">"&lt;div id=\"player\"&gt;&lt;div id=\"player-track\"&gt;&lt;div id=\"album-name\"&gt;&lt;/div&gt;&lt;div id=\"track-name\"&gt;&lt;/div&gt;&lt;div id=\"track-time\"&gt;&lt;div id=\"current-time\"&gt;&lt;/div&gt;&lt;div id=\"track-length\"&gt;&lt;/div&gt;&lt;/div&gt;&lt;div id=\"s-area\"&gt;&lt;div id=\"ins-time\"&gt;&lt;/div&gt;&lt;div id=\"s-hover\"&gt;&lt;/div&gt;&lt;div id=\"seek-bar\"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div id=\"player-content\"&gt;&lt;div id=\"album-art\"&gt;&lt;img src=\"images/1.jpg\" class=\"active\" id=\"album-pic\"&gt;&lt;div id=\"buffer-box\"&gt;加载中...&lt;/div&gt;&lt;/div&gt;&lt;div id=\"player-controls\"&gt;&lt;div class=\"control\"&gt;&lt;div class=\"player-button\" id=\"play-previous\"&gt;&lt;i class=\"fas fa-backward\"&gt;&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=\"control\"&gt;&lt;div class=\"player-button\" id=\"play-pause-button\"&gt;&lt;i class=\"fas fa-play\"&gt;&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=\"control\"&gt;&lt;div class=\"player-button\" id=\"play-next\"&gt;&lt;i class=\"fas fa-forward\"&gt;&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;"</span>);
+    <span class="hljs-keyword">var</span> playerTrack = $(<span class="hljs-string">"#player-track"</span>),
+        albumName = $(<span class="hljs-string">'#album-name'</span>),
+        trackName = $(<span class="hljs-string">'#track-name'</span>),
+        albumArt = $(<span class="hljs-string">'#album-art'</span>),
+        sArea = $(<span class="hljs-string">'#s-area'</span>),
+        seekBar = $(<span class="hljs-string">'#seek-bar'</span>),
+        trackTime = $(<span class="hljs-string">'#track-time'</span>),
+        insTime = $(<span class="hljs-string">'#ins-time'</span>),
+        sHover = $(<span class="hljs-string">'#s-hover'</span>),
+        playPauseButton = $(<span class="hljs-string">"#play-pause-button"</span>),
+        i = playPauseButton.find(<span class="hljs-string">'i'</span>),
+        tProgress = $(<span class="hljs-string">'#current-time'</span>),
+        tTime = $(<span class="hljs-string">'#track-length'</span>),
+        seekT, seekLoc, seekBarPos, cM, ctMinutes, ctSeconds, curMinutes, curSeconds, durMinutes, durSeconds, playProgress, bTime, nTime = <span class="hljs-number">0</span>,
+        buffInterval = <span class="hljs-literal">null</span>,
+        tFlag = <span class="hljs-literal">false</span>,
+        playPreviousTrackButton = $(<span class="hljs-string">'#play-previous'</span>),
+        playNextTrackButton = $(<span class="hljs-string">'#play-next'</span>);
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">playPause</span>(<span class="hljs-params"></span>) </span>&#123;
+        setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+            <span class="hljs-keyword">if</span> (audio.paused) &#123;
+                playerTrack.addClass(<span class="hljs-string">'active'</span>);
+                albumArt.addClass(<span class="hljs-string">'active'</span>);
+                checkBuffering();
+                i.attr(<span class="hljs-string">'class'</span>, <span class="hljs-string">'fas fa-pause'</span>);
+                audio.play();
+            &#125; <span class="hljs-keyword">else</span> &#123;
+                playerTrack.removeClass(<span class="hljs-string">'active'</span>);
+                albumArt.removeClass(<span class="hljs-string">'active'</span>);
+                clearInterval(buffInterval);
+                albumArt.removeClass(<span class="hljs-string">'buffering'</span>);
+                i.attr(<span class="hljs-string">'class'</span>, <span class="hljs-string">'fas fa-play'</span>);
+                audio.pause();
+            &#125;
+        &#125;, <span class="hljs-number">300</span>);
+    &#125;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showHover</span>(<span class="hljs-params">event</span>) </span>&#123;
+        seekBarPos = sArea.offset();
+        seekT = event.clientX - seekBarPos.left;
+        seekLoc = audio.duration * (seekT / sArea.outerWidth());
+        sHover.width(seekT);
+        cM = seekLoc / <span class="hljs-number">60</span>;
+        ctMinutes = <span class="hljs-built_in">Math</span>.floor(cM);
+        ctSeconds = <span class="hljs-built_in">Math</span>.floor(seekLoc - ctMinutes * <span class="hljs-number">60</span>);
+        <span class="hljs-keyword">if</span> ((ctMinutes &lt; <span class="hljs-number">0</span>) || (ctSeconds &lt; <span class="hljs-number">0</span>)) <span class="hljs-keyword">return</span>;
+        <span class="hljs-keyword">if</span> (ctMinutes &lt; <span class="hljs-number">10</span>) ctMinutes = <span class="hljs-string">'0'</span> + ctMinutes;
+        <span class="hljs-keyword">if</span> (ctSeconds &lt; <span class="hljs-number">10</span>) ctSeconds = <span class="hljs-string">'0'</span> + ctSeconds;
+        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">isNaN</span>(ctMinutes) || <span class="hljs-built_in">isNaN</span>(ctSeconds)) insTime.text(<span class="hljs-string">'--:--'</span>);
+        <span class="hljs-keyword">else</span> insTime.text(ctMinutes + <span class="hljs-string">':'</span> + ctSeconds);
+        insTime.css(&#123;
+            <span class="hljs-string">'left'</span>: seekT,
+            <span class="hljs-string">'margin-left'</span>: <span class="hljs-string">'-21px'</span>
+        &#125;).fadeIn(<span class="hljs-number">0</span>);
+    &#125;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hideHover</span>(<span class="hljs-params"></span>) </span>&#123;
+        sHover.width(<span class="hljs-number">0</span>);
+        insTime.text(<span class="hljs-string">'00:00'</span>).css(&#123;
+            <span class="hljs-string">'left'</span>: <span class="hljs-string">'0px'</span>,
+            <span class="hljs-string">'margin-left'</span>: <span class="hljs-string">'0px'</span>
+        &#125;).fadeOut(<span class="hljs-number">0</span>);
+    &#125;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">playFromClickedPos</span>(<span class="hljs-params"></span>) </span>&#123;
+        audio.currentTime = seekLoc;
+        seekBar.width(seekT);
+        hideHover();
+    &#125;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">updateCurrTime</span>(<span class="hljs-params"></span>) </span>&#123;
+        nTime = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();
+        nTime = nTime.getTime();
+        <span class="hljs-keyword">if</span> (!tFlag) &#123;
+            tFlag = <span class="hljs-literal">true</span>;
+            trackTime.addClass(<span class="hljs-string">'active'</span>);
+        &#125;
+        curMinutes = <span class="hljs-built_in">Math</span>.floor(audio.currentTime / <span class="hljs-number">60</span>);
+        curSeconds = <span class="hljs-built_in">Math</span>.floor(audio.currentTime - curMinutes * <span class="hljs-number">60</span>);
+        durMinutes = <span class="hljs-built_in">Math</span>.floor(audio.duration / <span class="hljs-number">60</span>);
+        durSeconds = <span class="hljs-built_in">Math</span>.floor(audio.duration - durMinutes * <span class="hljs-number">60</span>);
+        playProgress = (audio.currentTime / audio.duration) * <span class="hljs-number">100</span>;
+        <span class="hljs-keyword">if</span> (curMinutes &lt; <span class="hljs-number">10</span>) curMinutes = <span class="hljs-string">'0'</span> + curMinutes;
+        <span class="hljs-keyword">if</span> (curSeconds &lt; <span class="hljs-number">10</span>) curSeconds = <span class="hljs-string">'0'</span> + curSeconds;
+        <span class="hljs-keyword">if</span> (durMinutes &lt; <span class="hljs-number">10</span>) durMinutes = <span class="hljs-string">'0'</span> + durMinutes;
+        <span class="hljs-keyword">if</span> (durSeconds &lt; <span class="hljs-number">10</span>) durSeconds = <span class="hljs-string">'0'</span> + durSeconds;
+        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">isNaN</span>(curMinutes) || <span class="hljs-built_in">isNaN</span>(curSeconds)) tProgress.text(<span class="hljs-string">'00:00'</span>);
+        <span class="hljs-keyword">else</span> tProgress.text(curMinutes + <span class="hljs-string">':'</span> + curSeconds);
+        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">isNaN</span>(durMinutes) || <span class="hljs-built_in">isNaN</span>(durSeconds)) tTime.text(<span class="hljs-string">'00:00'</span>);
+        <span class="hljs-keyword">else</span> tTime.text(durMinutes + <span class="hljs-string">':'</span> + durSeconds);
+        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">isNaN</span>(curMinutes) || <span class="hljs-built_in">isNaN</span>(curSeconds) || <span class="hljs-built_in">isNaN</span>(durMinutes) || <span class="hljs-built_in">isNaN</span>(durSeconds)) trackTime.removeClass(<span class="hljs-string">'active'</span>);
+        <span class="hljs-keyword">else</span> trackTime.addClass(<span class="hljs-string">'active'</span>);
+        seekBar.width(playProgress + <span class="hljs-string">'%'</span>);
+        <span class="hljs-keyword">if</span> (playProgress == <span class="hljs-number">100</span>) &#123;
+            i.attr(<span class="hljs-string">'class'</span>, <span class="hljs-string">'fa fa-play'</span>);
+            seekBar.width(<span class="hljs-number">0</span>);
+            tProgress.text(<span class="hljs-string">'00:00'</span>);
+            albumArt.removeClass(<span class="hljs-string">'buffering'</span>).removeClass(<span class="hljs-string">'active'</span>);
+            clearInterval(buffInterval);
+        &#125;
+    &#125;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkBuffering</span>(<span class="hljs-params"></span>) </span>&#123;
+        clearInterval(buffInterval);
+        buffInterval = setInterval(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+            <span class="hljs-keyword">if</span> ((nTime == <span class="hljs-number">0</span>) || (bTime - nTime) &gt; <span class="hljs-number">1000</span>) albumArt.addClass(<span class="hljs-string">'buffering'</span>);
+            <span class="hljs-keyword">else</span> albumArt.removeClass(<span class="hljs-string">'buffering'</span>);
+            bTime = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();
+            bTime = bTime.getTime();
+        &#125;, <span class="hljs-number">100</span>);
+    &#125;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">selectTrack2</span>(<span class="hljs-params">flag</span>) </span>&#123;
+        <span class="hljs-comment">//歌单api调用 https://api.uomg.com/doc-rand.music.html</span>
+        $.getJSON(<span class="hljs-string">'https://api.uomg.com/api/rand.music?'</span>, &#123;
+            sort: <span class="hljs-string">"热歌榜"</span>, <span class="hljs-comment">//选择输出分类[热歌榜|新歌榜|飙升榜|抖音榜|电音榜]，为空输出热歌榜</span>
+            <span class="hljs-comment">// mid: 12345,		歌单 id</span>
+            <span class="hljs-comment">// sort mid 二选一</span>
+            format: <span class="hljs-string">'json'</span>
+        &#125;, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">json, textStatus</span>) </span>&#123;
+            <span class="hljs-keyword">if</span> (json.code == <span class="hljs-number">1</span>) &#123;
+                <span class="hljs-keyword">if</span> (flag == <span class="hljs-number">0</span>) i.attr(<span class="hljs-string">'class'</span>, <span class="hljs-string">'fa fa-play'</span>);
+                <span class="hljs-keyword">else</span> &#123;
+                    albumArt.removeClass(<span class="hljs-string">'buffering'</span>);
+                    i.attr(<span class="hljs-string">'class'</span>, <span class="hljs-string">'fa fa-pause'</span>);
+                &#125;
+                seekBar.width(<span class="hljs-number">0</span>);
+                trackTime.removeClass(<span class="hljs-string">'active'</span>);
+                tProgress.text(<span class="hljs-string">'00:00'</span>);
+                tTime.text(<span class="hljs-string">'00:00'</span>);
+                currAlbum = json.data.artistsname;
+                currTrackName = json.data.name;
+                currArtwork = json.data.picurl;
+                audio.src = json.data.url;
+                nTime = <span class="hljs-number">0</span>;
+                bTime = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();
+                bTime = bTime.getTime();
+                <span class="hljs-keyword">if</span> (flag != <span class="hljs-number">0</span>) &#123;
+                    audio.play();
+                    playerTrack.addClass(<span class="hljs-string">'active'</span>);
+                    albumArt.addClass(<span class="hljs-string">'active'</span>);
+                    clearInterval(buffInterval);
+                    checkBuffering();
+                &#125;
+                albumName.text(currAlbum);
+                trackName.text(currTrackName);
+                albumArt.find(<span class="hljs-string">'img.active'</span>).removeClass(<span class="hljs-string">'active'</span>);
+                $(<span class="hljs-string">'#album-pic'</span>).addClass(<span class="hljs-string">'active'</span>);
+                $(<span class="hljs-string">'#album-pic'</span>).attr(<span class="hljs-string">'src'</span>,currArtwork);
+            &#125;
+        &#125;);
+    &#125;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">initPlayer</span>(<span class="hljs-params"></span>) </span>&#123;
+        audio = <span class="hljs-keyword">new</span> Audio();
+        selectTrack2(<span class="hljs-number">1</span>); <span class="hljs-comment">//非0自动播放</span>
+        audio.loop = <span class="hljs-literal">false</span>;
+        playPauseButton.on(<span class="hljs-string">'click'</span>, playPause);
+        sArea.mousemove(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>&#123;
+            showHover(event);
+        &#125;);
+        sArea.mouseout(hideHover);
+        sArea.on(<span class="hljs-string">'click'</span>, playFromClickedPos);
+        $(audio).on(<span class="hljs-string">'timeupdate'</span>, updateCurrTime);
+        playPreviousTrackButton.on(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+            selectTrack2(<span class="hljs-number">-1</span>);
+        &#125;);
+        playNextTrackButton.on(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+            selectTrack2(<span class="hljs-number">1</span>);
+        &#125;);
+    &#125;
+    initPlayer();
+&#125;)();</code></pre></div><h4 id="css-2"><a class="markdownIt-Anchor" href="#css-2"></a> CSS</h4><p>自定义 CSS 中加入</p><div class="hljs"><pre><code class="hljs stylus">#dowebok
+  <span class="hljs-attribute">right</span> <span class="hljs-number">0</span>
+  <span class="hljs-attribute">left</span> <span class="hljs-number">0</span>
+  <span class="hljs-attribute">width</span> <span class="hljs-number">430px</span>
+  <span class="hljs-attribute">height</span> <span class="hljs-number">100px</span>
+  <span class="hljs-attribute">margin</span> <span class="hljs-number">100px</span> auto <span class="hljs-number">100px</span>
+
+#player
+  <span class="hljs-attribute">position</span> relative
+  <span class="hljs-attribute">height</span> <span class="hljs-number">100%</span>
+  <span class="hljs-attribute">z-index</span> <span class="hljs-number">3</span>
+
+#player-track
+  <span class="hljs-attribute">position</span> absolute
+  <span class="hljs-attribute">top</span> <span class="hljs-number">0</span>
+  <span class="hljs-attribute">right</span> <span class="hljs-number">15px</span>
+  <span class="hljs-attribute">left</span> <span class="hljs-number">15px</span>
+  <span class="hljs-attribute">padding</span> <span class="hljs-number">13px</span> <span class="hljs-number">22px</span> <span class="hljs-number">10px</span> <span class="hljs-number">184px</span>
+  <span class="hljs-attribute">background-color</span> <span class="hljs-number">#fff7f7</span>
+  <span class="hljs-attribute">border-radius</span> <span class="hljs-number">15px</span> <span class="hljs-number">15px</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span>
+  <span class="hljs-attribute">transition</span> <span class="hljs-number">0.3s</span> ease top
+  <span class="hljs-attribute">z-index</span> <span class="hljs-number">1</span>
+
+  &amp;.active
+    <span class="hljs-attribute">top</span> -<span class="hljs-number">80px</span>
+
+<span class="hljs-selector-id">#album-name</span> 
+  <span class="hljs-attribute">color</span> <span class="hljs-number">#54576f</span>
+  <span class="hljs-attribute">font-size</span> <span class="hljs-number">17px</span>
+  <span class="hljs-attribute">font-weight</span> bold
+
+#track-name
+  <span class="hljs-attribute">color</span> <span class="hljs-number">#acaebd</span>
+  <span class="hljs-attribute">font-size</span> <span class="hljs-number">11px</span>
+  <span class="hljs-attribute">white-space</span>: nowrap; 
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>; 
+  <span class="hljs-attribute">overflow</span>: hidden;
+  <span class="hljs-attribute">text-overflow</span>:ellipsis;
+
+#track-time
+  <span class="hljs-attribute">height</span> <span class="hljs-number">12px</span>
+  <span class="hljs-attribute">margin-bottom</span> <span class="hljs-number">3px</span>
+
+  &amp;.active
+    <span class="hljs-selector-id">#current-time</span>, #track-length
+      <span class="hljs-attribute">color</span> <span class="hljs-number">#f86d92</span>;
+      <span class="hljs-attribute">background-color</span> transparent
+
+<span class="hljs-selector-id">#current-time</span> 
+  <span class="hljs-attribute">float</span> left
+
+<span class="hljs-selector-id">#track-length</span> 
+  <span class="hljs-attribute">float</span> right
+
+<span class="hljs-selector-id">#current-time</span>,
+#track-length
+  <span class="hljs-attribute">color</span> transparent
+  <span class="hljs-attribute">font-size</span> <span class="hljs-number">11px</span>
+  <span class="hljs-attribute">background-color</span> <span class="hljs-number">#ffe8ee</span>
+  <span class="hljs-attribute">border-radius</span> <span class="hljs-number">10px</span>
+  <span class="hljs-attribute">transition</span> <span class="hljs-number">0.3s</span> ease all
+
+
+<span class="hljs-selector-id">#s-area</span>,
+#seek-bar
+  <span class="hljs-attribute">position</span> relative
+  <span class="hljs-attribute">height</span> <span class="hljs-number">4px</span>
+  <span class="hljs-attribute">border-radius</span> <span class="hljs-number">4px</span>
+
+#s-area
+  <span class="hljs-attribute">background-color</span> <span class="hljs-number">#ffe8ee</span>
+  <span class="hljs-attribute">cursor</span> pointer
+
+<span class="hljs-selector-id">#ins-time</span> 
+  <span class="hljs-attribute">position</span> absolute
+  <span class="hljs-attribute">top</span> -<span class="hljs-number">29px</span>
+  <span class="hljs-attribute">color</span> <span class="hljs-number">#fff</span>
+  <span class="hljs-attribute">font-size</span> <span class="hljs-number">12px</span>
+  <span class="hljs-attribute">white-space</span> pre
+  <span class="hljs-attribute">padding</span> <span class="hljs-number">5px</span> <span class="hljs-number">6px</span>
+  <span class="hljs-attribute">border-radius</span> <span class="hljs-number">4px</span>
+  <span class="hljs-attribute">display</span> none;
+  <span class="hljs-attribute">background-color</span> <span class="hljs-number">#3b3d50</span>
+
+#s-hover
+  <span class="hljs-attribute">position</span> absolute
+  <span class="hljs-attribute">top</span> <span class="hljs-number">0</span>
+  <span class="hljs-attribute">bottom</span> <span class="hljs-number">0</span>
+  <span class="hljs-attribute">left</span> <span class="hljs-number">0</span>
+  <span class="hljs-attribute">opacity</span> <span class="hljs-number">0.2</span>
+  <span class="hljs-attribute">z-index</span> <span class="hljs-number">2</span>
+  <span class="hljs-attribute">background-color</span> <span class="hljs-number">#3b3d50</span>
+
+
+#seek-bar
+  <span class="hljs-attribute">content</span> <span class="hljs-string">''</span>
+  <span class="hljs-attribute">position</span> absolute
+  <span class="hljs-attribute">top</span> <span class="hljs-number">0</span>
+  <span class="hljs-attribute">bottom</span> <span class="hljs-number">0</span>
+  <span class="hljs-attribute">left</span> <span class="hljs-number">0</span>
+  <span class="hljs-attribute">width</span> <span class="hljs-number">0</span>
+  <span class="hljs-attribute">background-color</span> <span class="hljs-number">#fd6d94</span>
+  <span class="hljs-attribute">transition</span> <span class="hljs-number">0.2s</span> ease width
+  <span class="hljs-attribute">z-index</span> <span class="hljs-number">1</span>
+
+#player-<span class="hljs-attribute">content</span>
+  <span class="hljs-attribute">position</span> relative
+  <span class="hljs-attribute">height</span> <span class="hljs-number">100%</span>
+  <span class="hljs-attribute">background-color</span> <span class="hljs-number">#fff</span>
+  <span class="hljs-attribute">box-shadow</span> <span class="hljs-number">0</span> <span class="hljs-number">30px</span> <span class="hljs-number">80px</span> <span class="hljs-number">#656565</span>
+  <span class="hljs-attribute">border-radius</span> <span class="hljs-number">15px</span>
+  <span class="hljs-attribute">z-index</span> <span class="hljs-number">2</span>
+
+#album-art
+  <span class="hljs-attribute">position</span> absolute
+  <span class="hljs-attribute">top</span> -<span class="hljs-number">40px</span>
+  <span class="hljs-attribute">width</span> <span class="hljs-number">115px</span>
+  <span class="hljs-attribute">height</span> <span class="hljs-number">115px</span>
+  <span class="hljs-attribute">margin-left</span> <span class="hljs-number">40px</span>
+  -webkit-<span class="hljs-attribute">transform</span> rotateZ(<span class="hljs-number">0</span>)
+  <span class="hljs-attribute">transform</span> rotateZ(<span class="hljs-number">0</span>)
+  <span class="hljs-attribute">transition</span> <span class="hljs-number">0.3s</span> ease all
+  <span class="hljs-attribute">box-shadow</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">10px</span> <span class="hljs-number">#fff</span>
+  <span class="hljs-attribute">border-radius</span> <span class="hljs-number">50%</span>
+  <span class="hljs-attribute">overflow</span> hidden
+
+  .buffering
+    #buffer-box
+      <span class="hljs-attribute">opacity</span> <span class="hljs-number">1</span>
+
+    img
+      <span class="hljs-attribute">opacity</span> <span class="hljs-number">0.25</span>
+
+      .active
+        <span class="hljs-attribute">opacity</span> <span class="hljs-number">0.8</span>
+        <span class="hljs-attribute">filter</span> blur(<span class="hljs-number">2px</span>)
+        -webkit-<span class="hljs-attribute">filter</span> blur(<span class="hljs-number">2px</span>)
+
+  <span class="hljs-selector-tag">img</span> 
+    <span class="hljs-attribute">display</span> block;
+    <span class="hljs-attribute">position</span> absolute;
+    <span class="hljs-attribute">top</span> <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">left</span> <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">width</span> <span class="hljs-number">100%</span>;
+    <span class="hljs-attribute">height</span> <span class="hljs-number">100%</span>;
+    <span class="hljs-attribute">opacity</span> <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">z-index</span> -<span class="hljs-number">1</span>;
+    <span class="hljs-attribute">transition</span> <span class="hljs-number">0.1s</span> linear all
+
+    &amp;<span class="hljs-selector-class">.active</span> 
+      <span class="hljs-attribute">opacity</span> <span class="hljs-number">1</span>;
+      <span class="hljs-attribute">z-index</span> <span class="hljs-number">1</span>;
+
+  &amp;<span class="hljs-selector-class">.active</span> 
+    <span class="hljs-attribute">top</span> -<span class="hljs-number">60px</span>
+    <span class="hljs-attribute">box-shadow</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">4px</span> <span class="hljs-number">#fff7f7</span>, <span class="hljs-number">0</span> <span class="hljs-number">30px</span> <span class="hljs-number">50px</span> -<span class="hljs-number">15px</span> <span class="hljs-number">#afb7c1</span>
+
+    <span class="hljs-selector-tag">img</span><span class="hljs-selector-class">.active</span> 
+      <span class="hljs-attribute">z-index</span> <span class="hljs-number">1</span>;
+      -webkit-<span class="hljs-attribute">animation</span> rotateAlbumArt <span class="hljs-number">3s</span> linear <span class="hljs-number">0s</span> infinite forwards;
+      <span class="hljs-attribute">animation</span> rotateAlbumArt <span class="hljs-number">3s</span> linear <span class="hljs-number">0s</span> infinite forwards;
+
+  &amp;::before 
+    <span class="hljs-attribute">content</span> <span class="hljs-string">''</span>
+    <span class="hljs-attribute">position</span> absolute
+    <span class="hljs-attribute">top</span> <span class="hljs-number">50%</span>
+    <span class="hljs-attribute">right</span> <span class="hljs-number">0</span>
+    <span class="hljs-attribute">left</span> <span class="hljs-number">0</span>
+    <span class="hljs-attribute">width</span> <span class="hljs-number">20px</span>
+    <span class="hljs-attribute">height</span> <span class="hljs-number">20px</span>
+    <span class="hljs-attribute">margin</span> -<span class="hljs-number">10px</span> auto <span class="hljs-number">0</span> auto
+    <span class="hljs-attribute">background-color</span> <span class="hljs-number">#d6dee7</span>
+    <span class="hljs-attribute">border-radius</span> <span class="hljs-number">50%</span>
+    <span class="hljs-attribute">box-shadow</span> inset <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">2px</span> <span class="hljs-number">#fff</span>
+    <span class="hljs-attribute">z-index</span> <span class="hljs-number">2</span>
+
+@-webkit-keyframes rotateAlbumArt
+  <span class="hljs-number">0%</span>
+    -webkit-<span class="hljs-attribute">transform</span>: rotateZ(<span class="hljs-number">0</span>)
+    <span class="hljs-attribute">transform</span>: rotateZ(<span class="hljs-number">0</span>)
+  <span class="hljs-number">100%</span>
+    -webkit-<span class="hljs-attribute">transform</span>: rotateZ(<span class="hljs-number">360deg</span>)
+    <span class="hljs-attribute">transform</span>: rotateZ(<span class="hljs-number">360deg</span>)
+@keyframes rotateAlbumArt
+  <span class="hljs-number">0%</span>
+    -webkit-<span class="hljs-attribute">transform</span>: rotateZ(<span class="hljs-number">0</span>)
+    <span class="hljs-attribute">transform</span>: rotateZ(<span class="hljs-number">0</span>)
+  <span class="hljs-number">100%</span>
+    -webkit-<span class="hljs-attribute">transform</span>: rotateZ(<span class="hljs-number">360deg</span>)
+    <span class="hljs-attribute">transform</span>: rotateZ(<span class="hljs-number">360deg</span>)
+
+#buffer-box
+  <span class="hljs-attribute">position</span> absolute
+  <span class="hljs-attribute">top</span> <span class="hljs-number">50%</span>
+  <span class="hljs-attribute">right</span> <span class="hljs-number">0</span>
+  <span class="hljs-attribute">left</span> <span class="hljs-number">0</span>
+  <span class="hljs-attribute">height</span> <span class="hljs-number">13px</span>
+  <span class="hljs-attribute">color</span> <span class="hljs-number">#1f1f1f</span>
+  <span class="hljs-attribute">font-size</span> <span class="hljs-number">13px</span>
+  <span class="hljs-attribute">font-family</span> Helvetica
+  <span class="hljs-attribute">text-align</span> center
+  <span class="hljs-attribute">font-weight</span> bold
+  <span class="hljs-attribute">line-height</span> <span class="hljs-number">1</span>
+  <span class="hljs-attribute">padding</span> <span class="hljs-number">6px</span>
+  <span class="hljs-attribute">margin</span> -<span class="hljs-number">12px</span> auto <span class="hljs-number">0</span> auto
+  <span class="hljs-attribute">background-color</span> rgba(<span class="hljs-number">255</span>, <span class="hljs-number">255</span>, <span class="hljs-number">255</span>, <span class="hljs-number">0.19</span>)
+  <span class="hljs-attribute">opacity</span> <span class="hljs-number">0</span>
+  <span class="hljs-attribute">z-index</span> <span class="hljs-number">2</span>
+  <span class="hljs-attribute">transition</span> <span class="hljs-number">0.1s</span> linear all
+
+#player-controls
+  <span class="hljs-attribute">width</span> <span class="hljs-number">250px</span>
+  <span class="hljs-attribute">height</span> <span class="hljs-number">100%</span>
+  <span class="hljs-attribute">margin</span> <span class="hljs-number">0</span> <span class="hljs-number">5px</span> <span class="hljs-number">0</span> <span class="hljs-number">141px</span>
+  <span class="hljs-attribute">float</span> right
+  <span class="hljs-attribute">overflow</span> hidden
+
+.control
+  <span class="hljs-attribute">width</span> <span class="hljs-number">33.333%</span>
+  <span class="hljs-attribute">float</span> left
+  <span class="hljs-attribute">padding</span> <span class="hljs-number">12px</span> <span class="hljs-number">0</span>
+
+.player-button
+  <span class="hljs-attribute">padding</span> <span class="hljs-number">25px</span>
+  <span class="hljs-attribute">background-color</span> <span class="hljs-number">#fff</span>
+  <span class="hljs-attribute">border-radius</span> <span class="hljs-number">6px</span>
+  <span class="hljs-attribute">cursor</span> pointer
+  <span class="hljs-attribute">transition</span> <span class="hljs-number">0.2s</span> ease all
+
+  i
+    <span class="hljs-attribute">display</span> block
+    <span class="hljs-attribute">color</span> <span class="hljs-number">#d6dee7</span>
+    <span class="hljs-attribute">font-size</span> <span class="hljs-number">26px</span>
+    <span class="hljs-attribute">text-align</span> center
+    <span class="hljs-attribute">line-height</span> <span class="hljs-number">1</span>
+    <span class="hljs-attribute">transition</span> <span class="hljs-number">0.2s</span> ease all
+
+  &amp;:hover
+    <span class="hljs-attribute">background-color</span> <span class="hljs-number">#d6d6de</span>
+
+    i
+      <span class="hljs-attribute">color</span> <span class="hljs-number">#fff</span>
+
+@media (<span class="hljs-attribute">max-width</span>:<span class="hljs-number">768px</span>)
+  #dowebok
+    <span class="hljs-attribute">width</span> <span class="hljs-number">95%</span>
+    <span class="hljs-attribute">height</span> <span class="hljs-number">20vw</span>
+
+  #player-controls
+    <span class="hljs-attribute">width</span> <span class="hljs-number">175px</span>
+
+  .player-button
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">20px</span>
+
+    i
+      <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>
+
+    &amp;:hover
+      <span class="hljs-attribute">background-color</span> <span class="hljs-number">#000</span>0
+
+      i
+        <span class="hljs-attribute">color</span> <span class="hljs-number">#d6dee7</span>
+
+  #album-art
+    <span class="hljs-attribute">width</span> <span class="hljs-number">30%</span>
+    <span class="hljs-attribute">height</span> <span class="hljs-number">0</span>
+    <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-number">30%</span>
+
+  #album-name
+    <span class="hljs-attribute">font-size</span> <span class="hljs-number">15px</span>
+
+  #track-name
+    <span class="hljs-attribute">font-size</span> <span class="hljs-number">10px</span></code></pre></div><p>上方的 css 已经放在 GitHub 中，若想直接引用，可在上方 JS 想办法引进去，或者在需要的界面加进去<br>不建议加到全局，毕竟不是所有界面都需要（其实影响也不是很大）</p><p>CDN🔗 <a href="https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/css/music.min.css" target="_blank" rel="noopener external nofollow noreferrer">https://cdn.jsdelivr.net/gh/Royce2019/BlogSource/css/music.min.css</a></p><h4 id="html"><a class="markdownIt-Anchor" href="#html"></a> HTML</h4><p>需要加载的页面（md 或者 ejs）中加入</p><div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"dowebok"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre></div><p>可能会出现遮挡问题，自己通过 <code>&lt;br&gt;</code> 调整就好了</p><p>js 和 css，源自<a href="https://www.yanghuaxing.com/blog/547.html" target="_blank" rel="noopener external nofollow noreferrer">链接</a><br>稍作修改，手机端适配我可能没怎么写好 <s>(就那么几行能适配完美才怪)</s><br>暗黑模式也没适配这个<br>音乐来源见 js 代码块的 114、115 行，可选自己的网易歌单或者热歌榜等排行榜</p><p>直接把源码部署到一个地方拿来代替用也非常不错，毕竟很好看，再用 Edge 安装在电脑上，嘻嘻嘻</p><h3 id="可交互复选框"><a class="markdownIt-Anchor" href="#可交互复选框"></a> 可交互复选框</h3><p><sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup></p><p>已 PR 至主题，可前往主题更新并通过 Tag 标签使用<br>但主题只内置了方形选框，下方新增</p><div><input type="radio" disabled checked><p>圆形选框</p></div><div><input type="checkbox" disabled checked><p>方形选框</p></div><div><input type="checkbox" class="red" disabled checked><p>可选颜色</p></div><p>下方只介绍 HTML 用法<br>自定义 CSS 中添加以下代码</p><div class="hljs"><pre><code class="hljs css"><span class="hljs-selector-tag">input</span>
+  <span class="hljs-selector-tag">-webkit-appearance</span>: <span class="hljs-selector-tag">none</span>;
+  <span class="hljs-selector-tag">-moz-appearance</span>: <span class="hljs-selector-tag">none</span>;
+  <span class="hljs-selector-tag">-ms-appearance</span>: <span class="hljs-selector-tag">none</span>;
+  <span class="hljs-selector-tag">-o-appearance</span>: <span class="hljs-selector-tag">none</span>;
+  <span class="hljs-selector-tag">appearance</span>: <span class="hljs-selector-tag">none</span>;
+  <span class="hljs-selector-tag">position</span>: <span class="hljs-selector-tag">relative</span>;
+  <span class="hljs-selector-tag">right</span>: 0;
+  <span class="hljs-selector-tag">bottom</span>: 0;
+  <span class="hljs-selector-tag">left</span>: 0;
+  <span class="hljs-selector-tag">height</span>: 20<span class="hljs-selector-tag">px</span>;
+  <span class="hljs-selector-tag">width</span>: 20<span class="hljs-selector-tag">px</span>;
+  <span class="hljs-selector-tag">transition</span><span class="hljs-selector-pseudo">:all</span> <span class="hljs-selector-class">.15s</span> <span class="hljs-selector-tag">ease-out</span> 0<span class="hljs-selector-tag">s</span>;
+  <span class="hljs-selector-tag">color</span>: <span class="hljs-selector-id">#fff</span>;
+  <span class="hljs-selector-tag">cursor</span>: <span class="hljs-selector-tag">pointer</span>;
+  <span class="hljs-selector-tag">display</span>: <span class="hljs-selector-tag">inline-block</span>;
+  <span class="hljs-selector-tag">margin</span>: <span class="hljs-selector-class">.4rem</span> <span class="hljs-selector-class">.2rem</span> <span class="hljs-selector-class">.4rem</span> !<span class="hljs-selector-tag">important</span>;
+  <span class="hljs-selector-tag">outline</span>: <span class="hljs-selector-tag">none</span>;
+  <span class="hljs-selector-tag">border-radius</span>: 10%;
+
+
+<span class="hljs-comment">/* Checkbox */</span>
+<span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=checkbox]</span>
+  <span class="hljs-selector-tag">vertical-align</span>: <span class="hljs-selector-tag">-0</span><span class="hljs-selector-class">.65rem</span>;
+
+  &amp;<span class="hljs-selector-pseudo">:before</span>, &amp;<span class="hljs-selector-pseudo">:after</span>
+    <span class="hljs-selector-tag">position</span>: <span class="hljs-selector-tag">absolute</span>;
+    <span class="hljs-selector-tag">content</span>: "";
+    <span class="hljs-selector-tag">background</span>: <span class="hljs-selector-id">#fff</span>;
+    <span class="hljs-selector-tag">transition</span>: <span class="hljs-selector-tag">all</span> <span class="hljs-selector-class">.2s</span> <span class="hljs-selector-tag">ease-in-out</span>;
+
+  &amp;<span class="hljs-selector-pseudo">:before</span>
+    <span class="hljs-selector-tag">left</span>: 2<span class="hljs-selector-tag">px</span>;
+    <span class="hljs-selector-tag">top</span>: 6<span class="hljs-selector-tag">px</span>;
+    <span class="hljs-selector-tag">width</span>: 0;
+    <span class="hljs-selector-tag">height</span>: 2<span class="hljs-selector-tag">px</span>;
+    <span class="hljs-selector-tag">transform</span>: <span class="hljs-selector-tag">rotate</span>(45<span class="hljs-selector-tag">deg</span>);
+    <span class="hljs-selector-tag">-webkit-transform</span>: <span class="hljs-selector-tag">rotate</span>(45<span class="hljs-selector-tag">deg</span>);
+    <span class="hljs-selector-tag">-moz-transform</span>: <span class="hljs-selector-tag">rotate</span>(45<span class="hljs-selector-tag">deg</span>);
+    <span class="hljs-selector-tag">-ms-transform</span>: <span class="hljs-selector-tag">rotate</span>(45<span class="hljs-selector-tag">deg</span>);
+    <span class="hljs-selector-tag">-o-transform</span>: <span class="hljs-selector-tag">rotate</span>(45<span class="hljs-selector-tag">deg</span>);
+
+  &amp;<span class="hljs-selector-pseudo">:after</span>
+    <span class="hljs-selector-tag">right</span>: 9<span class="hljs-selector-tag">px</span>;
+    <span class="hljs-selector-tag">bottom</span>: 3<span class="hljs-selector-tag">px</span>;
+    <span class="hljs-selector-tag">width</span>: 2<span class="hljs-selector-tag">px</span>;
+    <span class="hljs-selector-tag">height</span>: 0;
+    <span class="hljs-selector-tag">transform</span>: <span class="hljs-selector-tag">rotate</span>(40<span class="hljs-selector-tag">deg</span>);
+    <span class="hljs-selector-tag">-webkit-transform</span>: <span class="hljs-selector-tag">rotate</span>(40<span class="hljs-selector-tag">deg</span>);
+    <span class="hljs-selector-tag">-moz-transform</span>: <span class="hljs-selector-tag">rotate</span>(40<span class="hljs-selector-tag">deg</span>);
+    <span class="hljs-selector-tag">-ms-transform</span>: <span class="hljs-selector-tag">rotate</span>(40<span class="hljs-selector-tag">deg</span>);
+    <span class="hljs-selector-tag">-o-transform</span>: <span class="hljs-selector-tag">rotate</span>(40<span class="hljs-selector-tag">deg</span>);
+    <span class="hljs-selector-tag">transition-delay</span>: <span class="hljs-selector-class">.2s</span>;
+
+  &amp;<span class="hljs-selector-pseudo">:checked</span>
+    &amp;<span class="hljs-selector-pseudo">:before</span>
+      <span class="hljs-selector-tag">left</span>: 1<span class="hljs-selector-tag">px</span>;
+      <span class="hljs-selector-tag">top</span>: 10<span class="hljs-selector-tag">px</span>;
+      <span class="hljs-selector-tag">width</span>: 6<span class="hljs-selector-tag">px</span>;
+      <span class="hljs-selector-tag">height</span>: 2<span class="hljs-selector-tag">px</span>;
+
+    &amp;<span class="hljs-selector-pseudo">:after</span> 
+      <span class="hljs-selector-tag">right</span>: 5<span class="hljs-selector-tag">px</span>;
+      <span class="hljs-selector-tag">bottom</span>: 1<span class="hljs-selector-tag">px</span>;
+      <span class="hljs-selector-tag">width</span>: 2<span class="hljs-selector-tag">px</span>;
+      <span class="hljs-selector-tag">height</span>: 14<span class="hljs-selector-tag">px</span>;
+
+<span class="hljs-comment">/* radio */</span>
+<span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=radio]</span>
+  <span class="hljs-selector-tag">vertical-align</span>: <span class="hljs-selector-tag">-0</span><span class="hljs-selector-class">.7rem</span>;
+  <span class="hljs-selector-tag">border-radius</span>: 50%;
+
+  &amp;<span class="hljs-selector-pseudo">:before</span>
+    <span class="hljs-selector-tag">content</span>: "";
+    <span class="hljs-selector-tag">display</span>: <span class="hljs-selector-tag">block</span>;
+    <span class="hljs-selector-tag">width</span>: 10<span class="hljs-selector-tag">px</span>;
+    <span class="hljs-selector-tag">height</span>: 10<span class="hljs-selector-tag">px</span>;
+    <span class="hljs-selector-tag">border-radius</span>: 50%;
+    <span class="hljs-selector-tag">margin</span>: <span class="hljs-selector-class">.2rem</span>;
+    <span class="hljs-selector-tag">transform</span>: <span class="hljs-selector-tag">scale</span>(0);
+    <span class="hljs-selector-tag">transition</span>: <span class="hljs-selector-tag">all</span> <span class="hljs-selector-tag">ease-out</span> 250<span class="hljs-selector-tag">ms</span>;
+
+  &amp;<span class="hljs-selector-pseudo">:checked</span><span class="hljs-selector-pseudo">:before</span>
+    <span class="hljs-selector-tag">transform</span>: <span class="hljs-selector-tag">scale</span>(1);
+
+<span class="hljs-comment">/* Colors */</span>
+<span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=checkbox]</span>
+  <span class="hljs-selector-tag">border</span>: 2<span class="hljs-selector-tag">px</span> <span class="hljs-selector-tag">solid</span> <span class="hljs-selector-id">#4caf50</span>;
+
+  &amp;<span class="hljs-selector-pseudo">:checked</span>, &amp;<span class="hljs-selector-pseudo">:indeterminate</span>
+    <span class="hljs-selector-tag">background</span>: <span class="hljs-selector-id">#4caf50</span>;
+
+<span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=radio]</span>
+  <span class="hljs-selector-tag">border</span>: 2<span class="hljs-selector-tag">px</span> <span class="hljs-selector-tag">solid</span> <span class="hljs-selector-id">#4caf50</span>;
+
+  &amp;<span class="hljs-selector-pseudo">:checked</span><span class="hljs-selector-pseudo">:before</span>
+    <span class="hljs-selector-tag">background</span>: <span class="hljs-selector-id">#4caf50</span>;
+
+<span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=checkbox]</span><span class="hljs-selector-class">.blue</span>
+  <span class="hljs-selector-tag">border</span>: 2<span class="hljs-selector-tag">px</span> <span class="hljs-selector-tag">solid</span> <span class="hljs-selector-id">#2196f3</span>;
+
+  &amp;<span class="hljs-selector-pseudo">:checked</span>, &amp;<span class="hljs-selector-pseudo">:indeterminate</span>
+    <span class="hljs-selector-tag">background</span>: <span class="hljs-selector-id">#2196f3</span>;
+
+<span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=radio]</span><span class="hljs-selector-class">.blue</span>
+  <span class="hljs-selector-tag">border</span>: 2<span class="hljs-selector-tag">px</span> <span class="hljs-selector-tag">solid</span> <span class="hljs-selector-id">#2196f3</span>;
+
+  &amp;<span class="hljs-selector-pseudo">:checked</span><span class="hljs-selector-pseudo">:before</span>
+    <span class="hljs-selector-tag">background</span>: <span class="hljs-selector-id">#2196f3</span>;
+
+<span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=checkbox]</span><span class="hljs-selector-class">.red</span>
+  <span class="hljs-selector-tag">border</span>: 2<span class="hljs-selector-tag">px</span> <span class="hljs-selector-tag">solid</span> <span class="hljs-selector-id">#f44336</span>;
+
+  &amp;<span class="hljs-selector-pseudo">:checked</span>, &amp;<span class="hljs-selector-pseudo">:indeterminate</span>
+    <span class="hljs-selector-tag">background</span>: <span class="hljs-selector-id">#f44336</span>;
+
+<span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=radio]</span><span class="hljs-selector-class">.red</span>
+  <span class="hljs-selector-tag">border</span>: 2<span class="hljs-selector-tag">px</span> <span class="hljs-selector-tag">solid</span> <span class="hljs-selector-id">#f44336</span>;
+
+  &amp;<span class="hljs-selector-pseudo">:checked</span><span class="hljs-selector-pseudo">:before</span>
+    <span class="hljs-selector-tag">background</span>: <span class="hljs-selector-id">#f44336</span>;
+
+<span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=checkbox]</span><span class="hljs-selector-class">.orange</span>
+  <span class="hljs-selector-tag">border</span>: 2<span class="hljs-selector-tag">px</span> <span class="hljs-selector-tag">solid</span> <span class="hljs-selector-id">#ffc107</span>;
+
+  &amp;<span class="hljs-selector-pseudo">:checked</span>, &amp;<span class="hljs-selector-pseudo">:indeterminate</span>
+    <span class="hljs-selector-tag">background</span>: <span class="hljs-selector-id">#ffc107</span>;
+
+<span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=radio]</span><span class="hljs-selector-class">.orange</span>
+  <span class="hljs-selector-tag">border</span>: 2<span class="hljs-selector-tag">px</span> <span class="hljs-selector-tag">solid</span> <span class="hljs-selector-id">#ffc107</span>;
+
+  &amp;<span class="hljs-selector-pseudo">:checked</span><span class="hljs-selector-pseudo">:before</span>
+    <span class="hljs-selector-tag">background</span>: <span class="hljs-selector-id">#ffc107</span>;</code></pre></div><p>用法</p><div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span>&gt;</span></code></pre></div><div><input type="checkbox" class="green" disabled><p>左边是 <code>type=checkbox</code></p></div><div><input type="radio" disabled><p>左边是 <code>type=radio</code></p></div><p>默认绿色，设置颜色，只需要加上 class 就行。<br>目前 class 有 <code>blue</code> <code>red</code> <code>orange</code>，可自行更改 CSS</p><p>默认是方形没有打勾，圆形没有选中<br>加上 chencked 就会默认选中<br>如下方代码</p><div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">chencked</span>&gt;</span></code></pre></div><div><input type="checkbox" class="blue" disabled checked><p>左边是选中的</p></div><div><input class="red" type="radio" checked disabled><p>左边是选中的</p></div><h3 id="球形标签云"><a class="markdownIt-Anchor" href="#球形标签云"></a> 球形标签云</h3><p><sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup></p><p><code>hexo-tag-cloud</code> 插件是 MikeCoder 写的一个 Hexo 博客的标签云插件</p><p><img src="https://cos.royce2003.top/db44ecae/03.webp-default" srcset="https://cdn.jsdelivr.net/gh/chuyua/imges@master/BlogSource/loading.svg" alt="GIF.gif"></p><h4 id="安装插件"><a class="markdownIt-Anchor" href="#安装插件"></a> 安装插件</h4><div class="hljs"><pre><code class="hljs bash">npm install hexo-tag-cloud@^2.1.* --save</code></pre></div><p>在 <code>fluid\layout\tags.ejs</code> 中加入如下代码</p><div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">%</span> <span class="hljs-attr">if</span> (<span class="hljs-attr">site.tags.length</span>) &#123; %&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"text-center"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"&lt;%- url_for('/js/tagcloud.js') %&gt;"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"&lt;%- url_for('/js/tagcanvas.js') %&gt;"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"widget-wrap"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"myCanvasContainer"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"widget tagcloud"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"250"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"250"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"resCanvas"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width=100%"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">%-</span> <span class="hljs-attr">tagcloud</span>() %&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">%</span> &#125; %&gt;</span></code></pre></div><h4 id="开启"><a class="markdownIt-Anchor" href="#开启"></a> 开启</h4><p>根目录配置文件添加如下的配置</p><div class="hljs"><pre><code class="hljs yaml"><span class="hljs-comment"># hexo-tag-cloud</span>
+<span class="hljs-attr">tag_cloud:</span>
+    <span class="hljs-attr">textFont:</span> <span class="hljs-string">Trebuchet</span> <span class="hljs-string">MS,</span> <span class="hljs-string">Helvetica</span>
+    <span class="hljs-attr">textColor:</span> <span class="hljs-string">'#333'</span>
+    <span class="hljs-attr">textHeight:</span> <span class="hljs-number">25</span>
+    <span class="hljs-attr">outlineColor:</span> <span class="hljs-string">'#E2E1D1'</span>
+    <span class="hljs-attr">maxSpeed:</span> <span class="hljs-number">0.5</span></code></pre></div><p><code>textColor</code>: 字体颜色<br><code>textHeight</code>: 字体高度<br><code>maxSpeed</code>: 文字滚动速度</p><hr><h3 id="最后"><a class="markdownIt-Anchor" href="#最后"></a> 最后</h3><p>应该没啥可折腾的了，还有的话也不新开文章了，就这里持续更新吧，会置顶并将最近一次更新写在摘要中<br>暗黑模式下篇文章再写吧 <s>(水文章数量)</s></p><p>作者已经把主题做的非常完美了，有什么问题都会立马修复，功能也出的很快，超 nice</p><p>博客刚搭建的时候用了一个 material 主题，觉得过于平淡，换到了一个 gal 主题，功能很多<br>慢慢的又看厌了，很多人推荐 Next，就又换到了 Next，的确很好用<br>就光针对 Next 的教程数量而言，应该能算是大部分用 Hexo 的人都用过的<br>经常逛博客也发现很多都是用的这个主题，用了几个月，改了很多东西，但也慢慢看厌了</p><p>就开始再次踏上寻找主题的路，经常看到一个好看的主题，但又想到自己在 Next 上大量的自定义内容，一直不忍心丢下<br>看到 Fluid 之后超喜欢，先用 Fluid 搭建了副站，放在 Gitee 上，慢慢完善<br>完善到一定程度，有人和我说副站更好看，我看了看好像真是这么回事…<br>才下定决心开始换主题，前前后后花了一个多星期全部完成</p><p>Fluid 应该是会一直用下去了<br>不过仍有继续折腾的打算<br>可能会再用 Typecho 搭建一个玩玩…</p><p>写的不好，凑合吧<br><a href="./25976.html">面向纯小白的 CSS 教程1</a><br><a href="./17142.html">面向纯小白的 CSS 教程2</a></p><hr class="footnotes-sep"><section class="footnotes"><ol class="footnotes-list"><li id="fn1" class="footnote-item"><p>参考: <a href="https://www.51qianduan.com/article/3115.html" target="_blank" rel="noopener external nofollow noreferrer">纯css3全屏图片背景缩小渐变式切换特效</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p></li><li id="fn2" class="footnote-item"><p>参考: <a href="https://bestzuo.cn/posts/blog-establish.html" target="_blank" rel="noopener external nofollow noreferrer">Hexo博客+Next主题深度优化与定制</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p></li><li id="fn3" class="footnote-item"><p>参考: <a href="https://www.yanghuaxing.com/blog/547.html" target="_blank" rel="noopener external nofollow noreferrer">网易云HTML5音乐随机播放器</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p></li><li id="fn4" class="footnote-item"><p>参考: <a href="http://www.htmleaf.com/css3/css3donghua/201806235190.html" target="_blank" rel="noopener external nofollow noreferrer">带点击动画特效的CSS3单选框和复选框</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p></li><li id="fn5" class="footnote-item"><p>参考: <a href="https://github.com/MikeCoder/hexo-tag-cloud" target="_blank" rel="noopener external nofollow noreferrer">MikeCoder/hexo-tag-cloud</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p></li></ol></section></article><hr><div><div class="post-metas mb-3"><div class="post-meta"><a class="hover-with-bg" href="/tags/Hexo/">Hexo</a> <a class="hover-with-bg" href="/tags/Fluid/">Fluid</a> <a class="hover-with-bg" href="/tags/CSS/">CSS</a></div></div></div><br><br><div class="markdown-body"><div class="text-center"><a class="btn" id="valine-btn">Valine</a> <a class="btn" id="utterances-btn">Utterances</a></div></div><div class="comments valine" id="comments"><script defer src="https://cdn.jsdelivr.net/npm/leancloud-storage@3.0.4/dist/av-min.js"></script><script defer src="https://cdn.jsdelivr.net/gh/royce003/BlogSource/js/Valine.min.js"></script><script type="text/javascript">var oldLoadVa=window.onload;window.onload=function(){oldLoadVa&&oldLoadVa(),new Valine({lang:"zh-cn",el:"#comments",app_id:"BP0WteqAi1rLTH6C13A1Jfw8-gzGzoHsz",app_key:"Xhohtk79OfxwRIBRi4ew2KhF",admin_email:"979093525@qq.com",placeholder:"说点什么...",emoticon_url:"https://rmt.dogedoge.com/fetch/royce/storage/comments",emoticon_list:["抓狂.png","无奈2.png","惊讶.png","托腮.png","快哭了.png","可怜.png","吃瓜.png","打哈欠.png","辣眼睛.png","脑阔疼.png","doge.png","动耳朵.gif","抖脚脚.gif","抖眼.gif","抖眼镜.gif","风吹秀发.gif","慌张.gif","夹住.gif","开车.gif","哭唧唧.gif","绿色的.gif","跳舞.gif","跳着走.gif","小花花.gif","眼睛转.gif","摇头.gif","眨眼.gif","吃东西.gif","弹肚皮.gif","动次打次.gif?fmt=webp ","比心心.gif","吹风.gif","打篮球.gif","都是小心心.gif","吐.png","喷血.png","狂汗.png","不说话.png","汗.png","坐等.png","献花.png","不高兴.png","中刀.png","害羞.png","皱眉.png","小眼睛.png","中指.png","尴尬.png","瞅你.png","想一想.png","中枪.png","得意.png","肿包.png","扇耳光.png","亲亲.png","惊喜.png","脸红.png","无所谓.png","便便.png","愤怒.png","蜡烛.png","献黄瓜.png","内伤.png","投降.png","观察.png","看不见.png","击掌.png","抠鼻.png","邪恶.png","看热闹.png","口水.png","抽烟.png","锁眉.png","装大款.png","吐舌.png","无奈.png","长草.png","赞一个.png","呲牙.png","无语.png","阴暗.png","不出所料.png","咽气.png","期待.png","高兴.png","吐血倒地.png","哭泣.png","欢呼.png","黑线.png","喜极而泣.png","喷水.png","深思.png","鼓掌.png","暗地观察.png"]})}</script><noscript>Please enable JavaScript to view the <a href="https://valine.js.org" target="_blank" rel="nofollow noopener noopener">comments powered by Valine.</a></noscript></div><div class="comments utterances" id="comments" style="display:none"><script defer src="https://utteranc.es/client.js" repo="chuyua/commit-utterance" issue-term="pathname" label="utterances" theme="preferred-color-scheme" crossorigin="anonymous"></script></div></div></div></div></div><div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn"><div id="toc"><p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p><div id="tocbot"></div></div></div></div></div></main><a id="scroll-top-button" href="#" role="button"><i class="iconfont icon-arrowup" aria-hidden="true"></i></a><footer class="mt-5"><div class="text-center py-3"><div><a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a></div><div>Powered by <a href="https://pages.github.com/" class="qr-trigger" target="_blank" rel="nofollow noopener">GitHub Pages</a></div><div><a href="http://beian.miit.gov.cn/" target="_blank" class="beian-icp" rel="nofollow noopener">闽ICP备20005437号-1</a></div></div></footer><script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script><script src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script><script src="/js/debouncer.js"></script><script src="/js/main.js"></script><script src="/js/lazyload.js"></script><script src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js"></script><script>$(document).ready(function(){var t=$("#board-ctn").offset().top;tocbot.init({tocSelector:"#tocbot",contentSelector:".post-content",headingSelector:"h1,h2,h3,h4,h5,h6",linkClass:"tocbot-link",activeLinkClass:"tocbot-active-link",listClass:"tocbot-list",isCollapsedClass:"tocbot-is-collapsed",collapsibleClass:"tocbot-is-collapsible",collapseDepth:0,scrollSmooth:!0,headingsOffset:-t}),0<$(".toc-list-item").length&&$("#toc").css("visibility","visible")})</script><script defer>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?ff40c47e72e383767b9bcd0a82d13218";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><script src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js"></script><script>var typed=new Typed("#subtitle",{strings:["  ","Hexo Fluid 瞎折腾&nbsp;"],cursorChar:"_",typeSpeed:70,loop:!1});typed.stop(),$(document).ready(function(){$(".typed-cursor").addClass("h2"),typed.start()})</script><script src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js"></script><link rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css"><script>$("#post img:not(.no-zoom img, img[no-zoom]), img[zoom]").each(function(){var t=document.createElement("a");$(t).attr("data-fancybox","images"),$(t).attr("href",$(this).attr("src")),$(this).wrap(t)})</script><script type="text/javascript">var a_idx=0;jQuery(document).ready(function(d){d("body").click(function(a){var o=new Array("富强","民主","文明","和谐","自由","平等","公正","法治","爱国","敬业","诚信","友善"),t=d("<span/>").text(o[a_idx]);a_idx=(a_idx+1)%o.length;var n=a.pageX,e=a.pageY;t.css({"z-index":999,top:e-20,left:n,position:"absolute","font-weight":"bold",color:"rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"}),d("body").append(t),t.animate({top:e-180,opacity:0},1500,function(){t.remove()})})})</script></body></html>
