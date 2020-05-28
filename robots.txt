@@ -4,5 +4,5 @@ Allow: /
 Disallow: /js/
 Disallow: /css/
 
-Sitemap: https://linik.ml/sitemap.xml
-Sitemap: https://linik.ml/baidusitemap.xml
+Sitemap: https://lioil233.top/sitemap.xml
+Sitemap: https://lioil233.top/baidusitemap.xml
