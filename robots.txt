@@ -1,8 +1,0 @@
-User-agent: *
-Allow: /
-
-Disallow: /js/
-Disallow: /css/
-
-Sitemap: https://lioil233.top/sitemap.xml
-Sitemap: https://lioil233.top/baidusitemap.xml
