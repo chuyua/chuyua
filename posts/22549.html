@@ -1,0 +1,253 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"><meta name="renderer" content="webkit"><meta name="force-rendering" content="webkit"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta name="HandheldFriendly" content="True"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><title>Valine评论之微信提醒 | lioil&#39;s Blog</title><meta name="keywords" content="undefinedHexo, 教程"><meta name="description" content="该功能基于 Leancloud 的云引擎与云函数。可以提供邮件 通知站长 和 被@ 通知 的功能还支持自定义邮件模板哦![1]项目来自 查看链接首先你需要一个可以正常使用 Valine 的博客 邮件提醒Valine官方文档首先进入 LeanCloud华东节点的从这里进 查看链接华北节点从这里 查看链接 修改代码库然后进入放评论数据的那个应用，云引擎–&gt;设置–&gt;修改代码库为https:&#x2F;"><meta property="og:type" content="article"><meta property="og:title" content="Valine评论之微信提醒"><meta property="og:url" content="https://www.linil.ml/posts/22549.html"><meta property="og:site_name" content="lioil&#39;s Blog"><meta property="og:description" content="该功能基于 Leancloud 的云引擎与云函数。可以提供邮件 通知站长 和 被@ 通知 的功能还支持自定义邮件模板哦![1]项目来自 查看链接首先你需要一个可以正常使用 Valine 的博客 邮件提醒Valine官方文档首先进入 LeanCloud华东节点的从这里进 查看链接华北节点从这里 查看链接 修改代码库然后进入放评论数据的那个应用，云引擎–&gt;设置–&gt;修改代码库为https:&#x2F;"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://calm-silence-7593.lioil.workers.dev/22549/01.webp-default"><meta property="og:image" content="https://calm-silence-7593.lioil.workers.dev/22549/02.webp-default"><meta property="og:image" content="https://calm-silence-7593.lioil.workers.dev/22549/03.webp-default"><meta property="og:image" content="https://calm-silence-7593.lioil.workers.dev/22549/04.webp-default"><meta property="og:image" content="https://calm-silence-7593.lioil.workers.dev/22549/05.webp-default"><meta property="og:image" content="https://calm-silence-7593.lioil.workers.dev/22549/06.webp-default"><meta property="og:image" content="https://calm-silence-7593.lioil.workers.dev/22549/07.webp-default"><meta property="og:image" content="https://calm-silence-7593.lioil.workers.dev/22549/08.webp-default"><meta property="og:image" content="https://calm-silence-7593.lioil.workers.dev/22549/09.webp-default"><meta property="og:image" content="https://calm-silence-7593.lioil.workers.dev/22549/10.webp-default"><meta property="og:image" content="https://calm-silence-7593.lioil.workers.dev/22549/11.webp-default"><meta property="og:image" content="https://calm-silence-7593.lioil.workers.dev/22549/12.webp-default"><meta property="og:image" content="https://calm-silence-7593.lioil.workers.dev/22549/13.webp-default"><meta property="og:image" content="https://calm-silence-7593.lioil.workers.dev/22549/14.webp-default"><meta property="og:image" content="https://calm-silence-7593.lioil.workers.dev/22549/15.webp-default"><meta property="article:published_time" content="2020-02-20T06:42:29.000Z"><meta property="article:modified_time" content="2020-07-14T06:13:37.395Z"><meta property="article:author" content="lioil"><meta property="article:tag" content="Hexo"><meta property="article:tag" content="教程"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://calm-silence-7593.lioil.workers.dev/22549/01.webp-default"><link rel="alternate" href="/atom.xml" title="lioil's Blog"><link rel="stylesheet" href="/css/style.css"><script>(()=>{const t=document.documentElement,e="user-color-scheme",r="--color-mode",o="data-user-color-scheme",l=(t,e)=>{try{localStorage.setItem(t,e)}catch(t){}},c=t=>{try{localStorage.removeItem(t)}catch(t){}},a=t=>{try{return localStorage.getItem(t)}catch(t){return null}},n=()=>{const e=getComputedStyle(t).getPropertyValue(r);return e.length?e.replace(/\"/g,"").trim():"dark"===e?"dark":"light"},d=()=>{t.removeAttribute(o),c(e)},u={dark:!0,light:!0},g=r=>{const l=r||a(e);l===n()?d():u[l]?t.setAttribute(o,l):d()},m={dark:"light",light:"dark"},i=()=>{var t=a(e);if(u[t])t=m[t];else{if(null!==t)return;t=m[n()]}return l(e,t),t};g(),window.onload=(()=>{const t=document.getElementById("btn-toggle-dark");t.addEventListener("click",()=>{g(i())})})})();</script><link href="https://fonts.dogedoge.com/css2?family=Roboto+Slab:wght@400;500;700&family=Fira+Code&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" media="print" onload='this.media="all"'><meta name="baidu-site-verification" content="qfwvQsv2Xc"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jalenchuh/cdn/css/hint.min.css"><meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="lioil's Blog" type="application/atom+xml"></head><body><div id="app"><header class="header"><div class="header__left"><a href="/" class="button"><span class="logo__text">lioil's Blog</span></a></div><div class="header__right"><div class="cover__menus"><a href="https://travellings.now.sh/" target="_blank" rel="noopener external nofollow noreferrer" class="cover-menu button">开往 </a><a href="/artitalk/" class="cover-menu button">时光机 </a><a href="/friends/" class="cover-menu button">友链 </a><a href="/about/" class="cover-menu button">关于 </a><a href="/atom.xml" class="cover-menu button">订阅</a></div><a href="javaScript:void(0);" rel="external nofollow noreferrer" id="btn-toggle-dark"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> </a><a href="#" id="b2t" style="display:block" aria-label="Back to Top" title="Back to Top"><svg fill="currentColor" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M122.546 559.36a72.038 72.038 0 0 1-101.376 0 70.707 70.707 0 0 1 0-100.813L461.49 20.838a72.09 72.09 0 0 1 101.376 0l440.32 437.71a70.707 70.707 0 0 1 0 100.812 72.038 72.038 0 0 1-101.376 0L512.178 172.083zm389.632 56.32l389.632 387.277a71.936 71.936 0 0 0 101.376 0 70.707 70.707 0 0 0 0-100.813l-440.32-437.709a72.09 72.09 0 0 0-101.376 0L21.17 902.144a70.707 70.707 0 0 0 0 100.813 71.936 71.936 0 0 0 101.376 0zm0 0"/></svg> </a><a class="dropdown-icon button" id="btn-dropdown"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="24" height="24" fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a><div class="dropdown-menus" id="dropdown-menus"><a class="dropback-icon button" id="btn-dropback"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="24" height="24" fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M11.469,10l7.08-7.08c0.406-0.406,0.406-1.064,0-1.469c-0.406-0.406-1.063-0.406-1.469,0L10,8.53l-7.081-7.08c-0.406-0.406-1.064-0.406-1.469,0c-0.406,0.406-0.406,1.063,0,1.469L8.531,10L1.45,17.081c-0.406,0.406-0.406,1.064,0,1.469c0.203,0.203,0.469,0.304,0.735,0.304c0.266,0,0.531-0.101,0.735-0.304L10,11.469l7.08,7.081c0.203,0.203,0.469,0.304,0.735,0.304c0.267,0,0.532-0.101,0.735-0.304c0.406-0.406,0.406-1.064,0-1.469L11.469,10z"></path></svg> </a><a href="https://travellings.now.sh/" target="_blank" rel="noopener external nofollow noreferrer" class="dropdown-menu button">开往 </a><a href="/artitalk/" class="dropdown-menu button">时光机 </a><a href="/friends/" class="dropdown-menu button">友链 </a><a href="/about/" class="dropdown-menu button">关于 </a><a href="/atom.xml" class="dropdown-menu button">订阅</a></div><script>document.getElementById('btn-dropdown').addEventListener('click', () => {
+                    const dd = document.getElementById('dropdown-menus');
+                    requestAnimationFrame(() => {
+                        dd.style.display = 'flex';
+                        requestAnimationFrame(() => {
+                            dd.style.transform = 'translateY(0)';
+                            dd.style.opacity = '1';
+                        });
+                    });
+                });
+                document.getElementById('btn-dropback').addEventListener('click', () => {
+                    const dd = document.getElementById('dropdown-menus');
+                    dd.style.transform = 'translateY(2.25rem)';
+                    dd.style.opacity = '0';
+                    setTimeout(() => {dd.style.display = 'none';}, 350);
+                });</script></div></header><main class="main"><div class="post-title"><h1 class="post-title__text">Valine评论之微信提醒</h1><div class="post-title__meta"><span class="button" style="color:grey">Posted Feb 20 2020. <strong style="color:var(--main-color)">1203 words. 6 min read.</strong></span></div></div><div class="post__with-side"><aside class="post-side"><div class="post-side__toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#邮件提醒"><span class="toc-text">邮件提醒</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#修改代码库"><span class="toc-text">修改代码库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置环境变量"><span class="toc-text">配置环境变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#防止休眠"><span class="toc-text">防止休眠</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#评论管理"><span class="toc-text">评论管理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#微信提醒"><span class="toc-text">微信提醒</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#更改代码库"><span class="toc-text">更改代码库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置环境变量-2"><span class="toc-text">配置环境变量</span></a></li></ol></li></ol></div></aside><article class="post content-card"><div class="post__header"><div class="post__expire" id="post-expired-notify"><p>📢 该文章发布于 <span id="expire-date"></span> 天前，年久失修，内容可能有所偏颇，还请仔细甄别！</p></div><script>(() => {
+            var date = Date.parse("2020-02-20"),
+                now = new Date().getTime(),
+                expire = now - date,
+                expire_days = Math.floor(expire/(24*3600*1000));
+            if (expire_days >= 120) {
+                document.querySelectorAll('#expire-date')[0].innerHTML = expire_days;
+                document.querySelectorAll('#post-expired-notify')[0].style.display = 'block';
+            }
+        })();</script></div><div class="post__content"><div class="md-content"><p>该功能基于 Leancloud 的云引擎与云函数。<br>可以提供邮件 通知站长 和 被@ 通知 的功能还支持自定义邮件模板哦!<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="参考： Hexo 优化 — Valine 扩展之邮件通知">[1]</span></a></sup></p><p>项目来自 <a href="http://www.zhaojun.im/" target="_blank" rel="noopener external nofollow noreferrer">查看链接</a></p><p>首先你需要一个可以正常使用 Valine 的博客</p><h2 id="邮件提醒"><a class="markdownIt-Anchor" href="#邮件提醒"></a> 邮件提醒</h2><p><a href="https://valine.js.org/" target="_blank" rel="noopener external nofollow noreferrer">Valine官方文档</a></p><p>首先进入 LeanCloud</p><p>华东节点的从这里进 <a href="https://tab.leancloud.cn/applist.html#/apps" target="_blank" rel="noopener external nofollow noreferrer">查看链接</a></p><p>华北节点从这里 <a href="https://leancloud.cn/dashboard/login.html#/apps" target="_blank" rel="noopener external nofollow noreferrer">查看链接</a></p><h3 id="修改代码库"><a class="markdownIt-Anchor" href="#修改代码库"></a> 修改代码库</h3><p>然后进入放评论数据的那个应用，云引擎–&gt;设置–&gt;修改代码库为<br><code>https://github.com/zhaojun1998/Valine-Admin</code></p><p><img src="https://calm-silence-7593.lioil.workers.dev/22549/01.webp-default" class="lazyload" data-srcset="https://calm-silence-7593.lioil.workers.dev/22549/01.webp-default" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg==" alt=""></p><p>进入部署界面，选择 Git 源码部署，</p><p><img src="https://calm-silence-7593.lioil.workers.dev/22549/02.webp-default" class="lazyload" data-srcset="https://calm-silence-7593.lioil.workers.dev/22549/02.webp-default" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg==" alt=""></p><p>修改 分支或版本号为 master</p><p><img src="https://calm-silence-7593.lioil.workers.dev/22549/03.webp-default" class="lazyload" data-srcset="https://calm-silence-7593.lioil.workers.dev/22549/03.webp-default" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg==" alt=""></p><p>下载最新依赖是升级用的<br>然后点击部署<br>过程会比较漫长，耐心等待当看到完成之类的字眼就好啦图片我下了个最新依赖花了我 4 分钟…</p><p><img src="https://calm-silence-7593.lioil.workers.dev/22549/04.webp-default" class="lazyload" data-srcset="https://calm-silence-7593.lioil.workers.dev/22549/04.webp-default" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg==" alt=""></p><h3 id="配置环境变量"><a class="markdownIt-Anchor" href="#配置环境变量"></a> 配置环境变量</h3><p>接下来就需要配置环境变量了</p><blockquote class="blockquote-note blockquote-note__warning"><div class="blockquote-note__content"><p>环境变量配置图片已更新，请注意 SITE_URL 的值需要带 http(s)，否则邮件无法跳转</p></div></blockquote><p><img src="https://calm-silence-7593.lioil.workers.dev/22549/05.webp-default" class="lazyload" data-srcset="https://calm-silence-7593.lioil.workers.dev/22549/05.webp-default" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg==" alt=""></p><p><code>SITE_NAME</code> : 网站名称<br><code>SITE_URL</code> : 网站地址, 最后不要加 / SMTP_SERVICE : 邮件服务提供商，不如QQ，163…<br><code>SMTP_USER</code> : SMTP 服务用户名，邮箱地址<br><code>SMTP_PASS</code> : SMTP 密码，不是登录密码哦，是授权码，就是超级超级坑，需要你花钱发短信才能获得的授权码!<br><code>SENDER_NAME</code> : 寄件人名称<br><code>TEMPLATE_NAME</code>：邮件的样式，可以不写这行就按默认，除了默认还有另一个样式rainbow<br>（我没提到但图片里有的环境变量先不管他）<br>支持的邮件服务商:<br><code>&quot;126&quot; &quot;163&quot; &quot;1und1&quot; &quot;AOL&quot; &quot;DebugMail&quot; &quot;DynectEmail&quot; &quot;FastMail&quot; &quot;GandiMail&quot; &quot;Gmail&quot; &quot;Godaddy&quot; &quot;GodaddyAsia&quot; &quot;GodaddyEurope&quot; &quot;hot.ee&quot; &quot;Hotmail&quot; &quot;iCloud&quot; &quot;mail.ee&quot; &quot;Mail.ru&quot; &quot;Maildev&quot; &quot;Mailgun&quot; &quot;Mailjet&quot; &quot;Mailosaur&quot; &quot;Mandrill&quot; &quot;Naver&quot; &quot;OpenMailBox&quot; &quot;Outlook365&quot; &quot;Postmark&quot; &quot;QQ&quot; &quot;QQex&quot; &quot;SendCloud&quot; &quot;SendGrid&quot; &quot;SendinBlue&quot; &quot;SendPulse&quot; &quot;SES&quot; &quot;SES-US-EAST-1&quot; &quot;SES-US-WEST-2&quot; &quot;SES-EU-WEST-1&quot; &quot;Sparkpost&quot; &quot;Yahoo&quot; &quot;Yandex&quot; &quot;Zoho&quot; &quot;qiye.aliyun&quot;</code> 就这么多啦</p><blockquote class="blockquote-note blockquote-note__danger"><div class="blockquote-note__content"><p>每次配置完环境变量需要重启容器!</p></div></blockquote><p>好啦，至此已经完成了邮件提醒!</p><h3 id="防止休眠"><a class="markdownIt-Anchor" href="#防止休眠"></a> 防止休眠</h3><p>不过还有个小问题 LeanCloud 也是要恰饭的，当然不可能给你免费提供给这么好的服务!</p><p>免费版的 LeanCloud 容器，是有强制性休眠策略的，不能 24 小时运行<br>每天必须休眠 6 个小时</p><p>30 分钟内没有外部请求就会休眠</p><p>休眠后如果有新的外部请求才启动但是启动的第一份邮件会发送失败</p><p>如果您不缺钱请直接购买付费容器并跳过这段</p><p>正是因为大家都缺钱所以我们需要利用 LeanCloud的 云函数进行唤醒</p><p>既然必须休眠 6 个小时，那就让他休眠呗，总不可能你博客 24 小时都有人评论</p><p>首先我们需要再添加一个环境变量 <code>ADMIN_URL</code> 然后把下方 Web 主机域名给填写上</p><p><img src="https://calm-silence-7593.lioil.workers.dev/22549/06.webp-default" class="lazyload" data-srcset="https://calm-silence-7593.lioil.workers.dev/22549/06.webp-default" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg==" alt=""></p><p>然后点击定时任务–&gt;创建定时任务</p><p><img src="https://calm-silence-7593.lioil.workers.dev/22549/07.webp-default" class="lazyload" data-srcset="https://calm-silence-7593.lioil.workers.dev/22549/07.webp-default" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg==" alt=""></p><p>名字随便取<br>选择生产环境下的 <code>self_wake</code><br>然后cron表达式输入<br><code>0 */30 7-23 * * ?</code><br>意思是 8 点到 23 点每 30 分钟唤醒一次<br>这是我的表达式<br>大家可以按自己需求改只需要保证 6 小时的休眠就好啦<br>然后如果出问题了可以去应用日志里查看以下</p><p><img src="https://calm-silence-7593.lioil.workers.dev/22549/08.webp-default" class="lazyload" data-srcset="https://calm-silence-7593.lioil.workers.dev/22549/08.webp-default" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg==" alt=""><br><img src="https://calm-silence-7593.lioil.workers.dev/22549/09.webp-default" class="lazyload" data-srcset="https://calm-silence-7593.lioil.workers.dev/22549/09.webp-default" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg==" alt=""></p><p>当有人评论时，应用日志里也会显示</p><h3 id="评论管理"><a class="markdownIt-Anchor" href="#评论管理"></a> 评论管理</h3><p>然后还记得刚刚的 Web 主机域名，你也可以绑定自己的域名<br>通过访问该地址你就可以管理评论啦<br>但当你打开网址时会叫你登录<br>这时候你需要去创建个用户，也就是你自己<br>只需要填写密码，username，邮箱</p><p><img src="https://calm-silence-7593.lioil.workers.dev/22549/10.webp-default" class="lazyload" data-srcset="https://calm-silence-7593.lioil.workers.dev/22549/10.webp-default" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg==" alt=""><br><img src="https://calm-silence-7593.lioil.workers.dev/22549/11.webp-default" class="lazyload" data-srcset="https://calm-silence-7593.lioil.workers.dev/22549/11.webp-default" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg==" alt=""></p><p>注意！邮箱才是是你的登录名！<br>不懂这是什么逻辑</p><h2 id="微信提醒"><a class="markdownIt-Anchor" href="#微信提醒"></a> 微信提醒</h2><p>好啦，接下来时加如微信提醒<sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><span class="hint--top hint--rounded" aria-label="参考： Hexo 博客 valine 评论微信、qq 提醒">[2]</span></a></sup>了<br>首先进入 Server 酱官网注册个账号然后按官网首页绑定微信</p><p><img src="https://calm-silence-7593.lioil.workers.dev/22549/12.webp-default" class="lazyload" data-srcset="https://calm-silence-7593.lioil.workers.dev/22549/12.webp-default" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg==" alt=""></p><p>第三步时测试绑定有没有成功</p><h3 id="更改代码库"><a class="markdownIt-Anchor" href="#更改代码库"></a> 更改代码库</h3><p>然后还记得更改的代码仓库吗，将他改成这个<br><code>https://github.com/sviptzk/Valine-Admin-Server</code> 点击保存</p><p><img src="https://calm-silence-7593.lioil.workers.dev/22549/13.webp-default" class="lazyload" data-srcset="https://calm-silence-7593.lioil.workers.dev/22549/13.webp-default" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg==" alt=""></p><h3 id="配置环境变量-2"><a class="markdownIt-Anchor" href="#配置环境变量-2"></a> 配置环境变量</h3><p>然后再添加一个新的环境变量 <code>SCKEY</code></p><p><img src="https://calm-silence-7593.lioil.workers.dev/22549/14.webp-default" class="lazyload" data-srcset="https://calm-silence-7593.lioil.workers.dev/22549/14.webp-default" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg==" alt=""></p><p><code>SCKEY</code> 的值从这来</p><p><img src="https://calm-silence-7593.lioil.workers.dev/22549/15.webp-default" class="lazyload" data-srcset="https://calm-silence-7593.lioil.workers.dev/22549/15.webp-default" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEXMzMyWlpYU2uzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAACklEQVQImWNgAAAAAgAB9HFkpgAAAABJRU5ErkJggg==" alt=""></p><blockquote class="blockquote-note blockquote-note__danger"><div class="blockquote-note__content"><p>然后一定记得要进行重新部署，重启容器！</p></div></blockquote><p>大功告成，你可以在微信收到博客的评论了！</p><section class="footnotes"><hr><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>参考： <a href="http://www.zhaojun.im/hexo-valine-admin/" target="_blank" rel="noopener external nofollow noreferrer">Hexo 优化 — Valine 扩展之邮件通知</a><a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span>参考： <a href="https://www.antmoe.com/posts/2380732b/index.html" target="_blank" rel="noopener external nofollow noreferrer">Hexo 博客 valine 评论微信、qq 提醒</a><a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section></div></div><div class="post-meta post-footer__meta"><p>最后更新于：Tue Jul 14 2020</p></div><div class="post-cats post-card__cats"><a href="/tags/Hexo/" class="post-tags__link button"># Hexo</a> <a href="/tags/%E6%95%99%E7%A8%8B/" class="post-tags__link button"># 教程</a></div></article><br><div class="post__comment content-card"><h4 style="margin-top:0">Comments</h4><div id="disqus_thread">Unable to load Disqus, please make sure your network can access.</div></div></div></main><footer class="footer"><p>JalenChuh ©2020 | <a style="color:#999;text-decoration:none" href="http://beian.miit.gov.cn/" target="_blank" rel="noopener external nofollow noreferrer">闽ICP备20005437号-1</a></p><p>Powered by <a href="https://hexo.io" rel="external nofollow noreferrer" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" rel="external nofollow noreferrer" target="_blank">Cards</a> | ImageHost - <a href="https://www.dogedoge.com" rel="external nofollow noreferrer" target="_blank">DogeDoge</a></p></footer><script defer>(function () {
+    // 查询存储的记录
+    function getRecord(Counter, target) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({target})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
+            }
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {target, time: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
+            }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    }
+
+    // 发起自增请求
+    function increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    }
+
+    // 构建自增请求体
+    function buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "time": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    }
+
+    // 校验是否为有效的 UV
+    function validUV() {
+      var key = 'LeanCloud_UV_Flag';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    }
+
+    function addCount(Counter) {
+      var enableIncr = window.location.hostname !== 'localhost';
+      var getterArr = [];
+      var incrArr = [];
+
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#leancloud-site-pv-container');
+      if (pvCtn || enableIncr) {
+        var pvGetter = getRecord(Counter, 'site-pv').then((record) => {
+          incrArr.push(buildIncrement(record.objectId))
+          var ele = document.querySelector('#leancloud-site-pv');
+          if (ele) {
+            ele.innerText = record.time + 1;
+            if (pvCtn) {
+              pvCtn.style.display = 'inline';
+            }
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#leancloud-site-uv-container');
+      if (uvCtn || enableIncr) {
+        var uvGetter = getRecord(Counter, 'site-uv').then((record) => {
+          var vuv = validUV();
+          vuv && incrArr.push(buildIncrement(record.objectId))
+          var ele = document.querySelector('#leancloud-site-uv');
+          if (ele) {
+            ele.innerText = record.time + (vuv ? 1 : 0);
+            if (uvCtn) {
+              uvCtn.style.display = 'inline';
+            }
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 如果是文章，请求文章的浏览数，并自增
+      if ('false' === 'true') {
+        var viewCtn = document.querySelector('#leancloud-post-views-container');
+        if (viewCtn || enableIncr) {
+          var target = decodeURI('/about/index.html');
+          var viewGetter = getRecord(Counter, target).then((record) => {
+            incrArr.push(buildIncrement(record.objectId))
+            if (viewCtn) {
+              var ele = document.querySelector('#leancloud-post-views');
+              if (ele) {
+                ele.innerText = (record.time || 0) + 1;
+                viewCtn.style.display = 'inline';
+              }
+            }
+          });
+          getterArr.push(viewGetter);
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && increment(Counter, incrArr);
+        })
+      }
+    }
+
+    var app_id = 'Ikn1WpEQq7e9N6H3EhY9k43J-9Nh9j0Va'
+    var app_key = '3SnOsnvmkYXBAT0WFNoLdEuR'
+    var server_url = 'https://shuo.royce2003.top'
+
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': app_id,
+            'X-LC-Key': app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+
+      addCount(Counter);
+    }
+
+    var api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${ app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(resp => resp.json())
+        .then(({api_server}) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();</script></div><script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.0.0/dist/lazyload.min.js"></script><script>window.lazyLoadOptions={elements_selector:".lazyload",threshold:0}</script><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?f6526ac522397a0fbbe5820a46b9bf18";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><script>function callback() {
+                    window.disqus_config = function () {
+                        this.page.url = 'https://www.linil.ml/posts/22549.html';
+                        this.page.identifier = 'posts/22549.html';
+                    }
+                    new DisqusJS({
+                        shortname: 'jalenchuh',
+                        siteName: 'lioil&#39;s Blog',
+                        api: 'https://disqus.skk.moe/disqus/',
+                        apikey: 'TVO15k0E1I6odAZnbZgkatBY3vvj9hWDeNlZ62CjxIDbXJ2ijEMsWjEL4qGGfOe1',
+                        admin: 'JalenChuh',
+                        identifier: 'posts/22549.html',
+                        url: 'https://www.linil.ml/posts/22549.html',
+                        nesting: '5'
+                    });
+                }
+                function addStyle(url) {
+                    var d = document.createElement('link');
+                    d.rel = 'stylesheet';
+                    d.href = url;
+                    document.head.appendChild(d);
+                }
+                function addScript(url) {
+                    var d = document.createElement('script');
+                    d.src = url;
+                    d.async = false;
+                    document.body.appendChild(d);
+                    d.onload = () => {
+                        callback();
+                    }
+                }
+
+                function loadDisqus() {
+                    addScript('https://cdn.jsdelivr.net/npm/disqusjs@1.3/dist/disqus.js');
+                    addStyle('https://cdn.jsdelivr.net/npm/disqusjs@1.3/dist/disqusjs.css');
+                }
+
+                var runningOnBrowser = typeof window !== "undefined";
+                var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
+                var supportsIntersectionObserver = runningOnBrowser && "IntersectionObserver" in window;
+
+                setTimeout(function () {
+                    if (!isBot && supportsIntersectionObserver) {
+                        var disqus_observer = new IntersectionObserver(function(entries) {
+                            if (entries[0].isIntersecting) {
+                                loadDisqus();
+                                disqus_observer.disconnect();
+                            }
+                        });
+                        disqus_observer.observe(document.getElementById('disqus_thread'));
+                    } else {
+                        loadDisqus();
+                    }
+                }, 0);</script></body></html>
