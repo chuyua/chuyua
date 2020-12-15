@@ -1,1 +1,56 @@
-.highlight{display:block;overflow-x:auto;padding:.5em;background:#eaeef3;color:#00193a}.highlight .doctag,.highlight .keyword,.highlight .name,.highlight .section,.highlight .selector-tag,.highlight .strong,.highlight .title{font-weight:700}.highlight .comment{color:#738191}.highlight .addition,.highlight .built_in,.highlight .literal,.highlight .name,.highlight .quote,.highlight .section,.highlight .selector-class,.highlight .selector-id,.highlight .string,.highlight .tag,.highlight .title,.highlight .type{color:#0048ab}.highlight .attribute,.highlight .bullet,.highlight .deletion,.highlight .link,.highlight .meta,.highlight .regexp,.highlight .subst,.highlight .symbol,.highlight .template-variable,.highlight .variable{color:#4c81c9}.highlight .emphasis{font-style:italic}
+/*
+  Five-color theme from a single blue hue.
+*/
+.highlight {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #eaeef3;
+  color: #00193a;
+}
+
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .title,
+.highlight .section,
+.highlight .doctag,
+.highlight .name,
+.highlight .strong {
+  font-weight: bold;
+}
+
+.highlight .comment {
+  color: #738191;
+}
+
+.highlight .string,
+.highlight .title,
+.highlight .section,
+.highlight .built_in,
+.highlight .literal,
+.highlight .type,
+.highlight .addition,
+.highlight .tag,
+.highlight .quote,
+.highlight .name,
+.highlight .selector-id,
+.highlight .selector-class {
+  color: #0048ab;
+}
+
+.highlight .meta,
+.highlight .subst,
+.highlight .symbol,
+.highlight .regexp,
+.highlight .attribute,
+.highlight .deletion,
+.highlight .variable,
+.highlight .template-variable,
+.highlight .link,
+.highlight .bullet {
+  color: #4c81c9;
+}
+
+.highlight .emphasis {
+  font-style: italic;
+}

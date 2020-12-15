@@ -1,1 +1,83 @@
-.highlight{display:block;overflow-x:auto;padding:.5em;background:#000}.highlight,.highlight .subst,.highlight .tag,.highlight .title{color:#aaa}.highlight .emphasis,.highlight .strong{color:#a8a8a2}.highlight .bullet,.highlight .literal,.highlight .number,.highlight .quote,.highlight .regexp{color:#f5f}.highlight .code .highlight .selector-class{color:#aaf}.highlight .emphasis,.highlight .stronge,.highlight .type{font-style:italic}.highlight .function,.highlight .keyword,.highlight .name,.highlight .section,.highlight .selector-tag,.highlight .symbol{color:#ff5}.highlight .attribute{color:#f55}.highlight .class .highlight .title,.highlight .params,.highlight .variable{color:#88f}.highlight .addition,.highlight .built_in,.highlight .builtin-name,.highlight .link,.highlight .selector-attr,.highlight .selector-id,.highlight .selector-pseudo,.highlight .string,.highlight .template-tag,.highlight .template-variable,.highlight .type{color:#f5f}.highlight .comment,.highlight .deletion,.highlight .meta{color:#5ff}
+/*
+
+Qt Creator dark color scheme
+
+*/
+
+
+.highlight {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #000000;
+}
+
+.highlight,
+.highlight .subst,
+.highlight .tag,
+.highlight .title {
+  color: #aaaaaa;
+}
+
+.highlight .strong,
+.highlight .emphasis {
+  color: #a8a8a2;
+}
+
+.highlight .bullet,
+.highlight .quote,
+.highlight .number,
+.highlight .regexp,
+.highlight .literal {
+  color: #ff55ff;
+}
+
+.highlight .code
+.highlight .selector-class {
+  color: #aaaaff;
+}
+
+.highlight .emphasis,
+.highlight .stronge,
+.highlight .type {
+  font-style: italic;
+}
+
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .function,
+.highlight .section,
+.highlight .symbol,
+.highlight .name {
+  color: #ffff55;
+}
+
+.highlight .attribute {
+  color: #ff5555;
+}
+
+.highlight .variable,
+.highlight .params,
+.highlight .class .highlight .title {
+  color: #8888ff;
+}
+
+.highlight .string,
+.highlight .selector-id,
+.highlight .selector-attr,
+.highlight .selector-pseudo,
+.highlight .type,
+.highlight .built_in,
+.highlight .builtin-name,
+.highlight .template-tag,
+.highlight .template-variable,
+.highlight .addition,
+.highlight .link {
+  color: #ff55ff;
+}
+
+.highlight .comment,
+.highlight .meta,
+.highlight .deletion {
+  color: #55ffff;
+}

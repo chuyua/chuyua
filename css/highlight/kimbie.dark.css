@@ -1,1 +1,74 @@
-.highlight .comment,.highlight .quote{color:#d6baad}.highlight .meta,.highlight .name,.highlight .regexp,.highlight .selector-class,.highlight .selector-id,.highlight .tag,.highlight .template-variable,.highlight .variable{color:#dc3958}.highlight .built_in,.highlight .builtin-name,.highlight .deletion,.highlight .link,.highlight .literal,.highlight .number,.highlight .params,.highlight .type{color:#f79a32}.highlight .attribute,.highlight .section,.highlight .title{color:#f06431}.highlight .addition,.highlight .bullet,.highlight .string,.highlight .symbol{color:#889b4a}.highlight .function,.highlight .keyword,.highlight .selector-tag{color:#98676a}.highlight{display:block;overflow-x:auto;background:#221a0f;color:#d3af86;padding:.5em}.highlight .emphasis{font-style:italic}.highlight .strong{font-weight:700}
+/*
+    Name:     Kimbie (dark)
+    Author:   Jan T. Sott
+    License:  Creative Commons Attribution-ShareAlike 4.0 Unported License
+    URL:      https://github.com/idleberg/Kimbie-highlight.js
+*/
+
+/* Kimbie Comment */
+.highlight .comment,
+.highlight .quote {
+  color: #d6baad;
+}
+
+/* Kimbie Red */
+.highlight .variable,
+.highlight .template-variable,
+.highlight .tag,
+.highlight .name,
+.highlight .selector-id,
+.highlight .selector-class,
+.highlight .regexp,
+.highlight .meta {
+  color: #dc3958;
+}
+
+/* Kimbie Orange */
+.highlight .number,
+.highlight .built_in,
+.highlight .builtin-name,
+.highlight .literal,
+.highlight .type,
+.highlight .params,
+.highlight .deletion,
+.highlight .link {
+  color: #f79a32;
+}
+
+/* Kimbie Yellow */
+.highlight .title,
+.highlight .section,
+.highlight .attribute {
+  color: #f06431;
+}
+
+/* Kimbie Green */
+.highlight .string,
+.highlight .symbol,
+.highlight .bullet,
+.highlight .addition {
+  color: #889b4a;
+}
+
+/* Kimbie Purple */
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .function {
+  color: #98676a;
+}
+
+.highlight {
+  display: block;
+  overflow-x: auto;
+  background: #221a0f;
+  color: #d3af86;
+  padding: 0.5em;
+}
+
+.highlight .emphasis {
+  font-style: italic;
+}
+
+.highlight .strong {
+  font-weight: bold;
+}
